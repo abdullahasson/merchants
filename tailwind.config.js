@@ -1,0 +1,310 @@
+const colorVariable = require('@mertasan/tailwindcss-variables/colorVariable')
+
+module.exports = {
+  mode: 'layers',
+  content: ['*.html/','./**/*.html/','./src/js/*.js'],
+  darkMode: 'class', // or 'media' or 'class'
+  theme: {
+    extend: {
+      colors: {
+        white: colorVariable('var(--colors-white)'),
+        black: colorVariable('var(--colors-black)'),
+        primary: {
+          10: colorVariable('var(--colors-primary-10)'),
+          50: colorVariable('var(--colors-primary-50)'),
+          100: colorVariable('var(--colors-primary-100)'),
+          200: colorVariable('var(--colors-primary-200)'),
+          300: colorVariable('var(--colors-primary-300)'),
+          400: colorVariable('var(--colors-primary-400)'),
+          500: colorVariable('var(--colors-primary-500)'),
+          600: colorVariable('var(--colors-primary-600)'),
+          700: colorVariable('var(--colors-primary-700)'),
+          800: colorVariable('var(--colors-primary-800)'),
+          900: colorVariable('var(--colors-primary-900)'),
+        },
+        secondary: {
+          10: colorVariable('var(--colors-secondary-10)'),
+          50: colorVariable('var(--colors-secondary-50)'),
+          100: colorVariable('var(--colors-secondary-100)'),
+          200: colorVariable('var(--colors-secondary-200)'),
+          300: colorVariable('var(--colors-secondary-300)'),
+          400: colorVariable('var(--colors-secondary-400)'),
+          500: colorVariable('var(--colors-secondary-500)'),
+          600: colorVariable('var(--colors-secondary-600)'),
+          700: colorVariable('var(--colors-secondary-700)'),
+          800: colorVariable('var(--colors-secondary-800)'),
+          900: colorVariable('var(--colors-secondary-900)'),
+        },
+        tertiary: {
+          10: colorVariable('var(--colors-tertiary-10)'),
+          50: colorVariable('var(--colors-tertiary-50)'),
+          100: colorVariable('var(--colors-tertiary-100)'),
+          200: colorVariable('var(--colors-tertiary-200)'),
+          300: colorVariable('var(--colors-tertiary-300)'),
+          400: colorVariable('var(--colors-tertiary-400)'),
+          500: colorVariable('var(--colors-tertiary-500)'),
+          600: colorVariable('var(--colors-tertiary-600)'),
+          700: colorVariable('var(--colors-tertiary-700)'),
+          800: colorVariable('var(--colors-tertiary-800)'),
+          900: colorVariable('var(--colors-tertiary-900)'),
+        },
+        error: {
+          10: colorVariable('var(--colors-error-10)'),
+          50: colorVariable('var(--colors-error-50)'),
+          100: colorVariable('var(--colors-error-100)'),
+          200: colorVariable('var(--colors-error-200)'),
+          300: colorVariable('var(--colors-error-300)'),
+          400: colorVariable('var(--colors-error-400)'),
+          500: colorVariable('var(--colors-error-500)'),
+          600: colorVariable('var(--colors-error-600)'),
+          700: colorVariable('var(--colors-error-700)'),
+          800: colorVariable('var(--colors-error-800)'),
+          900: colorVariable('var(--colors-error-900)'),
+        },
+        neutral: {
+          10: colorVariable('var(--colors-neutral-10)'),
+          50: colorVariable('var(--colors-neutral-50)'),
+          100: colorVariable('var(--colors-neutral-100)'),
+          200: colorVariable('var(--colors-neutral-200)'),
+          300: colorVariable('var(--colors-neutral-300)'),
+          400: colorVariable('var(--colors-neutral-400)'),
+          500: colorVariable('var(--colors-neutral-500)'),
+          600: colorVariable('var(--colors-neutral-600)'),
+          700: colorVariable('var(--colors-neutral-700)'),
+          800: colorVariable('var(--colors-neutral-800)'),
+          900: colorVariable('var(--colors-neutral-900)'),
+        },
+        gray: {
+          10: colorVariable('var(--colors-gray-10)'),
+          50: colorVariable('var(--colors-gray-50)'),
+          100: colorVariable('var(--colors-gray-100)'),
+          200: colorVariable('var(--colors-gray-200)'),
+          300: colorVariable('var(--colors-gray-300)'),
+          400: colorVariable('var(--colors-gray-400)'),
+          500: colorVariable('var(--colors-gray-500)'),
+          600: colorVariable('var(--colors-gray-600)'),
+          700: colorVariable('var(--colors-gray-700)'),
+          800: colorVariable('var(--colors-gray-800)'),
+          900: colorVariable('var(--colors-gray-900)'),
+        },
+        surface: {
+          50: colorVariable('var(--colors-surface-50)'),
+          100: colorVariable('var(--colors-surface-100)'),
+          200: colorVariable('var(--colors-surface-200)'),
+          300: colorVariable('var(--colors-surface-300)'),
+          400: colorVariable('var(--colors-surface-400)'),
+          500: colorVariable('var(--colors-surface-500)'),
+        },
+        surfacedark: {
+          50: colorVariable('var(--colors-surfacedark-50)'),
+          100: colorVariable('var(--colors-surfacedark-100)'),
+          200: colorVariable('var(--colors-surfacedark-200)'),
+          300: colorVariable('var(--colors-surfacedark-300)'),
+          400: colorVariable('var(--colors-surfacedark-400)'),
+          500: colorVariable('var(--colors-surfacedark-500)'),
+        }
+      },
+      variables: {
+        DEFAULT: {
+          colors: {
+            white: '#ffffff',
+            black: '#000000',
+            primary: {
+              950: '#001129',
+              900: '#001b3c',
+              800: '#003061',
+              700: '#004689',
+              600: '#245fa6',
+              500: '#4278c1',
+              400: '#5e92dd',
+              300: '#7aadfa',
+              200: '#a7c8ff',
+              100: '#d5e3ff',
+              50: '#ecf1ff',
+              10: '#fdfbff',
+            },
+            secondary: {
+              950: '#071120',
+              900: '#121c2b',
+              800: '#273141',
+              700: '#3d4758',
+              600: '#555f71',
+              500: '#6e778a',
+              400: '#8791a5',
+              300: '#a2abc0',
+              200: '#bdc7dc',
+              100: '#d9e3f8',
+              50: '#ecf1ff',
+              10: '#fdfbff',
+            },
+            tertiary: {
+              950: '#1c0824',
+              900: '#28132f',
+              800: '#3e2845',
+              700: '#563e5d',
+              600: '#6e5676',
+              500: '#886e8f',
+              400: '#a387aa',
+              300: '#bfa2c5',
+              200: '#dbbce1',
+              100: '#f8d8fe',
+              50: '#feebff',
+              10: '#fffbff',
+            },
+            error: {
+              950: '#2d0001',
+              900: '#410002',
+              800: '#690005',
+              700: '#93000a',
+              600: '#ba1a1a',
+              500: '#de3730',
+              400: '#ff5449',
+              300: '#ff897d',
+              200: '#ffb4ab',
+              100: '#ffdad6',
+              50: '#ffedea',
+              10: '#fffbff',
+            },
+            neutral: {
+              950: '#101114',
+              900: '#1a1c1e',
+              800: '#2f3033',
+              700: '#46474a',
+              600: '#5e5e62',
+              500: '#76777a',
+              400: '#909094',
+              300: '#ababaf',
+              200: '#c7c6ca',
+              100: '#e3e2e6',
+              50: '#f1f0f4',
+              10: '#fdfbff',
+            },
+            gray: {       
+              950: '#0d1117',
+              900: '#181c22',
+              800: '#2d3038',
+              700: '#43474e',
+              600: '#5b5e66',
+              500: '#74777f',
+              400: '#8e9199',
+              300: '#a8abb4',
+              200: '#c4c6cf',
+              100: '#e0e2ec',
+              50: '#eef0fa',
+              10: '#fdfbff',
+            },
+            surface: {
+              100: '#f8fafd',
+              200: '#f3f6fc',
+              300: '#eff3fa',
+              400: '#edf2fa',
+              500: '#eaf0f9',
+            },
+            surfacedark: {
+              100: '#28292a',
+              200: '#2d2f31',
+              300: '#333438',
+              400: '#34363a',
+              500: '#383a3e',
+            }
+          }
+        }
+      }
+    },
+    fontFamily: {
+      sans: ['Roboto', 'sans-serif'],
+      serif: ['Roboto Serif', 'serif'],
+    },
+    fontSize: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.125',
+      xl: '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '3rem',
+      '6xl': '4rem',
+
+      // custom typography
+      'display-lg': ['3.5625rem', {
+        lineHeight: '1.2em',
+        fontWeight: '400',
+      }],
+      'display-md': ['2.8125rem', {
+        lineHeight: '1.2em',
+        fontWeight: '400',
+      }],
+      'display-sm': ['2.441rem', {
+        lineHeight: '1.2em',
+        fontWeight: '400',
+      }],
+
+      'headline-lg': ['2rem', {
+        lineHeight: '1.2em',
+        fontWeight: '400',
+      }],
+      'headline-md': ['1.75rem', {
+        lineHeight: '1.2em',
+        fontWeight: '400',
+      }],
+      'headline-sm': ['1.563rem', {
+        lineHeight: '1.2em',
+        fontWeight: '400',
+      }],
+
+      'title-lg': ['1.25rem', {
+        lineHeight: '1.2em',
+        fontWeight: '400',
+      }],
+      'title-md': ['1rem', {
+        lineHeight: '1.3em',
+        letterSpacing: '0.25px',
+        fontWeight: '500',
+      }],
+      'title-sm': ['0.875rem', {
+        lineHeight: '1.3em',
+        letterSpacing: '0.1px',
+        fontWeight: '500',
+      }],
+
+      'label-lg': ['0.875rem', {
+        lineHeight: '1em',
+        letterSpacing: '0.1px',
+        fontWeight: '500',
+      }],
+      'label-md': ['12px', {
+        lineHeight: '1em',
+        letterSpacing: '0.5px',
+        fontWeight: '500',
+      }],
+      'label-sm': ['11px', {
+        lineHeight: '1em',
+        letterSpacing: '0.5px',
+        fontWeight: '500',
+      }],
+
+      'body-lg': ['1rem', {
+        lineHeight: '1.75em',
+        letterSpacing: '0.25px',
+        fontWeight: '400',
+      }],
+      'body-md': ['0.875rem', {
+        lineHeight: '1.675em',
+        letterSpacing: '0.1px',
+        fontWeight: '400',
+      }],
+      'body-sm': ['12px', {
+        lineHeight: '1.5em',
+        letterSpacing: '0.4px',
+        fontWeight: '400',
+      }]
+    }
+  },
+  plugins: [
+    require('@mertasan/tailwindcss-variables')({
+      colorVariables: true
+    }),
+  ]
+}

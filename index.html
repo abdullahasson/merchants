@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Title  -->
+  <title>Goodash | Tailwind Dashboard Material Design 3</title>
+
+  <!-- Style Css -->
+  <link rel="stylesheet" id="stylesheet" href="src/css/style.css">
+  <link rel="stylesheet" id="colors" href="src/css/colors.css">
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Icons  -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+  <!-- Favicon  -->
+  <link rel="icon" href="src/img/favicon.png">
+</head>
+
+<body id="body-layout" class="text-body-md relative font-sans font-normal text-gray-700 dark:text-gray-300 bg-surface-200 dark:bg-surfacedark-200 show">
+  <!-- preloader -->
+  <div class="preloader fixed inset-0 z-50 bg-surface-500 dark:bg-surfacedark-500">
+    <div class="w-full h-screen flex justify-center items-center">
+      <!-- loader -->
+      <svg class="circular-loader relative w-[100px] h-[100px]">
+        <circle class="path stroke-primary-600 dark:stroke-primary-200" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+      </svg>
+    </div>
+  </div>
+
+  <header class="max-w-[90rem] md:px-6 lg:px-8 mx-auto bg-white dark:bg-gray-900">
+    <!-- navbar -->
+    <nav class="relative flex flex-col md:flex-row justify-between items-center w-full">
+      <div class="min-h-[80px] md:min-h-[60px] px-4 flex flex-row w-full md:w-auto justify-between items-center">
+        <!-- logo -->
+        <a href="index.html" class="sidebar-logo pt-4 pb-2 flex items-center w-full">
+          <div class="w-9 h-9 rounded-full border-2 border-primary-600 flex items-center justify-center text-primary-800 font-bold text-lg">
+            <span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary-200">G</span>
+          </div>
+          <h4 class="text-2xl font-medium tracking-wide text-gray-900 dark:text-gray-100 compact-hide ml-2">Goodash</h4>
+        </a>
+
+        <button data-type="toggle" data-target="#navbar-id" class="group relative !inline-flex md:!hidden !items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] tracking-[.00714em] text-center font-medium hover:bg-surface-300 focus:bg-surface-400 dark:text-primary-200 dark:hover:bg-surfacedark-300 dark:focus:bg-surfacedark-400 !text-4xl">
+          <span class="material-symbols-outlined group-[.show]:!hidden">menu</span>
+          <span class="material-symbols-outlined !hidden group-[.show]:!block">close</span>
+        </button>
+      </div>
+      
+      <!-- menu -->
+      <div id="navbar-id" class="nav [&.show]:!opacity-100 [&.show]:!visible [&.show]:!h-auto max-md:[&.show]:bg-surface-100 max-md:dark:[&.show]:bg-surfacedark-100 opacity-0 invisible md:visible flex opacity-1 h-0 md:h-auto md:opacity-100 absolute top-full left-0 right-0 md:relative z-40 flex-col md:flex-row items-center pb-6 md:pb-0 duration-[400ms] ease-[cubic-bezier(0.2, 0, 0, 1)]">
+        <a href="index.html" class="active relative flex flex-col justify-center items-center w-11/12 md:w-auto p-6 hover:bg-surface-100 dark:hover:bg-surfacedark-100 hover:bg-opacity-80 dark:hover:bg-opacity-80 gap-6">
+          <p class="text-sm tracking-[.00714em]">Home</p>
+          <span class="indicator w-12 md:w-full absolute bottom-0 h-0.5 rounded-t-full"></span>
+        </a>
+        <a href="analytics/analytics-dashboard.html" class="relative flex flex-col justify-center items-center w-11/12 md:w-auto p-6 hover:bg-surface-100 dark:hover:bg-surfacedark-100 hover:bg-opacity-80 dark:hover:bg-opacity-80 gap-6">
+          <p class="text-sm tracking-[.00714em]">Demo</p>
+          <span class="indicator w-12 md:w-full absolute bottom-0 h-0.5 rounded-t-full"></span>
+        </a>
+        <a href="docs/index.html" class="relative flex flex-col justify-center items-center w-11/12 md:w-auto p-6 hover:bg-surface-100 dark:hover:bg-surfacedark-100 hover:bg-opacity-80 dark:hover:bg-opacity-80 gap-6">
+          <p class="text-sm tracking-[.00714em]">Documentation</p>
+          <span class="indicator w-12 md:w-full absolute bottom-0 h-0.5 rounded-t-full"></span>
+        </a>
+        <a href="components/accordion.html" class="relative flex flex-col justify-center items-center w-11/12 md:w-auto p-6 hover:bg-surface-100 dark:hover:bg-surfacedark-100 hover:bg-opacity-80 dark:hover:bg-opacity-80 gap-6">
+          <p class="text-sm tracking-[.00714em]">Components</p>
+          <span class="indicator w-12 md:w-full absolute bottom-0 h-0.5 rounded-t-full"></span>
+        </a>
+
+        <hr class="opacity-0 lg:opacity-100 self-stretch h-8 my-auto mr-6 border-r border-solid border-gray-200 dark:border-gray-700">
+
+        <!-- btn action -->
+        <div class="flex flex-row gap-4 items-center">
+          <div class="relative" aria-label="Light & Dark mode" data-microtip-position="bottom" role="tooltip" >
+            <!-- light & dark -->
+            <button data-type="theme" id="lightdark" class="btn-outline relative flex flex-row items-center justify-center w-8 h-8 gap-x-2 py-2 px-4 rounded-full text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
+              <span class="material-symbols-outlined !text-base dark-hidden">light_mode</span>
+              <span class="material-symbols-outlined !text-base dark-block">dark_mode</span>
+            </button>
+          </div>
+
+          <div class="relative" aria-label="Theme color" data-microtip-position="bottom" role="tooltip">
+            <button data-type="dropdown" data-target="#dropdown1" class="btn-outline relative flex flex-row items-center justify-center w-8 h-8 gap-x-2 py-2 px-4 rounded-full text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
+              <span class="material-symbols-outlined !text-base">palette</span>
+            </button>
+
+            <!-- menus -->
+            <ul id="dropdown1" data-type="dropdownmenu" class="setSkin [&.show]:!opacity-100 [&.show]:!visible opacity-0 invisible absolute top-14 z-30 transition duration-400 ease-in-out right-0 min-w-[200px] inline-flex flex-col py-2 rounded overflow-hidden bg-surface-200 dark:bg-surfacedark-200 shadow-md dark:shadow-gray-50/10">
+              <li class="relative">
+                <label for="red-theme" class="setSkin min-h-[3rem] flex flex-row items-center gap-4 py-2 px-3 hover-icon hover:bg-secondary-100 dark:hover:bg-secondary-700 hover:bg-opacity-30 dark:hover:bg-opacity-30">
+                <input type="radio" class="z-10 opacity-0" name="themes" id="red-theme" value="red-theme">
+                <span class="w-4 h-4 rounded-full bg-red-600"></span>
+                  Red
+                </label>
+              </li>
+              <li class="relative">
+                <label for="green-theme" class="setSkin min-h-[3rem] flex flex-row items-center gap-4 py-2 px-3 hover-icon hover:bg-secondary-100 dark:hover:bg-secondary-700 hover:bg-opacity-30 dark:hover:bg-opacity-30">
+                <input type="radio" class="z-10 opacity-0" name="themes" id="green-theme" value="green-theme">
+                <span class="w-4 h-4 rounded-full bg-green-600"></span>
+                  Green
+                </label>
+              </li>
+              <li class="relative">
+                <label for="yellow-theme" class="setSkin min-h-[3rem] flex flex-row items-center gap-4 py-2 px-3 hover-icon hover:bg-secondary-100 dark:hover:bg-secondary-700 hover:bg-opacity-30 dark:hover:bg-opacity-30">
+                <input type="radio" class="z-10 opacity-0" name="themes" id="yellow-theme" value="yellow-theme">
+                <span class="w-4 h-4 rounded-full bg-yellow-600"></span>
+                  Yellow
+                </label>
+              </li>
+              <li class="relative">
+                <label for="purple-theme" class="setSkin min-h-[3rem] flex flex-row items-center gap-4 py-2 px-3 hover-icon hover:bg-secondary-100 dark:hover:bg-secondary-700 hover:bg-opacity-30 dark:hover:bg-opacity-30">
+                <input type="radio" class="z-10 opacity-0" name="themes" id="purple-theme" value="purple-theme">
+                <span class="w-4 h-4 rounded-full bg-purple-600"></span>
+                  Purple
+                </label>
+              </li>
+              <li class="relative border-t border-gray-200 dark:border-gray-700">
+                <label for="blue-theme" class="setSkin min-h-[3rem] flex flex-row items-center gap-4 py-2 px-3 hover-icon hover:bg-secondary-100 dark:hover:bg-secondary-700 hover:bg-opacity-30 dark:hover:bg-opacity-30">
+                <input type="radio" class="z-10 opacity-0" name="themes" id="blue-theme" value="blue-theme">
+                <span class="w-4 h-4 rounded-full bg-blue-600"></span>
+                  Blue (default)
+                </label>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <main class="relative overflow-hidden">
+    <!-- Hero -->
+    <div class="relative max-w-[90rem] py-14 md:py-16 px-4 sm:px-6 lg:px-12 mx-auto bg-surface-500 dark:bg-surfacedark-500" style="background-image: url('src/img/cover/cover1.jpg');background-size: cover;">
+      <div class="absolute inset-0 bg-white bg-opacity-20 dark:bg-gray-900 dark:bg-opacity-70"></div>
+      <div class="z-30 relative grid lg:grid-cols-2 gap-8">
+        <div class="flex flex-col justify-center items-start">
+          <div class="mb-8 md:px-12 lg:px-0">
+            <h1 class="text-[2.6rem] sm:text-[3.5625rem] leading-tight sm:leading-[4rem] font-normal text-primary-900 dark:text-primary-10 mb-2">
+              <span class="text-primary-600 dark:text-primary-200">Goodash is</span>
+              UI Kit Material Design 3
+            </h1>
+
+            <p class="text-body-lg">
+              Goodash is Dashboard Template with Material design 3 UI Kit based on Tailwind css framework. Built with Material Design 3 the latest version of Google's open-source design system.
+            </p>
+          </div>
+
+          <!-- Buttons -->
+          <div class="grid gap-6 w-full sm:inline-flex md:px-12 lg:px-0">
+            <a href="analytics/analytics-dashboard.html" class="btn relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
+              <span class="material-symbols-outlined">link</span>
+              Preview Demo
+            </a>
+
+            <a href="https://aribudin.gumroad.com/l/goodash?wanted=true&variant=Single%20License" class="btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
+              <span class="material-symbols-outlined">shopping_cart</span>
+              Buy Now
+            </a>
+          </div>
+        </div>
+
+        <div class="hidden w-full md:flex justify-center">
+          <img class="max-w-full h-auto w-full rounded-xl border-[10px] border-surface-500 dark:border-surfacedark-500" src="src/img/cover/hero1.jpg" alt="hero">
+        </div>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="max-w-[90rem] py-14 md:py-20 px-4 sm:px-6 lg:px-12 mx-auto bg-white dark:bg-gray-900">
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+        <!-- Block -->
+        <div class="relative flex">
+          <div class="material-symbols-outlined relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium bg-surface-300 dark:text-primary-200 dark:bg-surfacedark-300">widgets</div>
+          <div class="ml-6">
+            <h3 class="text-title-lg text-primary-900 dark:text-primary-10 mb-2">High Quality Component</h3>
+            <p class="text-sm tracking-[0.25px]">A wide range of high-quality components designed to meet all your website needs.</p>
+          </div>
+        </div>
+
+        <!-- Block -->
+        <div class="relative flex">
+          <div class="material-symbols-outlined relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium bg-surface-300 dark:text-primary-200 dark:bg-surfacedark-300">css</div>
+          <div class="ml-6">
+            <h3 class="text-title-lg text-primary-900 dark:text-primary-10 mb-2">Tailwind Css</h3>
+            <p class="text-sm tracking-[0.25px]">Tailwind CSS is a first-utility framework that allow developers build a unique User Interface.</p>
+          </div>
+        </div>
+
+        <!-- Block -->
+        <div class="relative flex">
+          <div class="material-symbols-outlined relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium bg-surface-300 dark:text-primary-200 dark:bg-surfacedark-300">dark_mode</div>
+          <div class="ml-6">
+            <h3 class="text-title-lg text-primary-900 dark:text-primary-10 mb-2">Dark Mode</h3>
+            <p class="text-sm tracking-[0.25px]">All components include a dark variant that allows you to style your site differently when dark mode is active.</p>
+          </div>
+        </div>
+
+        <!-- Block -->
+        <div class="relative flex">
+          <div class="material-symbols-outlined relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium bg-surface-300 dark:text-primary-200 dark:bg-surfacedark-300">layers</div>
+          <div class="ml-6">
+            <h3 class="text-title-lg text-primary-900 dark:text-primary-10 mb-2">Material Design 3</h3>
+            <p class="text-sm tracking-[0.25px]">Built on the latest Material Design 3 framework, ensuring a visually appealing and consistent user interface.</p>
+          </div>
+        </div>
+
+        <!-- Block -->
+        <div class="relative flex">
+          <div class="material-symbols-outlined relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium bg-surface-300 dark:text-primary-200 dark:bg-surfacedark-300">language</div>
+          <div class="ml-6">
+            <h3 class="text-title-lg text-primary-900 dark:text-primary-10 mb-2">Cross-Browser Compatibility</h3>
+            <p class="text-sm tracking-[0.25px]">Your dashboard will work seamlessly on all major browsers, guaranteeing a consistent experience for every user.</p>
+          </div>
+        </div>
+
+        <!-- Block -->
+        <div class="relative flex">
+          <div class="material-symbols-outlined relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium bg-surface-300 dark:text-primary-200 dark:bg-surfacedark-300">support</div>
+          <div class="ml-6">
+            <h3 class="text-title-lg text-primary-900 dark:text-primary-10 mb-2">Docs and Support</h3>
+            <p class="text-sm tracking-[0.25px]">We provide detailed documentation to guide you through the setup process and answer any questions you may have.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- demo -->
+    <div class="max-w-[90rem] py-14 lg:py-16 px-4 sm:px-6 lg:px-12 mx-auto bg-surface-200 dark:bg-surfacedark-200">
+      <!-- card -->
+      <div class="flex flex-col gap-4">
+        <div class="max-w-2xl mx-auto text-center mb-6">
+          <h2 class="text-headline-sm lg:text-headline-lg text-primary-900 dark:text-primary-10 mb-3">Outstanding Demos</h2>
+          <p class="text-base tracking-[0.5px]">Check out our predesign dashboard examples</p>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mb-6">
+          <div>
+            <a href="analytics/analytics-dashboard.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/analytics.jpg" alt="analytics" class="rounded-t max-w-full">
+              <p class="text-body-lg">Analytics</p>
+            </a>
+          </div>
+          <div>
+            <a href="analytics/audience.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/audience.jpg" alt="audience" class="rounded-t max-w-full">
+              <p class="text-body-lg">Audience</p>
+            </a>
+          </div>
+          <div>
+            <a href="analytics/traffic.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/traffics.jpg" alt="traffics" class="rounded-t max-w-full">
+              <p class="text-body-lg">Traffics</p>
+            </a>
+          </div>
+          <div>
+            <a href="crm/crm-dashboard.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/crm.jpg" alt="crm" class="rounded-t max-w-full">
+              <p class="text-body-lg">CRM</p>
+            </a>
+          </div>
+
+          <div>
+            <a href="ecommerce/ecommerce-dashboard.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/ecommerce.jpg" alt="ecommerce" class="rounded-t max-w-full">
+              <p class="text-body-lg">Ecommerce</p>
+            </a>
+          </div>
+          <div>
+            <a href="sales/sales-dashboard.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/sales.jpg" alt="sales" class="rounded-t max-w-full">
+              <p class="text-body-lg">Sales</p>
+            </a>
+          </div>
+          <div>
+            <a href="projects/project-dashboard.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/projects.jpg" alt="projects" class="rounded-t max-w-full">
+              <p class="text-body-lg">Projects</p>
+            </a>
+          </div>
+          <div>
+            <a href="smarthome/smarthome-dashboard.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/smarthome.jpg" alt="smarthome" class="rounded-t max-w-full">
+              <p class="text-body-lg">Smarthome</p>
+            </a>
+          </div>
+
+          <div>
+            <a href="apps/chats.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/chats.jpg" alt="chats" class="rounded-t max-w-full">
+              <p class="text-body-lg">Chats</p>
+            </a>
+          </div>
+          <div>
+            <a href="apps/inbox.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/email.jpg" alt="inbox" class="rounded-t max-w-full">
+              <p class="text-body-lg">Inbox</p>
+            </a>
+          </div>
+          <div>
+            <a href="user/feed.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/feed.jpg" alt="feed" class="rounded-t max-w-full">
+              <p class="text-body-lg">Feed</p>
+            </a>
+          </div>
+          <div>
+            <a href="projects/kanban-board.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/kanban.jpg" alt="kanban" class="rounded-t max-w-full">
+              <p class="text-body-lg">Kanban</p>
+            </a>
+          </div>
+
+          <div>
+            <a href="user/profile.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/profile.jpg" alt="profile" class="rounded-t max-w-full">
+              <p class="text-body-lg">Profile</p>
+            </a>
+          </div>
+          <div>
+            <a href="crm/opportunities.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/opportunities.jpg" alt="opportunities" class="rounded-t max-w-full">
+              <p class="text-body-lg">Opportunities</p>
+            </a>
+          </div>
+          <div>
+            <a href="ecommerce/product-detail.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/product-detail.jpg" alt="product-detail" class="rounded-t max-w-full">
+              <p class="text-body-lg">Product Detail</p>
+            </a>
+          </div>
+          <div>
+            <a href="ecommerce/customers.html" class="p-3 relative flex flex-col gap-2 rounded-2xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+              <img src="src/img/products/tables.jpg" alt="tables" class="rounded-t max-w-full">
+              <p class="text-body-lg">Tables</p>
+            </a>
+          </div>
+        </div>
+
+        <p class="text-body-lg text-center py-4">And many more prebuild page examples..</p>
+      </div>
+    </div>
+
+    <!-- About -->
+    <div class="max-w-[90rem] py-14 md:py-16 px-4 sm:px-6 mx-auto flex flex-col gap-8 bg-white dark:bg-gray-900">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 py-8">
+        <div class="md:order-2 flex flex-col w-full px-6 md:px-12 md:mb-6">
+          <!-- screen scroll -->
+          <div class="screen-scroll relative w-full h-[350px] overflow-hidden rounded-xl border-y-[12px] border-surface-500 dark:border-surfacedark-500">
+            <img src="src/img/cover/hero2.jpg" class="absolute -bottom-[85%] sm:-bottom-[370%] hover:bottom-0 max-w-full h-auto w-full" alt="landing page">
+          </div>
+        </div>
+        
+        <div class="md:order-1 md:px-6">
+          <h2 class="text-headline-sm lg:text-headline-lg md:text-display-md text-primary-900 dark:text-primary-10 mb-2">
+            Building Blocks for Stunning Dashboards
+          </h2>
+
+          <p class="text-body-lg mb-6">Goodash provides an extensive collection of components that empower you to create visually stunning and highly functional dashboards. Each component is thoughtfully designed and optimized to enhance the user experience and simplify the process of dashboard creation.</p>
+
+          <a href="https://aribudin.gumroad.com/l/goodash?wanted=true&variant=Single%20License" class="btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
+            <span class="material-symbols-outlined">shopping_cart</span>
+            Buy Now
+          </a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 py-8">
+        <div class="flex flex-col w-full px-6 md:pr-12 mb-6">
+          <!-- screen scroll -->
+          <div class="screen-scroll relative w-full h-[300px] sm:h-[350px] overflow-hidden rounded-xl border-y-[12px] border-surface-500 dark:border-surfacedark-500">
+            <img src="src/img/cover/hero3.jpg" class="absolute -bottom-[5%] sm:-bottom-[55%] hover:bottom-0 max-w-full h-auto w-full" alt="landing page">
+          </div>
+        </div>
+
+        <!-- processs vertical -->
+        <ol class="flex flex-col gap-4 w-full">
+          <li class="flex">
+            <div class="relative flex-shrink-0 w-16 text-center">
+              <span class="absolute left-1/3 top-12 -bottom-8 border-l-2 border-dashed border-gray-200 dark:border-gray-700"></span>
+              <div class="flex items-center justify-center w-12 h-12 mr-auto rounded-full p-2 bg-surface-300 dark:bg-surfacedark-300 border border-gray-200 dark:border-gray-800">
+                <span class="text-title-md text-primary-600 dark:text-primary-200">1</span>
+              </div>
+            </div>
+
+            <div class="ml-4 mb-4 lg:ml-6">
+              <h3 class="text-title-lg text-gray-900 dark:text-gray-100 mb-2">Ready to use Charts and Graphs</h3>
+              <p class="text-body-lg">Visualize your data in a meaningful and engaging way, allowing users to grasp insights at a glance.</p>
+            </div>
+          </li>
+
+          <li class="flex">
+            <div class="relative flex-shrink-0 w-16 text-center">
+              <span class="absolute left-1/3 top-12 -bottom-8 border-l-2 border-dashed border-gray-200 dark:border-gray-700"></span>
+              <div class="flex items-center justify-center w-12 h-12 mr-auto rounded-full p-2 bg-surface-300 dark:bg-surfacedark-300 border border-gray-200 dark:border-gray-800">
+                <span class="text-title-md text-primary-600 dark:text-primary-200">2</span>
+              </div>
+            </div>
+
+            <div class="ml-4 mb-4 lg:ml-6">
+              <h3 class="text-title-lg text-gray-900 dark:text-gray-100 mb-2">Many choices of widgets</h3>
+              <p class="text-body-lg">These dynamic elements provide real-time updates and make your dashboard more engaging and informative.</p>
+            </div>
+          </li>
+
+          <li class="flex">
+            <div class="relative flex-shrink-0 w-16 text-center">
+              <span class="absolute left-1/3 top-12 -bottom-8 border-l-2 border-dashed border-gray-200 dark:border-gray-700"></span>
+              <div class="flex items-center justify-center w-12 h-12 mr-auto rounded-full p-2 bg-surface-300 dark:bg-surfacedark-300 border border-gray-200 dark:border-gray-800">
+                <span class="text-title-md text-primary-600 dark:text-primary-200">3</span>
+              </div>
+            </div>
+
+            <div class="ml-4 mb-4 lg:ml-6">
+              <h3 class="text-title-lg text-gray-900 dark:text-gray-100 mb-2">Data Tables &amp; Forms Input</h3>
+              <p class="text-body-lg">Display tabular data in an organized and structured manner using Goodash's data table component.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+    
+    <!-- Pricing -->
+    <div class="max-w-[90rem] py-14 md:py-16 px-4 sm:px-6 lg:px-12 mx-auto bg-surface-500 dark:bg-surfacedark-500">
+      <div class="max-w-2xl mx-auto text-center mb-12">
+        <h2 class="text-headline-sm lg:text-headline-lg text-primary-900 dark:text-primary-10 mb-3">Choose Pricing Plans</h2>
+        <p class="text-base tracking-[0.5px]">Choose the plan that works best for you and start creating stunning dashboards.</p>
+      </div>
+      
+      <div class="flex flex-col items-center gap-6">
+        <!-- pricing area -->
+        <div id="pricing-area" class="w-full flex sm:justify-center flex-col lg:flex-row gap-6 lg:gap-8 xl:gap-12 [&.show_.price-year]:block [&.show_.price-month]:hidden show">
+          <!-- card -->
+          <div class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-12 px-8 rounded-3xl max-sm:w-full sm:min-w-[280px] md:min-w-[320px]">
+            <div class="flex flex-col">
+              <h3 class="text-title-lg text-gray-900 dark:text-white">REGULAR</h3>
+              <p class="text-body-lg">For Single End Product</p>
+            </div>
+
+            <div class="flex flex-col">
+              <div class="text-display-md text-gray-900 dark:text-white">$29</div>
+              <p class="text-body-lg">Per License/User</p>
+            </div>
+
+            <ul class="flex flex-col gap-2 text-body-lg">
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> 1 Site/App/Install
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Ui Kit Components
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> All Source Demo Packages
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Future Update
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Customer Support
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-error-600 dark:text-error-200">close</span> SAAS Website
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-error-600 dark:text-error-200">close</span> Theme Generator
+              </li>
+            </ul>
+
+            <a href="https://aribudin.gumroad.com/l/goodash?wanted=true&variant=Single%20License" class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
+              <span class="material-symbols-outlined">arrow_forward</span>
+              Get Regular License
+            </a>
+          </div>
+
+          <!-- card -->
+          <div class="flex flex-col gap-4 bg-primary-600 dark:bg-primary-200 shadow-lg dark:shadow-gray-50/10 py-12 px-8 rounded-3xl max-sm:w-full sm:min-w-[280px] md:min-w-[320px] text-gray-100 dark:text-gray-700">
+            <div class="flex flex-col">
+              <h3 class="text-title-lg text-white dark:text-gray-900">EXTENDED</h3>
+              <p class="text-body-lg">For Single End Product</p>
+            </div>
+
+            <div class="flex flex-col">
+              <div class="text-display-md text-white dark:text-gray-900">$999</div>
+              <p class="text-body-lg">Per License/User</p>
+            </div>
+
+            <ul class="flex flex-col gap-2 text-body-lg">
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> 1 Site/App/Install
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Ui Kit Components
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> All Source Demo Packages
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Future Update
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Customer Support
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> SAAS Website
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-error-200 dark:text-error-600">close</span> Theme Generator
+              </li>
+            </ul>
+            <a href="https://aribudin.gumroad.com/l/goodash?wanted=true&variant=Extended%20License" class="mt-4 btn-elevated relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] shadow-lg text-sm tracking-[.00714em] font-medium bg-surface-100 hover:bg-surface-200 focus:bg-surface-400 text-primary-600 dark:bg-surfacedark-100 dark:hover:bg-surfacedark-200 dark:focus:bg-surfacedark-400 dark:text-primary-200">
+              <span class="material-symbols-outlined">verified</span>
+              Get Extended License
+            </a>
+          </div>
+
+          <!-- card -->
+          <div class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-12 px-8 rounded-3xl max-sm:w-full sm:min-w-[280px] md:min-w-[320px]">
+            <div class="flex flex-col">
+              <h3 class="text-title-lg text-gray-900 dark:text-white">MULTIPLE</h3>
+              <p class="text-body-lg">For Unlimited End Product</p>
+            </div>
+
+            <div class="flex flex-col">
+              <div class="text-display-md text-gray-900 dark:text-white">$89</div>
+              <p class="text-body-lg">Per License/User</p>
+            </div>
+
+            <ul class="flex flex-col gap-2 text-body-lg">
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Unlimited Site/App/Install
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Ui Kit Components
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> All Source Demo Packages
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Future Update
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined">check</span> Customer Support
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-error-600 dark:text-error-200">close</span> SAAS Website
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-symbols-outlined text-error-600 dark:text-error-200">close</span> Theme Generator
+              </li>
+            </ul>
+
+            <a href="https://aribudin.gumroad.com/l/goodash?wanted=true&variant=Multiple%20License" class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
+              <span class="material-symbols-outlined">arrow_forward</span>
+              Get Multiple License
+            </a>
+          </div>
+        </div>
+        <p class="text-body-lg pt-6">If you have any questions, please <a class="hover:text-primary-600 dark:hover:text-primary-200 hover:underline" href="pages/contact.html">contact us</a></p>
+      </div>
+    </div>
+
+    <!-- Faq -->
+    <div class="max-w-[90rem] py-14 lg:py-16 px-4 sm:px-6 lg:px-12 mx-auto bg-white dark:bg-gray-900">
+      <!-- card -->
+      <div class="flex flex-col gap-4">
+        <div class="max-w-2xl mx-auto text-center mb-6">
+          <h2 class="text-headline-sm lg:text-headline-lg text-primary-900 dark:text-primary-10 mb-3">Frequently Asked Questions</h2>
+          <p class="text-base tracking-[0.5px]">Here are some of the basic types of questions for our customers. For more information please contact us.</p>
+        </div>
+
+        <!-- Accordion -->
+        <div id="Accordione" class="md:px-4">
+          <!-- list -->
+          <div class="relative flex flex-wrap flex-col shadow mb-4 bg-white dark:bg-gray-800">
+            <button class="active py-3 px-4 w-full border-b border-gray-200 mb-0 bg-surface-200 dark:bg-surfacedark-200 dark:border-gray-700 rounded-t text-title-md flex justify-between focus:outline-none focus:ring-0 text-left" data-type="collapse" data-target="#accordion1">
+              What is Goodash - Dashboard Material Design 3?
+            </button>
+            <div id="accordion1" data-type="collapsed" class="active [&.active]:block hidden">
+              <div class="flex-1 p-6 text-body-lg text-gray-600 dark:text-gray-400">
+                <p>Goodash - Tailwind Dashboard Material Design 3 is a powerful tool that enables you to create visually stunning and user-friendly dashboards for web and mobile. It is built on the latest Material Design 3 and Tailwind Css framework, ensuring a modern and intuitive user interface.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- list -->
+          <div class="relative flex flex-wrap flex-col shadow mb-4 bg-white dark:bg-gray-800">
+            <button class="py-3 px-4 w-full border-b border-gray-200 mb-0 bg-surface-200 dark:bg-surfacedark-200 dark:border-gray-700 rounded-t text-title-md flex justify-between focus:outline-none focus:ring-0 text-left" data-type="collapse" data-target="#accordion2">
+              Is Goodash compatible with my existing project?
+            </button>
+            <div id="accordion2" data-type="collapsed" class="[&.active]:block hidden">
+              <div class="flex-1 p-6 text-body-lg text-gray-600 dark:text-gray-400">
+                <p>Yes, Goodash can seamlessly integrate into your existing project. It is designed to work well with popular frameworks such as Tailwind css & Javascript. Our comprehensive documentation provides step-by-step guidance on how to integrate Goodash into your project.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- list -->
+          <div class="relative flex flex-wrap flex-col shadow mb-4 bg-white dark:bg-gray-800">
+            <button class="py-3 px-4 w-full border-b border-gray-200 mb-0 bg-surface-200 dark:bg-surfacedark-200 dark:border-gray-700 rounded-t text-title-md flex justify-between focus:outline-none focus:ring-0 text-left" data-type="collapse" data-target="#accordion3">
+              Can I customize the Goodash components?
+            </button>
+            <div id="accordion3" data-type="collapsed" class="[&.active]:block hidden">
+              <div class="flex-1 p-6 text-body-lg text-gray-600 dark:text-gray-400">
+                <p>Absolutely! Goodash offers extensive customization options. You can customize the appearance, styles, colors, and behavior of each component to match your branding and design preferences.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- list -->
+          <div class="relative flex flex-wrap flex-col shadow mb-4 bg-white dark:bg-gray-800">
+            <button class="py-3 px-4 w-full border-b border-gray-200 mb-0 bg-surface-200 dark:bg-surfacedark-200 dark:border-gray-700 rounded-t text-title-md flex justify-between focus:outline-none focus:ring-0 text-left" data-type="collapse" data-target="#accordion4">
+              Does Goodash support responsive design?
+            </button>
+            <div id="accordion4" data-type="collapsed" class="[&.active]:block hidden">
+              <div class="flex-1 p-6 text-body-lg text-gray-600 dark:text-gray-400">
+                <p>Yes, Goodash is designed to be responsive and mobile-friendly. Your dashboards will adapt and look great on different screen sizes, providing an optimal viewing experience across devices.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- list -->
+          <div class="relative flex flex-wrap flex-col shadow mb-4 bg-white dark:bg-gray-800">
+            <button class="py-3 px-4 w-full border-b border-gray-200 mb-0 bg-surface-200 dark:bg-surfacedark-200 dark:border-gray-700 rounded-t text-title-md flex justify-between focus:outline-none focus:ring-0 text-left" data-type="collapse" data-target="#accordion5">
+              What type of support is available for Goodash?
+            </button>
+            <div id="accordion5" data-type="collapsed" class="[&.active]:block hidden">
+              <div class="flex-1 p-6 text-body-lg text-gray-600 dark:text-gray-400">
+                <p>Goodash offers comprehensive documentation to guide you through the setup process and usage of components. In addition, we provide support through our dedicated support team, who are ready to assist you with any questions or issues you may encounter.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- list -->
+          <div class="relative flex flex-wrap flex-col shadow mb-4 bg-white dark:bg-gray-800">
+            <button class="py-3 px-4 w-full border-b border-gray-200 mb-0 bg-surface-200 dark:bg-surfacedark-200 dark:border-gray-700 rounded-t text-title-md flex justify-between focus:outline-none focus:ring-0 text-left" data-type="collapse" data-target="#accordion6">
+              Is Goodash regularly updated?
+            </button>
+            <div id="accordion6" data-type="collapsed" class="[&.active]:block hidden">
+              <div class="flex-1 p-6 text-body-lg text-gray-600 dark:text-gray-400">
+                <p>Yes, Goodash is regularly updated with new features, improvements, and bug fixes. We strive to provide our users with the best possible experience, and we are committed to keeping Goodash up-to-date with the latest design trends and technologies.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-3 flex flex-row items-center justify-center gap-4">
+          <p class="text-body-md text-left">Was this information helpful?</p>
+          <button class="btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-1.5 px-4 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
+            Yes
+          </button>
+          <button class="btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-1.5 px-4 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
+            No
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial -->
+    <div class="max-w-[90rem] py-14 md:py-16 px-4 sm:px-6 lg:px-12 mx-auto bg-surface-500 dark:bg-surfacedark-500">
+      <div class="max-w-2xl mx-auto text-center mb-12">
+        <h2 class="text-headline-sm lg:text-headline-lg text-primary-900 dark:text-primary-10 mb-3">Testimonials</h2>
+        <p class="text-base tracking-[0.5px]">Join with satisfied customers who have already used  Goodash to build beautiful dashboard interface. </p>
+      </div>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-6">
+        <div>
+          <div class="p-6 relative flex flex-col gap-2 rounded-xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+            <span class="material-symbols-outlined !text-5xl text-primary-500 absolute top-3 right-3">format_quote</span>
+            <!-- user -->
+            <div class="flex flex-start gap-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                <a href="#">
+                  <img src="src/img/avatar.png" alt="avatar" class="w-10 h-10 rounded-full">
+                </a>
+              </div>
+              <div class="relative">
+                <a href="#" class="text-title-md text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-200 mb-0.5">James Rich</a>
+                <p class="text-body-sm text-gray-500">@james_rich</p>
+              </div>
+            </div>
+            <!-- rating star -->
+            <div class="flex flex-row gap-2">
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star_half</span>
+            </div>
+            <p class="text-body-lg">Using Goodash, we were able to elevate our user experience by creating modern and responsive dashboards</p>
+          </div>
+        </div>
+        <div>
+          <div class="p-6 relative flex flex-col gap-2 rounded-xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+            <span class="material-symbols-outlined !text-5xl text-primary-500 absolute top-3 right-3">format_quote</span>
+            <!-- user -->
+            <div class="flex flex-start gap-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                <a href="#">
+                  <img src="src/img/avatar.png" alt="avatar" class="w-10 h-10 rounded-full">
+                </a>
+              </div>
+              <div class="relative">
+                <a href="#" class="text-title-md text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-200 mb-0.5">John Tomson</a>
+                <p class="text-body-sm text-gray-500">@john_tomson</p>
+              </div>
+            </div>
+            <!-- rating star -->
+            <div class="flex flex-row gap-2">
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star_half</span>
+            </div>
+            <p class="text-body-lg">The consistent design language and sleek aesthetics have impressed our users and elevated our brand image</p>
+          </div>
+        </div>
+        <div>
+          <div class="p-6 relative flex flex-col gap-2 rounded-xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+            <span class="material-symbols-outlined !text-5xl text-primary-500 absolute top-3 right-3">format_quote</span>
+            <!-- user -->
+            <div class="flex flex-start gap-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                <a href="#">
+                  <img src="src/img/avatar.png" alt="avatar" class="w-10 h-10 rounded-full">
+                </a>
+              </div>
+              <div class="relative">
+                <a href="#" class="text-title-md text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-200 mb-0.5">Jesicca Khoe</a>
+                <p class="text-body-sm text-gray-500">@jesicca_khoe</p>
+              </div>
+            </div>
+            <!-- rating star -->
+            <div class="flex flex-row gap-2">
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star_half</span>
+            </div>
+            <p class="text-body-lg">Its customizable components and flexibility allowed us to iterate quickly and adapt our dashboards to changing requirements</p>
+          </div>
+        </div>
+        <div>
+          <div class="p-6 relative flex flex-col gap-2 rounded-xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+            <span class="material-symbols-outlined !text-5xl text-primary-500 absolute top-3 right-3">format_quote</span>
+            <!-- user -->
+            <div class="flex flex-start gap-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                <a href="#">
+                  <img src="src/img/avatar.png" alt="avatar" class="w-10 h-10 rounded-full">
+                </a>
+              </div>
+              <div class="relative">
+                <a href="#" class="text-title-md text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-200 mb-0.5">Benardo Timo</a>
+                <p class="text-body-sm text-gray-500">@benardo_timo</p>
+              </div>
+            </div>
+            <!-- rating star -->
+            <div class="flex flex-row gap-2">
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star_half</span>
+            </div>
+            <p class="text-body-lg">Their prompt responses and deep product knowledge have made our experience seamless and enjoyable</p>
+          </div>
+        </div>
+        <div>
+          <div class="p-6 relative flex flex-col gap-2 rounded-xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+            <span class="material-symbols-outlined !text-5xl text-primary-500 absolute top-3 right-3">format_quote</span>
+            <!-- user -->
+            <div class="flex flex-start gap-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                <a href="#">
+                  <img src="src/img/avatar.png" alt="avatar" class="w-10 h-10 rounded-full">
+                </a>
+              </div>
+              <div class="relative">
+                <a href="#" class="text-title-md text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-200 mb-0.5">Julian_forres</a>
+                <p class="text-body-sm text-gray-500">@julian_forres</p>
+              </div>
+            </div>
+            <!-- rating star -->
+            <div class="flex flex-row gap-2">
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star_half</span>
+            </div>
+            <p class="text-body-lg">The documentation was clear and concise, and we had our beautiful dashboards up and running in no time</p>
+          </div>
+        </div>
+        <div>
+          <div class="p-6 relative flex flex-col gap-2 rounded-xl bg-white dark:bg-gray-900 shadow hover:shadow-md dark:shadow-gray-500/10 transform hover:-translate-y-1 duration-200">
+            <span class="material-symbols-outlined !text-5xl text-primary-500 absolute top-3 right-3">format_quote</span>
+            <!-- user -->
+            <div class="flex flex-start gap-3">
+              <div class="w-10 h-10 flex items-center justify-center rounded-full title-md font-bold bg-primary-600 text-white dark:bg-primary-200 dark:text-neutral-900">
+                <a href="#">
+                  <img src="src/img/avatar.png" alt="avatar" class="w-10 h-10 rounded-full">
+                </a>
+              </div>
+              <div class="relative">
+                <a href="#" class="text-title-md text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-200 mb-0.5">Andrian Toe</a>
+                <p class="text-body-sm text-gray-500">@andrian_toe</p>
+              </div>
+            </div>
+            <!-- rating star -->
+            <div class="flex flex-row gap-2">
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star</span>
+              <span class="material-symbols-outlined filled-icon text-orange-500">star_half</span>
+            </div>
+            <p class="text-body-lg">Its powerful data visualization capabilities and user-friendly interface empower us to communicate insights effectively</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- footer start -->
+  <footer class="max-w-[90rem] px-4 sm:px-6 lg:px-12 mx-auto bg-gray-900 dark:bg-black text-gray-300 text-body-lg flex flex-col">
+    <div class="py-10 md:py-16 flex flex-wrap flex-row justify-between">
+      <!-- left widget -->
+      <div class="max-w-full w-full lg:w-1/2 px-4 mb-7 lg:mb-0 leading-relaxed">
+        <!-- Footer Content -->
+        <p class="mb-3">Goodash provides an extensive collection of components that empower you to create visually stunning and highly functional dashboards. Each component is thoughtfully designed and optimized to enhance the user experience and simplify the process of dashboard creation.</p>
+        <p class="flex gap-2 mb-3">
+          <span class="material-symbols-outlined">mail</span>
+          ari.budin77@gmail.com
+        </p>
+        <p class="flex gap-2 mb-3">
+          <span class="material-symbols-outlined">mail</span>
+          support@tailwinddashboard.com
+        </p>
+      </div>
+
+      <!-- center widget -->
+      <div class="max-w-full w-full lg:w-1/3 px-4 mb-7 lg:mb-0">
+        <!-- Footer Content -->
+        <div class="flex flex-wrap leading-relaxed flex-row -mx-4">
+          <div class="flex-shrink max-w-full w-1/2 px-4">
+            <ul class="space-y-2">
+              <li><a class="hover:text-gray-100" href="#">About us</a></li>
+              <li><a class="hover:text-gray-100" href="#">Contact us</a></li>
+              <li><a class="hover:text-gray-100" href="#">Privacy policy</a></li>
+              <li><a class="hover:text-gray-100" href="#">Term of use</a></li>
+              <li><a class="hover:text-gray-100" href="#">Career</a></li>
+            </ul>
+          </div>
+          <div class="flex-shrink max-w-full w-1/2 px-4">
+            <ul class="space-y-2">
+              <li><a class="hover:text-gray-100" href="#">Popular post</a></li>
+              <li><a class="hover:text-gray-100" href="#">Blogs</a></li>
+              <li><a class="hover:text-gray-100" href="#">Events</a></li>
+              <li><a class="hover:text-gray-100" href="#">Category</a></li>
+              <li><a class="hover:text-gray-100" href="#">Career</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- copyright  -->
+    <div class="py-9 w-full text-center border-t border-blue-200 border-opacity-10">
+      <p>Copyright © Goodash | All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Tailmater javascript -->
+  <script src="src/js/tailmater.js"></script>
+</body>
+</html>

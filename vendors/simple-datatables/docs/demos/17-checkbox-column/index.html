@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+        <title>Checkbox column</title>
+        <!-- DataTable Styles -->
+        <link rel="stylesheet" href="../dist/css/style.css">
+        <!-- Demo Styles -->
+        <link rel="stylesheet" href="../demo.css">
+        <style>
+        span.checkbox {
+            cursor: pointer;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Checkbox column</h1>
+        <table class="table"></table>
+        <!-- Custom Code -->
+        <script type="module">
+            import {
+                DataTable
+            } from "../dist/module.js"
+            // Instantiate
+            fetch("datatable.json").then(
+                response => response.json()
+            ).then(
+                data => {
+                    const datatable = new DataTable("table", {
+                        type: "string",
+                        data: {
+                            headings: ["Checked"].concat(Object.keys(data[0])),
+                            data: data.map(item => [false].concat(Object.values(item)))
+                        },
+                        rowRender: (rowValue, tr, _index) => {
+                            if (!tr.attributes) {
+                                tr.attributes = {}
+                            }
+                            tr.attributes["data-name"] = rowValue[1].data
+                            return tr
+                        },
+                        columns: [
+                            {
+                                select: 0,
+                                render: (value, _td, _rowIndex, _cellIndex) => `<span class="checkbox">${value ? "☑" : "☐"}</span>`
+                            }
+                        ]
+                    })
+                    datatable.dom.addEventListener("click", event => {
+                        if (event.target.matches("span.checkbox")) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                            const name = event.target.parentElement.parentElement.dataset.name
+                            const index = parseInt(event.target.parentElement.parentElement.dataset.index, 10)
+                            const cell = datatable.data.data[index][0]
+                            const checked = cell.data
+                            if (checked) {
+                                cell.data = false
+                            } else {
+                                cell.data = true
+                            }
+                            datatable.update()
+                            setTimeout( // set a timeout so that rednered checkbiox is rendered first.
+                                () => alert(`${name} has been ${checked ? "unchecked" : "checked"}.`),
+                                0
+                            )
+                        }
+                    })
+                }
+            )
+        </script>
+    </body>
+</html>
