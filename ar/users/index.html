@@ -47,7 +47,7 @@
 
     <!-- header -->
     <header data-type="navtop"
-        class="nav-top border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 lg:px-8 lg:pl-3 left-0 lg:right-72 right-0 flex flex-row items-center justify-between gap-3 z-50 transition-all duration-300 ease-in-out">
+        class="nav-top bg-white dark:bg-gray-900 border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 lg:px-8 lg:pl-3 left-0 lg:right-72 right-0 flex flex-row items-center justify-between gap-3 z-50 transition-all duration-300 ease-in-out">
         <!-- trigger sidebar -->
         <button data-type="dialogs" data-target="#sidebar"
             class="relative inline-flex lg:hidden items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
@@ -68,32 +68,8 @@
 
         <!-- navbar right -->
         <div class="flex flex-row items-center gap-3 mr-auto md:mr-12">
-            <!-- Theme Toggle Button -->
-            <div class="relative">
-                <button id="theme-toggle"
-                    class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
-                    <!-- Only one icon will be shown at a time -->
-                    <span id="theme-icon"
-                        class="material-symbols-outlined !text-[28px] pointer-events-none">light_mode</span>
-                </button>
-            </div>
 
-            <!-- Balance Button -->
-            <div class="relative">
-                <a href="#">
-                    <button
-                        class="btn relative flex flex-col items-center justify-center w-24 h-12 p-2.5 rounded-[6.25rem] bg-white text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:bg-gray-900 dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
-                        <span class="text-sm text-neutral-900 dark:text-neutral-100 leading-tight">
-                            الرصيد
-                        </span>
-                        <span class="text-xs text-green-600 dark:text-green-400 leading-tight">
-                            17466.99 ج.م
-                        </span>
-                    </button>
-                </a>
-            </div>
-
-            <div class="relative">
+                        <div class="relative">
                 <button data-type="dropdown" data-target="#adddropdown"
                     class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
                     <span aria-label="إضافة" data-microtip-position="bottom" role="tooltip"
@@ -128,6 +104,33 @@
                         </a>
                     </li>
                 </ul>
+            </div>
+
+
+            <!-- Balance Button -->
+            <div class="relative">
+                <a href="#">
+                    <button
+                        class="btn relative flex flex-col items-center justify-center w-24 h-12 p-2.5 rounded-[6.25rem] bg-white text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:bg-gray-900 dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                        <span class="text-sm text-neutral-900 dark:text-neutral-100 leading-tight">
+                            الرصيد
+                        </span>
+                        <span class="text-xs text-green-600 dark:text-green-400 leading-tight">
+                            17466.99 ج.م
+                        </span>
+                    </button>
+                </a>
+            </div>
+
+
+                        <!-- Theme Toggle Button -->
+            <div class="relative">
+                <button id="theme-toggle"
+                    class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                    <!-- Only one icon will be shown at a time -->
+                    <span id="theme-icon"
+                        class="material-symbols-outlined !text-[28px] pointer-events-none">light_mode</span>
+                </button>
             </div>
 
             <div class="relative">
@@ -204,7 +207,7 @@
     <main class="lg:flex">
         <!-- sidebar -->
         <aside id="sidebar"
-            class="sidebar border-l border-gray-300 transition-all duration-500 ease-in-out fixed max-lg:z-[60] lg:shrink-0 lg:relative lg:w-72 h-screen max-lg:[&amp;.show_.sidebar-bg]:opacity-60 dark:max-lg:[&amp;.show_.sidebar-bg]:opacity-60 [&amp;.show_.sidebar-bg]:inset-0 [&amp;.show_.sidebar-content]:translate-x-0">
+            class="sidebar bg-white dark:bg-gray-900 border-l border-gray-300 transition-all duration-500 ease-in-out fixed max-lg:z-[60] lg:shrink-0 lg:relative lg:w-72 h-screen max-lg:[&amp;.show_.sidebar-bg]:opacity-60 dark:max-lg:[&amp;.show_.sidebar-bg]:opacity-60 [&amp;.show_.sidebar-bg]:inset-0 [&amp;.show_.sidebar-content]:translate-x-0">
             <!-- backdrop -->
             <!-- <div data-close="#sidebar" class="sidebar-bg fixed z-40 opacity-0 -top-full bg-black"></div> -->
 
@@ -414,7 +417,7 @@
                 <h2 class="text-title-lg">لوحة التحكم</h2>
 
                 <!-- filter -->
-                <form class="btn-segmented inline-flex flex-row-reverse items-center" id="filter-form">
+                <!-- <form class="btn-segmented inline-flex flex-row-reverse items-center" id="filter-form">
                     <div
                         class="segmented-item [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 h-8 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2 px-4 text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
                         <input id="check7" type="radio" name="days_filter"
@@ -433,7 +436,7 @@
                             14 يوم
                         </label>
                     </div>
-                </form>
+                </form> -->
             </div>
 
             <!-- content 1 -->
