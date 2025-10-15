@@ -47,7 +47,7 @@
 
     <!-- header -->
     <header data-type="navtop"
-        class="nav-top border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 lg:px-8 lg:pl-3 left-0 lg:right-72 right-0 flex flex-row items-center justify-between gap-3 z-50 transition-all duration-300 ease-in-out bg-surface-500 dark:bg-surfacedark-500">
+        class="nav-top border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 lg:px-8 lg:pl-3 left-0 lg:right-72 right-0 flex flex-row items-center justify-between gap-3 z-50 transition-all duration-300 ease-in-out">
         <!-- trigger sidebar -->
         <button data-type="dialogs" data-target="#sidebar"
             class="relative inline-flex lg:hidden items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
@@ -68,6 +68,31 @@
 
         <!-- navbar right -->
         <div class="flex flex-row items-center gap-3 mr-auto md:mr-12">
+            <!-- Theme Toggle Button -->
+            <div class="relative">
+                <button id="theme-toggle"
+                    class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                    <!-- Only one icon will be shown at a time -->
+                    <span id="theme-icon"
+                        class="material-symbols-outlined !text-[28px] pointer-events-none">light_mode</span>
+                </button>
+            </div>
+
+            <!-- Balance Button -->
+            <div class="relative">
+                <a href="#">
+                    <button
+                        class="btn relative flex flex-col items-center justify-center w-24 h-12 p-2.5 rounded-[6.25rem] bg-white text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:bg-gray-900 dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                        <span class="text-sm text-neutral-900 dark:text-neutral-100 leading-tight">
+                            الرصيد
+                        </span>
+                        <span class="text-xs text-green-600 dark:text-green-400 leading-tight">
+                            17466.99 ج.م
+                        </span>
+                    </button>
+                </a>
+            </div>
+
             <div class="relative">
                 <button data-type="dropdown" data-target="#adddropdown"
                     class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
@@ -103,20 +128,6 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-
-            <div class="relative">
-                <a href="#">
-                    <button
-                        class="btn relative flex flex-col items-center justify-center w-24 h-12 p-2.5 rounded-[6.25rem] bg-white text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:bg-gray-900 dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
-                        <span class="text-sm text-neutral-900 dark:text-neutral-100 leading-tight">
-                            الرصيد
-                        </span>
-                        <span class="text-xs text-green-600 dark:text-green-400 leading-tight">
-                            17466.99 ج.م
-                        </span>
-                    </button>
-                </a>
             </div>
 
             <div class="relative">
@@ -189,6 +200,7 @@
         </div>
     </header>
 
+
     <main class="lg:flex">
         <!-- sidebar -->
         <aside id="sidebar"
@@ -198,9 +210,10 @@
 
             <!-- menu -->
             <div id="sidebar-content"
-                class="sidebar-content transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 right0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars">
+                class="sidebar-content transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 max-[767px]:right-0 max-[767px]:!bg-red-400 right-0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars">
                 <!-- logo -->
-                <a href="/en/users/dashboard/" class="sidebar-logo py-[13.5px] pr-6 flex items-center gap-2 w-full border-b border-gray-300">
+                <a href="/en/users/dashboard/"
+                    class="sidebar-logo py-[13.5px] pr-6 flex items-center gap-2 w-full border-b border-gray-300">
                     <div
                         class="w-9 h-9 rounded-full border-2 border-primary-600 flex items-center justify-center text-primary-800 font-bold text-lg">
                         <span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary-200">G</span>
@@ -424,7 +437,7 @@
             </div>
 
             <!-- content 1 -->
-            <div class="max-sm:flex gap-4 sm:grid sm:grid-cols-2 md:grid-cols-4 md:gap-6 mb-4 md:mb-6">
+            <div class="max-sm:flex gap-4 grid-cols-1 sm:grid sm:grid-cols-2 md:grid-cols-4 md:gap-6 mb-4 md:mb-6">
                 <!-- small card -->
                 <div
                     class="max-sm:w-60 max-sm:flex-shrink-0 flex flex-col justify-between rounded-xl bg-white dark:bg-gray-900 overflow-hidden">
@@ -435,7 +448,10 @@
                         </div>
                         <h4 class="text-display-sm text-gray-800 dark:text-gray-200">8</h4>
 
-                        <div class="absolute left-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">shopping_bag</div>
+                        <div
+                            class="absolute left-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
+                            shopping_bag
+                        </div>
                     </div>
                 </div>
                 <div
@@ -447,7 +463,9 @@
                         </div>
                         <h4 class="text-display-sm text-gray-800 dark:text-gray-200">8</h4>
 
-                        <div class="absolute left-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">pending_actions</div>
+                        <div
+                            class="absolute left-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
+                            pending_actions</div>
                     </div>
                 </div>
                 <div
@@ -459,7 +477,9 @@
                         </div>
                         <h4 class="text-display-sm text-gray-800 dark:text-gray-200">0</h4>
 
-                        <div class="absolute left-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">local_shipping</div>
+                        <div
+                            class="absolute left-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
+                            local_shipping</div>
                     </div>
                 </div>
                 <div
@@ -471,7 +491,9 @@
                         </div>
                         <h4 class="text-display-sm text-gray-800 dark:text-gray-200">TODO</h4>
 
-                        <div class="absolute left-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">payments</div>
+                        <div
+                            class="absolute left-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
+                            payments</div>
                     </div>
                 </div>
             </div>
@@ -484,7 +506,9 @@
                         <h3 class="text-title-lg">الخطوة 1</h3>
                         <p class="text-body-lg">ربط المتجر</p>
 
-                        <div class="absolute left-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">store</div>
+                        <div
+                            class="absolute left-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
+                            store</div>
                     </div>
                     <a href="/en/sales-channels/"
                         class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
@@ -497,7 +521,9 @@
                         <h3 class="text-title-lg">الخطوة 2</h3>
                         <p class="text-body-lg">ربط شركة الشحن</p>
 
-                        <div class="absolute left-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">Local_Shipping</div>
+                        <div
+                            class="absolute left-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
+                            store</div>
                     </div>
                     <a href="/en/carriers/carriers/"
                         class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
@@ -510,7 +536,9 @@
                         <h3 class="text-title-lg">الخطوة 3</h3>
                         <p class="text-body-lg">إنشاء طلب</p>
 
-                        <div class="absolute left-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">orders</div>
+                        <div
+                            class="absolute left-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
+                            store</div>
                     </div>
                     <a href="/en/orders/orders/"
                         class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
@@ -523,7 +551,9 @@
                         <h3 class="text-title-lg">الخطوة 4</h3>
                         <p class="text-body-lg">تتبع شحنة</p>
 
-                        <div class="absolute left-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">package</div>
+                        <div
+                            class="absolute left-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
+                            store</div>
                     </div>
                     <a href="/en/shipments/shipments/"
                         class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200">
@@ -560,6 +590,46 @@
 
     <!-- Tailmater javascript -->
     <script src="../src/js/tailmater.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+
+            // Check for saved theme preference or use system preference
+            const currentTheme = localStorage.getItem('theme') ||
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+            // Apply the theme and set the correct icon
+            if (currentTheme === 'dark') {
+                htmlElement.classList.add('dark');
+                themeIcon.textContent = 'light_mode';
+                themeIcon.setAttribute('aria-label', 'الوضع الليلي');
+            } else {
+                htmlElement.classList.remove('dark');
+                themeIcon.textContent = 'dark_mode';
+                themeIcon.setAttribute('aria-label', 'الوضع النهاري');
+            }
+
+            // Toggle theme on button click
+            themeToggle.addEventListener('click', function () {
+                if (htmlElement.classList.contains('dark')) {
+                    // Switch to light mode
+                    htmlElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                    themeIcon.textContent = 'dark_mode';
+                    themeIcon.setAttribute('aria-label', 'الوضع النهاري');
+                } else {
+                    // Switch to dark mode
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeIcon.textContent = 'light_mode';
+                    themeIcon.setAttribute('aria-label', 'الوضع الليلي');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
