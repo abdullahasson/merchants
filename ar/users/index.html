@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title  -->
-    <title>Gozagel Dashboard</title>
+    <title>Shpd Dashboard</title>
 
     <!-- Style Css -->
     <link rel="stylesheet" id="stylesheet" href="../../src/css/style.css">
@@ -69,15 +69,15 @@
         <!-- navbar right -->
         <div class="flex flex-row items-center gap-3 mr-auto md:mr-12">
 
-                        <div class="relative">
-                <button data-type="dropdown" data-target="#adddropdown"
+            <div class="relative">
+                <button data-type="dropdown" data-target="#dropdown"
                     class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
                     <span aria-label="إضافة" data-microtip-position="bottom" role="tooltip"
                         class="material-symbols-outlined !text-[28px] pointer-events-none">add</span>
                 </button>
 
                 <!-- menus -->
-                <ul id="adddropdown" data-type="dropdownmenu"
+                <ul id="dropdown" data-type="dropdownmenu"
                     class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-[3.1rem] z-30 transition duration-400 ease-in-out left-auto right-0 transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10">
                     <li class="relative">
                         <a href="#"
@@ -123,7 +123,7 @@
             </div>
 
 
-                        <!-- Theme Toggle Button -->
+            <!-- Theme Toggle Button -->
             <div class="relative">
                 <button id="theme-toggle"
                     class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
@@ -216,14 +216,9 @@
                 class="sidebar-content transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 max-[767px]:right-0 max-[767px]:!bg-red-400 right-0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars">
                 <!-- logo -->
                 <a href="/en/users/dashboard/"
-                    class="sidebar-logo py-[13.5px] pr-6 flex items-center gap-2 w-full border-b border-gray-300">
-                    <div
-                        class="w-9 h-9 rounded-full border-2 border-primary-600 flex items-center justify-center text-primary-800 font-bold text-lg">
-                        <span class="flex items-center justify-center w-6 h-6 rounded-full bg-primary-200">G</span>
-                    </div>
-                    <h4 class="text-2xl font-medium tracking-wide text-gray-900 dark:text-gray-100 compact-hide ml-2">
-                        GoZagel
-                    </h4>
+                    class="sidebar-logo py-[11.3px] pr-6 flex items-center gap-2 w-full border-b border-gray-300">
+                    <img src="/src/img/logo-light-ltr.png" alt="logo-light" class="h-10 w-auto dark:hidden">
+                    <img src="/src/img/logo-dark-ltr.png" alt="logo-light" class="h-10 w-auto hidden dark:block">
                 </a>
 
                 <!-- Standart drawer -->
@@ -581,18 +576,18 @@
 
 
     <!-- Charts js -->
-    <script src="../vendors/chart.js/dist/chart.umd.js"></script>
+    <script src="../../vendors/chart.js/dist/chart.umd.js"></script>
     <!-- Chart config -->
-    <script src="../src/js/charts/analytics.js"></script>
+    <script src="../../src/js/charts/analytics.js"></script>
 
     <!-- Vendor -->
-    <script src="../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
-    <script src="../vendors/jsvectormap/dist/maps/world.js"></script>
+    <script src="../../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
+    <script src="../../vendors/jsvectormap/dist/maps/world.js"></script>
     <!-- Vendor Configuration -->
-    <script src="../src/js/vendor.js"></script>
+    <script src="../../src/js/vendor.js"></script>
 
     <!-- Tailmater javascript -->
-    <script src="../src/js/tailmater.js"></script>
+    <script src="../../src/js/tailmater.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
