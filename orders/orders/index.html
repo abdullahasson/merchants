@@ -3,26 +3,43 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Title  -->
+    <meta 
+        http-equiv="X-UA-Compatible" 
+        content="IE=edge"
+    >
+    <meta 
+        name="viewport" 
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    >
     <title>Shpd Dashboard</title>
 
-    <!-- Style Css -->
-    <link rel="stylesheet" id="stylesheet" href="../src/css/style.css">
-    <link rel="stylesheet" id="color" href="../src/css/colors.css">
+    <!-- Stylesheets -->
+    <link 
+        rel="stylesheet" 
+        id="stylesheet" 
+        href="../../src/css/style.css"
+    >
+    <link 
+        rel="stylesheet" 
+        id="color" 
+        href="../../src/css/colors.css"
+    >
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Icons  -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <!-- Google Font -->
+    <link 
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" 
+        rel="stylesheet"
+    >
 
-    <!-- Favicon  -->
-    <link rel="icon" href="../src/img/favicon.png">
+    <!-- Material Icons -->
+    <link 
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    >
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../src/img/favicon.png">
 </head>
 
 <body id="body-layout"
@@ -185,9 +202,6 @@
 
 
     <main class="lg:flex">
-        <!-- sidebar -->
-
-
         <!-- Sidebar -->
         <aside 
             id="sidebar"
@@ -196,11 +210,11 @@
             <!-- Sidebar Content -->
             <div 
                 id="sidebar-content"
-                class="sidebar-content transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 left-0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars"
+                class="sidebar-content bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 left-0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars"
             >
                 <!-- Logo -->
                 <a 
-                    href="/users/index.html"
+                    href="/merchants/users/index.html"
                     class="sidebar-logo py-[11.3px] border-b border-gray-300 pl-6 flex items-center w-full"
                 >
                     <img 
@@ -224,7 +238,7 @@
                         <!-- Dashboard -->
                         <li class="relative">
                             <a 
-                                href="/users/index.html"
+                                href="/merchants/users/index.html"
                                 class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                             >
                                 <span 
@@ -266,7 +280,7 @@
                             >
                                 <li>
                                     <a 
-                                        href="/orders/index.html"
+                                        href="/merchants/orders/orders/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                                     >
                                         All Orders
@@ -274,7 +288,7 @@
                                 </li>
                                 <li>
                                     <a 
-                                        href="/orders/links/index.html"
+                                        href="/merchants/orders/links/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                                     >
                                         Checkout Links
@@ -309,7 +323,7 @@
                             >
                                 <li>
                                     <a 
-                                        href="/shipments/index.html"
+                                        href="/merchants/shipments/shipments/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                                     >
                                         All Shipments
@@ -317,7 +331,7 @@
                                 </li>
                                 <li>
                                     <a 
-                                        href="/shipments/pickups/index.html"
+                                        href="/merchants/shipments/pickups/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                                     >
                                         Pickups
@@ -352,7 +366,7 @@
                             >
                                 <li>
                                     <a 
-                                        href="/en/rates/fetch/"
+                                        href="/merchants/finance/rates/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                                     >
                                         Shipment Rate
@@ -360,7 +374,7 @@
                                 </li>
                                 <li>
                                     <a 
-                                        href="/en/shipments/shipments/carriers-cod"
+                                        href="/merchants/finance/cod/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                                     >
                                         COD
@@ -401,17 +415,17 @@
                             >
                                 <li>
                                     <a 
-                                        href="/integrations/index.html"
+                                        href="/merchants/integrations/sales-channels/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                        >
+                                    >
                                         Sales channels
                                     </a>
                                 </li>
                                 <li>
                                     <a 
-                                        href="/integrations/connections/index.html"
+                                        href="/merchants/integrations/carrier/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                        >
+                                    >
                                         Carrier connections
                                     </a>
                                 </li>
@@ -444,7 +458,7 @@
                             >
                                 <li>
                                     <a 
-                                        href="/shipping/address-book/index.html"
+                                        href="/merchants/shipping/address-book/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                                     >
                                         Address Book
@@ -479,7 +493,7 @@
                             >
                                 <li>
                                     <a 
-                                        href="/billing/plans/index.html"
+                                        href="/merchants/billing/plans/index.html"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                                     >
                                         Plans
@@ -487,7 +501,7 @@
                                 </li>
                                 <li>
                                     <a 
-                                        href="/billing/wallet/index.html"
+                                        href="/merchants/billing/payment-methods/"
                                         class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                                     >
                                         Payment Methods
@@ -981,70 +995,32 @@
 
     </main>
 
-    <!-- footer -->
+    <!-- Footer -->
     <footer class="footer absolute px-4 lg:px-8 lg:pl-3 left-0 lg:left-72 bottom-0 right-0 border-t border-gray-300">
         <div class="text-center py-6">
-            <!-- Copyright text -->
             <p>
                 <script>document.write(new Date().getFullYear())</script> GoZagel - All rights reserved
             </p>
         </div>
     </footer>
 
+    <!-- JavaScript Libraries -->
+    <script src="../vendors/chart.js/dist/chart.umd.js"></script>
+    <script src="../../src/js/charts/analytics.js"></script>
+    <script src="../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
+    <script src="../vendors/jsvectormap/dist/maps/world.js"></script>
+    <script src="../../src/js/vendor.js"></script>
+    <script src="../../src/js/tailmater.js"></script>
 
-
+    <!-- Theme Toggle Script -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabs = document.querySelectorAll('.tab');
-            const indicator = document.getElementById('indicator');
-
-            function setIndicatorPosition() {
-                const activeTab = document.querySelector('.tab.active') || tabs[0]; // Default to first tab if none is active
-                const tabRect = activeTab.getBoundingClientRect();
-
-                // Positioning the indicator based on the active tab
-                const tabOffset = tabRect.left; // Position of the active tab
-                const tabWidth = tabRect.width; // Width of the active tab
-
-                // Set the width and position of the indicator
-                indicator.style.width = `${tabWidth}px`;
-                indicator.style.transform = `translateX(${tabOffset - indicator.parentElement.getBoundingClientRect().left}px)`; // Use transform to adjust position
-            }
-
-            // Set initial position
-            setIndicatorPosition();
-
-            // Update indicator position on tab click
-            tabs.forEach(tab => {
-                tab.addEventListener('click', function () {
-                    tabs.forEach(t => t.classList.remove('active')); // Remove active class from all tabs
-                    this.classList.add('active'); // Add active class to clicked tab
-                    setIndicatorPosition(); // Update the indicator position
-                });
-            });
-
-            // Adjust indicator position on window resize
-            window.addEventListener('resize', setIndicatorPosition);
-        });
-    </script>
-
-    <!-- Tailmater javascript -->
-    <script src="../src/js/tailmater.js"></script>
-    <script src="../vendors/glightbox/dist/js/glightbox.min.js"></script>
-    <!-- Vendor Configuration -->
-    <script src="../src/js/vendor.js"></script>
-
-        <script>
         document.addEventListener('DOMContentLoaded', function () {
             const themeToggle = document.getElementById('theme-toggle');
             const themeIcon = document.getElementById('theme-icon');
             const htmlElement = document.documentElement;
 
-            // Check for saved theme preference or use system preference
-            const currentTheme = localStorage.getItem('theme') ||
-                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-            // Apply the theme and set the correct icon
             if (currentTheme === 'dark') {
                 htmlElement.classList.add('dark');
                 themeIcon.textContent = 'light_mode';
@@ -1055,16 +1031,13 @@
                 themeIcon.setAttribute('aria-label', 'الوضع النهاري');
             }
 
-            // Toggle theme on button click
             themeToggle.addEventListener('click', function () {
                 if (htmlElement.classList.contains('dark')) {
-                    // Switch to light mode
                     htmlElement.classList.remove('dark');
                     localStorage.setItem('theme', 'light');
                     themeIcon.textContent = 'dark_mode';
                     themeIcon.setAttribute('aria-label', 'الوضع النهاري');
                 } else {
-                    // Switch to dark mode
                     htmlElement.classList.add('dark');
                     localStorage.setItem('theme', 'dark');
                     themeIcon.textContent = 'light_mode';
