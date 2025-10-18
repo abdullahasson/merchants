@@ -669,9 +669,6 @@ video {
 .-bottom-\[85\%\] {
   bottom: -85%;
 }
-.-top-full {
-  top: -100%;
-}
 .bottom-0 {
   bottom: 0px;
 }
@@ -4215,28 +4212,6 @@ div.code-toolbar > .toolbar span {
 .\[\&\.active\]\:flex.active {
   display: flex;
 }
-.\[\&\.active\]\:bg-primary-600\/\[0\.08\].active {
-  background-color: rgba(var(--colors-primary-600-rgb), 0.08);
-}
-.\[\&\.active\]\:bg-secondary-100.active {
-  --tw-bg-opacity: 1;
-  background-color: rgba(var(--colors-secondary-100-rgb), var(--tw-bg-opacity, 1));
-}
-.\[\&\.active\]\:text-gray-900.active {
-  --tw-text-opacity: 1;
-  color: rgba(var(--colors-gray-900-rgb), var(--tw-text-opacity, 1));
-}
-.dark\:\[\&\.active\]\:bg-primary-200\/10.active:is(.dark *) {
-  background-color: rgba(var(--colors-primary-200-rgb), 0.1);
-}
-.dark\:\[\&\.active\]\:bg-secondary-700.active:is(.dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgba(var(--colors-secondary-700-rgb), var(--tw-bg-opacity, 1));
-}
-.dark\:\[\&\.active\]\:text-gray-100.active:is(.dark *) {
-  --tw-text-opacity: 1;
-  color: rgba(var(--colors-gray-100-rgb), var(--tw-text-opacity, 1));
-}
 .\[\&\.selected\]\:\!bg-primary-100.selected {
   --tw-bg-opacity: 1 !important;
   background-color: rgba(var(--colors-primary-100-rgb), var(--tw-bg-opacity, 1)) !important;
@@ -4250,10 +4225,6 @@ div.code-toolbar > .toolbar span {
 }
 .\[\&\.show\]\:\!h-auto.show {
   height: auto !important;
-}
-.\[\&\.show\]\:translate-y-0.show {
-  --tw-translate-y: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .\[\&\.show\]\:\!opacity-100.show {
   opacity: 1 !important;
@@ -4273,19 +4244,4 @@ div.code-toolbar > .toolbar span {
 }
 .\[\&\.show_\.price-year\]\:block.show .price-year {
   display: block;
-}
-.\[\&\.show_\.sidebar-bg\]\:inset-0.show .sidebar-bg {
-  inset: 0px;
-}
-@media not all and (min-width: 1024px) {
-  .max-lg\:\[\&\.show_\.sidebar-bg\]\:opacity-60.show .sidebar-bg {
-    opacity: 0.6;
-  }
-  .dark\:max-lg\:\[\&\.show_\.sidebar-bg\]\:opacity-60.show .sidebar-bg:is(.dark *) {
-    opacity: 0.6;
-  }
-}
-.\[\&\.show_\.sidebar-content\]\:translate-x-0.show .sidebar-content {
-  --tw-translate-x: 0px;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }

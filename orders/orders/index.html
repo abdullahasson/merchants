@@ -300,44 +300,20 @@
                         <!-- Shipments Submenu -->
                         <li class="relative">
                             <a 
-                                href="javascript:void(0)" 
-                                data-type="collapse" 
-                                data-target="#dashboard7"
+                                href="/merchants/shipments/shipments/index.html"
                                 class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
                             >
-                                <span
+                                <span 
                                     class="material-symbols-outlined"
                                 >
                                     package_2
                                 </span>
-                                <span
+                                <span 
                                     class="compact-title"
                                 >
                                     Shipments
                                 </span>
                             </a>
-                            <ul 
-                                id="dashboard7" 
-                                data-type="collapsed"                                    
-                                class="sidebar-submenu [&amp;.active]:block hidden"
-                            >
-                                <li>
-                                    <a 
-                                        href="/merchants/shipments/shipments/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        All Shipments
-                                    </a>
-                                </li>
-                                <li>
-                                    <a 
-                                        href="/merchants/shipments/pickups/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        Pickups
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <!-- Finance Submenu -->
@@ -514,7 +490,6 @@
             </div>
         </aside>
 
-
         <!-- content -->
 
         <div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
@@ -623,20 +598,38 @@
                                     </td>
                                     <td>700.00 EGP</td>
                                     <td>
-                                        <a href="/orders/orders/51/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/rates/fetch/?order_id=51"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Create shipment
-                                        </a>
-
-                                        <a href="/orders/orders/51/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -657,20 +650,38 @@
                                     </td>
                                     <td>759.95 USD</td>
                                     <td>
-                                        <a href="/orders/orders/50/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/shipments/shipments/38d4debe-4c88-43ea-8c8d-0c4005919bc2/detail/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            View shipment
-                                        </a>
-
-                                        <a href="/orders/orders/50/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -691,20 +702,38 @@
                                     </td>
                                     <td>1800.00 USD</td>
                                     <td>
-                                        <a href="/orders/orders/49/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/rates/fetch/?order_id=49"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Create shipment
-                                        </a>
-
-                                        <a href="/orders/orders/49/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -725,20 +754,38 @@
                                     </td>
                                     <td>659.95 USD</td>
                                     <td>
-                                        <a href="/orders/orders/48/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/rates/fetch/?order_id=48"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Create shipment
-                                        </a>
-
-                                        <a href="/orders/orders/48/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -759,20 +806,38 @@
                                     </td>
                                     <td>25.00 USD</td>
                                     <td>
-                                        <a href="/orders/orders/47/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/rates/fetch/?order_id=47"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Create shipment
-                                        </a>
-
-                                        <a href="/orders/orders/47/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -793,20 +858,38 @@
                                     </td>
                                     <td>629.95 USD</td>
                                     <td>
-                                        <a href="/orders/orders/46/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/rates/fetch/?order_id=46"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Create shipment
-                                        </a>
-
-                                        <a href="/orders/orders/46/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -827,20 +910,38 @@
                                     </td>
                                     <td>659.95 USD</td>
                                     <td>
-                                        <a href="/orders/orders/45/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/rates/fetch/?order_id=45"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Create shipment
-                                        </a>
-
-                                        <a href="/orders/orders/45/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -860,20 +961,38 @@
                                     </td>
                                     <td>600.00 USD</td>
                                     <td>
-                                        <a href="/orders/orders/44/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/rates/fetch/?order_id=44"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Create shipment
-                                        </a>
-
-                                        <a href="/orders/orders/44/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -893,20 +1012,38 @@
                                     </td>
                                     <td>300.00 EGP</td>
                                     <td>
-                                        <a href="/orders/orders/43/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/shipments/shipments/820f879f-9d3d-4c1e-8041-c6d441aeb034/detail/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            View shipment
-                                        </a>
-
-                                        <a href="/orders/orders/43/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
@@ -926,20 +1063,38 @@
                                     </td>
                                     <td>300.00 EGP</td>
                                     <td>
-                                        <a href="/orders/orders/42/edit/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Edit
-                                        </a>
+                                        <div class="relative">
+                                            <button data-type="dropdown" data-target="#addactions"
+                                                class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                                                <span
+                                                    class="material-symbols-outlined !text-[28px] pointer-events-none">
+                                                    More_Vert
+                                                </span>
+                                            </button>
 
-                                        <a href="/shipments/shipments/e7a0f361-080f-4d04-a3cf-9ce0cbb77c45/detail/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            View shipment
-                                        </a>
-
-                                        <a href="/orders/orders/42/delete/"
-                                            class="inline-flex items-center gap-x-1 py-1.5 px-3 rounded-full hover:shadow-md text-sm font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                                            Delete
-                                        </a>
+                                            <!-- menus -->
+                                            <ul id="addactions" data-type="dropdownmenu"
+                                                class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-0 right-[144%] z-30 transition duration-400 ease-in-out transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-gray-700 shadow-md dark:shadow-gray-50/10">
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/edit/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Edite
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/rates/fetch/?order_id=51"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Create shipment
+                                                    </a>
+                                                </li>
+                                                <li class="relative">
+                                                    <a href="/orders/orders/51/delete/"
+                                                        class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                                                        Delete
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </td>
                                 </tr>
 
