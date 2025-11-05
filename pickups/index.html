@@ -8,8 +8,8 @@
     <title>Shpd Dashboard</title>
 
     <!-- Stylesheets -->
-    <link rel="stylesheet" id="stylesheet" href="../../src/css/style.css">
-    <link rel="stylesheet" id="color" href="../../src/css/colors.css">
+    <link rel="stylesheet" id="stylesheet" href="../src/css/style.css">
+    <link rel="stylesheet" id="color" href="../src/css/colors.css">
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
     <!-- Favicon -->
-    <link rel="icon" href="../../src/img/favicon.png">
+    <link rel="icon" href="../src/img/favicon.png">
 
     <style>
         .custom-select-wrapper {
@@ -63,15 +63,7 @@
         .custom-select-wrapper {
             z-index: 30;
         }
-
-        /* Password validation styles */
-        .password-valid {
-            color: #10b981;
-        }
-        .password-invalid {
-            color: #ef4444;
-        }
-    </style>
+</style>
 </head>
 
 <body id="body-layout"
@@ -388,260 +380,255 @@
                 </div>
             </div>
         </aside>
+
+        <!-- Main Pickups Content -->
         <div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
             <!-- heading -->
             <div class="flex flex-row justify-between items-center pt-2 pb-6">
                 <h2 class="text-title-lg text-2xl font-semibold text-gray-800 dark:text-gray-200">
-                    Add Team Member
+                    Pickups
                 </h2>
+
                 <div class="flex flex-row gap-3 items-center pr-4">
-                    <a href="/teams/index.html" class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-white text-gray-700 border border-gray-300 hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600">
-                        <span class="material-symbols-outlined">arrow_back</span>
-                        Back to Teams
-                    </a>
+                    <button 
+                        id="create-pickup-btn"
+                        class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                    >
+                        <span 
+                            class="material-symbols-outlined"
+                        >
+                            add
+                        </span>
+
+                        Create pickup
+                    </button>
                 </div>
             </div>
 
-            <!-- content -->
-            <div class="grid grid-cols-1 gap-6">
-                <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-6 max-w-4xl">
-                    <form method="post" class="space-y-8">
-                        <!-- Personal Information Section -->
-                        <div class="space-y-6">
-                            <h3 class="text-title-md font-medium text-gray-900 dark:text-gray-100">
-                                Account settings
-                            </h3>
-                            
-                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                                New user
-                            </div>
-
-                            <!-- Name Fields -->
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <!-- First Name -->
-                                <div class="relative z-0">
-                                    <input 
-                                        type="text" 
-                                        name="first_name" 
-                                        id="first_name" 
-                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
-                                        placeholder=" "
-                                        required
-                                    >
-                                    <label for="first_name" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                                        First name <span class="text-red-500">*</span>
-                                    </label>
-                                </div>
-
-                                <!-- Last Name -->
-                                <div class="relative z-0">
-                                    <input 
-                                        type="text" 
-                                        name="last_name" 
-                                        id="last_name" 
-                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
-                                        placeholder=" "
-                                        required
-                                    >
-                                    <label for="last_name" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                                        Last name <span class="text-red-500">*</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="relative z-0">
-                                <input 
-                                    type="email" 
-                                    name="email" 
-                                    id="email" 
-                                    class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
-                                    placeholder=" "
-                                    required
-                                >
-                                <label for="email" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                                    E-mail address <span class="text-red-500">*</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Role Section -->
-                        <div class="space-y-6">
-                            <h4 class="text-title-sm font-medium text-gray-900 dark:text-gray-100">
-                                Role
-                            </h4>
-                            
-                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                                The role determines what someone can do with the account. A role change only becomes final after the user has logged out.
-                            </div>
-
-                            <div class="relative z-30">
-                                <div class="custom-select-wrapper relative z-30">
-                                    <select name="role" id="role" class="hidden-select w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400">
-                                        <option value="user">User</option>
-                                        <option value="admin">Admin</option>
-                                        <option value="owner">Owner</option>
-                                    </select>
-                                    <div class="custom-select" data-target="role">
-                                        <div class="custom-select-trigger flex justify-between items-center h-14 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border border-gray-500 dark:border-gray-400 cursor-pointer">
-                                            <span class="selected-value">User</span>
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                            </svg>
-                                        </div>
-                                        <div class="custom-options scrollbars hidden absolute z-50 w-full mt-1 max-h-60 overflow-auto rounded-md bg-white dark:bg-gray-800 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                                            <div class="options-container max-h-48 overflow-y-auto">
-                                                <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="user">User</div>
-                                                <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="admin">Admin</div>
-                                                <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="owner">Owner</div>
-                                            </div>
+            <!-- Create Pickup Form (Initially Hidden) -->
+            <div id="create-pickup-form" class="hidden bg-white dark:bg-gray-900 rounded-2xl shadow-md p-6 mb-6">
+                <h3 class="text-title-md font-medium text-gray-900 dark:text-gray-100 mb-6">
+                    Create pickup
+                </h3>
+                
+                <form method="post" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Carrier Selection -->
+                        <div class="relative z-30">
+                            <div class="custom-select-wrapper relative z-30">
+                                <select name="carrier" id="carrier" class="hidden-select w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" required>
+                                    <option value="">Select carrier...</option>
+                                    <option value="aramex">Aramex</option>
+                                    <option value="dhl">DHL</option>
+                                    <option value="kwickbox">KwickBox</option>
+                                    <option value="spl">Spl</option>
+                                </select>
+                                <div class="custom-select" data-target="carrier">
+                                    <div class="custom-select-trigger flex justify-between items-center h-14 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border border-gray-500 dark:border-gray-400 cursor-pointer">
+                                        <span class="selected-value">Select carrier...</span>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="custom-options scrollbars hidden absolute z-50 w-full mt-1 max-h-60 overflow-auto rounded-md bg-white dark:bg-gray-800 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        <div class="options-container max-h-48 overflow-y-auto">
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="aramex">Aramex</div>
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="dhl">DHL</div>
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="kwickbox">KwickBox</div>
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="spl">Spl</div>
                                         </div>
                                     </div>
                                 </div>
-                                <label for="role" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-40 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                                    Role
-                                </label>
                             </div>
+                            <label for="carrier" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-40 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
+                                Carrier <span class="text-red-500">*</span>
+                            </label>
                         </div>
 
-                        <!-- Webshops Section -->
-                        <div class="space-y-4">
-                            <h4 class="text-title-sm font-medium text-gray-900 dark:text-gray-100">
-                                Webshops
-                            </h4>
-
-                            <div class="flex items-start space-x-3">
-                                <input 
-                                    type="checkbox" 
-                                    name="all_webshops" 
-                                    id="all_webshops" 
-                                    class="mt-1 focus:ring-primary-600 h-4 w-4 text-primary-600 border-gray-300 rounded dark:bg-gray-800 dark:border-gray-600"
-                                    checked
-                                >
-                                <div>
-                                    <label for="all_webshops" class="block text-sm font-medium text-gray-700 dark:text-gray-300">
-                                        Access to all webshops (including future ones)
-                                    </label>
-                                    <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                                        Grant access to all current and future webshops in your account.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <!-- Specific webshops selection (hidden when all_webshops is checked) -->
-                            <div id="specific-webshops" class="hidden space-y-3 ml-7">
-                                <div class="text-sm text-gray-600 dark:text-gray-400">
-                                    Select specific webshops:
-                                </div>
-                                <div class="space-y-2">
-                                    <div class="flex items-center">
-                                        <input type="checkbox" id="webshop1" name="webshops" value="1" class="h-4 w-4 text-primary-600 border-gray-300 rounded focus:ring-primary-600 dark:bg-gray-800 dark:border-gray-600">
-                                        <label for="webshop1" class="ml-2 text-sm text-gray-700 dark:text-gray-300">Main Store</label>
+                        <!-- Address Selection -->
+                        <div class="relative z-30">
+                            <div class="custom-select-wrapper relative z-30">
+                                <select name="address" id="address" class="hidden-select w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" required>
+                                    <option value="">Select address...</option>
+                                    <option value="address1">Main Warehouse - 123 Business St, Dubai, UAE</option>
+                                    <option value="address2">Store Front - 456 Mall Road, Dubai, UAE</option>
+                                    <option value="address3">Storage Unit - 789 Industrial Area, Dubai, UAE</option>
+                                </select>
+                                <div class="custom-select" data-target="address">
+                                    <div class="custom-select-trigger flex justify-between items-center h-14 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border border-gray-500 dark:border-gray-400 cursor-pointer">
+                                        <span class="selected-value">Select address...</span>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
                                     </div>
-                                    <div class="flex items-center">
-                                        <input type="checkbox" id="webshop2" name="webshops" value="2" class="h-4 w-4 text-primary-600 border-gray-300 rounded focus:ring-primary-600 dark:bg-gray-800 dark:border-gray-600">
-                                        <label for="webshop2" class="ml-2 text-sm text-gray-700 dark:text-gray-300">Boutique</label>
-                                    </div>
-                                    <div class="flex items-center">
-                                        <input type="checkbox" id="webshop3" name="webshops" value="3" class="h-4 w-4 text-primary-600 border-gray-300 rounded focus:ring-primary-600 dark:bg-gray-800 dark:border-gray-600">
-                                        <label for="webshop3" class="ml-2 text-sm text-gray-700 dark:text-gray-300">Wholesale</label>
+                                    <div class="custom-options scrollbars hidden absolute z-50 w-full mt-1 max-h-60 overflow-auto rounded-md bg-white dark:bg-gray-800 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        <div class="options-container max-h-48 overflow-y-auto">
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="address1">Main Warehouse - 123 Business St, Dubai, UAE</div>
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="address2">Store Front - 456 Mall Road, Dubai, UAE</div>
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="address3">Storage Unit - 789 Industrial Area, Dubai, UAE</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <label for="address" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-40 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
+                                Address <span class="text-red-500">*</span>
+                            </label>
                         </div>
+                    </div>
 
-                        <!-- Password Section -->
-                        <div class="space-y-6">
-                            <h4 class="text-title-sm font-medium text-gray-900 dark:text-gray-100">
-                                Password
-                            </h4>
-                            
-                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                                Note: do not enter your own password here.
-                            </div>
-
-                            <!-- New Password -->
-                            <div class="relative z-0">
-                                <input 
-                                    type="password" 
-                                    name="password" 
-                                    id="password" 
-                                    class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
-                                    placeholder=" "
-                                    required
-                                >
-                                <label for="password" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                                    New password <span class="text-red-500">*</span>
-                                </label>
-                            </div>
-
-                            <!-- Password Requirements -->
-                            <div class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-                                <h5 class="text-sm font-medium text-blue-800 dark:text-blue-200 mb-2">
-                                    Password Requirements:
-                                </h5>
-                                <ul class="text-sm text-blue-700 dark:text-blue-300 space-y-1">
-                                    <li class="flex items-center">
-                                        <span class="material-symbols-outlined text-sm mr-2" id="length-check">radio_button_unchecked</span>
-                                        Minimum 8 characters
-                                    </li>
-                                    <li class="ml-6 text-xs text-blue-600 dark:text-blue-400">
-                                        At least 3 of the 4 following character types:
-                                    </li>
-                                    <li class="flex items-center ml-6">
-                                        <span class="material-symbols-outlined text-sm mr-2" id="lowercase-check">radio_button_unchecked</span>
-                                        A lowercase letter
-                                    </li>
-                                    <li class="flex items-center ml-6">
-                                        <span class="material-symbols-outlined text-sm mr-2" id="uppercase-check">radio_button_unchecked</span>
-                                        An uppercase letter
-                                    </li>
-                                    <li class="flex items-center ml-6">
-                                        <span class="material-symbols-outlined text-sm mr-2" id="number-check">radio_button_unchecked</span>
-                                        A number
-                                    </li>
-                                    <li class="flex items-center ml-6">
-                                        <span class="material-symbols-outlined text-sm mr-2" id="special-check">radio_button_unchecked</span>
-                                        A special character (no spaces)
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!-- Confirm Password -->
-                            <div class="relative z-0">
-                                <input 
-                                    type="password" 
-                                    name="confirm_password" 
-                                    id="confirm_password" 
-                                    class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
-                                    placeholder=" "
-                                    required
-                                >
-                                <label for="confirm_password" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                                    Confirm password <span class="text-red-500">*</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Form Actions -->
-                        <div class="flex items-center justify-end space-x-4 pt-6 border-t border-gray-200 dark:border-gray-700">
-                            <a href="url 'teams_list" class="inline-flex items-center px-6 py-3 border border-gray-300 text-sm font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600">
-                                Cancel
-                            </a>
-                            <button 
-                                type="submit" 
-                                id="submit-btn"
-                                class="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-                                disabled
+                    <!-- Date Selection -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="relative z-0">
+                            <input 
+                                type="date" 
+                                name="pickup_date" 
+                                id="pickup_date" 
+                                class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
+                                required
                             >
-                                Save
-                            </button>
+                            <label for="pickup_date" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
+                                Date <span class="text-red-500">*</span>
+                            </label>
                         </div>
-                    </form>
+                        
+                        <!-- Time Selection -->
+                        <div class="relative z-30">
+                            <div class="custom-select-wrapper relative z-30">
+                                <select name="pickup_time" id="pickup_time" class="hidden-select w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" required>
+                                    <option value="">Select time...</option>
+                                    <option value="09:00-12:00">09:00 - 12:00</option>
+                                    <option value="12:00-15:00">12:00 - 15:00</option>
+                                    <option value="15:00-18:00">15:00 - 18:00</option>
+                                    <option value="18:00-21:00">18:00 - 21:00</option>
+                                </select>
+                                <div class="custom-select" data-target="pickup_time">
+                                    <div class="custom-select-trigger flex justify-between items-center h-14 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border border-gray-500 dark:border-gray-400 cursor-pointer">
+                                        <span class="selected-value">Select time...</span>
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="custom-options scrollbars hidden absolute z-50 w-full mt-1 max-h-60 overflow-auto rounded-md bg-white dark:bg-gray-800 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        <div class="options-container max-h-48 overflow-y-auto">
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="09:00-12:00">09:00 - 12:00</div>
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="12:00-15:00">12:00 - 15:00</div>
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="15:00-18:00">15:00 - 18:00</div>
+                                            <div class="option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600" data-value="18:00-21:00">18:00 - 21:00</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="pickup_time" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-40 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
+                                Time Slot <span class="text-red-500">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="flex items-center justify-end space-x-4 pt-4">
+                        <button 
+                            type="button" 
+                            id="cancel-pickup-btn"
+                            class="inline-flex items-center px-6 py-3 border border-gray-300 text-sm font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600"
+                        >
+                            Cancel
+                        </button>
+                        <button 
+                            type="submit" 
+                            class="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-primary-600 hover:bg-primary-700 focus:outline-none"
+                        >
+                            Schedule Pickup
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tabs -->
+            <div class="relative flex flex-row items-center mb-6">
+                <a 
+                    href="?"
+                    class="w-1/4 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab if not request.GET.status  active endif "
+                >
+                    <span class="text-sm tracking-[.00714em] font-medium">
+                        All
+                    </span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">(0)</span>
+                </a>
+
+                <a 
+                    href="? update_querystring_param request field='status' value='processing"
+                    class="w-1/4 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab if request.GET.status == 'processing active endif "
+                >
+                    <span class="text-sm tracking-[.00714em] font-medium">
+                        Processing
+                    </span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">(0)</span>
+                </a>
+
+                <a 
+                    href="? update_querystring_param request field='status' value='completed"
+                    class="w-1/4 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab if request.GET.status == 'completed active endif "
+                >
+                    <span class="text-sm tracking-[.00714em] font-medium">
+                        Completed
+                    </span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">(0)</span>
+                </a>
+
+                <a 
+                    href="? update_querystring_param request field='status' value='canceled"
+                    class="w-1/4 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab if request.GET.status == 'canceled active endif "
+                >
+                    <span class="text-sm tracking-[.00714em] font-medium">
+                        Canceled
+                    </span>
+                    <span class="text-xs text-gray-500 dark:text-gray-400">(0)</span>
+                </a>
+
+                <div 
+                    id="indicator" 
+                    data-type="indicator"
+                    class="absolute left-0 bottom-0 transition-all duration-200 ease-in-out bg-primary-600 dark:bg-primary-200 w-1/4 sm:w-[120px] h-0.5 rounded-t-full"
+                    style="left: 0px;"
+                ></div>
+            </div>
+
+            <!-- Pickups List -->
+            <div class="grid grid-cols-1 sm:gap-4 md:gap-6">
+                <!-- card -->
+                <div class="px-6 py-8 flex flex-col rounded-xl bg-white dark:bg-gray-900">
+                    <div class="relative">
+                        <!-- pickups table -->
+                        <table class="table-bordered-bottom table-hover text-left">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Address</th>
+                                    <th>Carrier</th>
+                                    <th>Status</th>
+                                    <th>Confirmation number</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Empty State -->
+                                <tr>
+                                    <td colspan="6" class="text-center py-12">
+                                        <div class="flex flex-col items-center justify-center text-gray-500 dark:text-gray-400">
+                                            <span class="material-symbols-outlined text-6xl mb-4 opacity-50">
+                                                inventory_2
+                                            </span>
+                                            <p class="text-lg font-medium mb-2">There are no records to show</p>
+                                            <p class="text-sm">Schedule your first pickup to get started</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-
     </main>
 
     <!-- Footer -->
@@ -655,209 +642,18 @@
 
     <!-- JavaScript Libraries -->
     <!-- Charts js -->
-    <script src="../../vendors/chart.js/dist/chart.umd.js"></script>
+    <script src="../vendors/chart.js/dist/chart.umd.js"></script>
     <!-- Chart config -->
-    <script src="../../src/js/charts/analytics.js"></script>
+    <script src="../src/js/charts/analytics.js"></script>
 
     <!-- Vendor -->
-    <script src="../../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
-    <script src="../../vendors/jsvectormap/dist/maps/world.js"></script>
+    <script src="../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
+    <script src="../vendors/jsvectormap/dist/maps/world.js"></script>
     <!-- Vendor Configuration -->
-    <script src="../../src/js/vendor.js"></script>
+    <script src="../src/js/vendor.js"></script>
 
     <!-- Tailmater javascript -->
-    <script src="../../src/js/tailmater.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize custom select for role field
-            initializeCustomSelect('role');
-            
-            function initializeCustomSelect(selectId) {
-                const hiddenSelect = document.getElementById(selectId);
-                const customSelect = document.querySelector(`.custom-select[data-target="${selectId}"]`);
-                const trigger = customSelect.querySelector('.custom-select-trigger');
-                const optionsContainer = customSelect.querySelector('.options-container');
-                const selectedValue = trigger.querySelector('.selected-value');
-                
-                // Populate options
-                function populateOptions() {
-                    optionsContainer.innerHTML = '';
-                    const options = Array.from(hiddenSelect.options);
-                    
-                    options.forEach(option => {
-                        const div = document.createElement('div');
-                        div.className = 'option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600';
-                        div.textContent = option.text;
-                        div.dataset.value = option.value;
-                        
-                        if (option.selected) {
-                            div.classList.add('bg-blue-100', 'dark:bg-blue-900');
-                            selectedValue.textContent = option.text;
-                        }
-                        
-                        div.addEventListener('click', function() {
-                            // Update hidden select
-                            hiddenSelect.value = option.value;
-                            
-                            // Update displayed value
-                            selectedValue.textContent = option.text;
-                            
-                            // Close dropdown
-                            customSelect.querySelector('.custom-options').classList.add('hidden');
-                            
-                            // Remove selected class from all options
-                            optionsContainer.querySelectorAll('.option-item').forEach(item => {
-                                item.classList.remove('bg-blue-100', 'dark:bg-blue-900');
-                            });
-                            
-                            // Add selected class to clicked option
-                            this.classList.add('bg-blue-100', 'dark:bg-blue-900');
-                        });
-                        
-                        optionsContainer.appendChild(div);
-                    });
-                }
-                
-                // Initial population
-                populateOptions();
-                
-                // Toggle dropdown
-                trigger.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const options = customSelect.querySelector('.custom-options');
-                    const allDropdowns = document.querySelectorAll('.custom-options');
-                    
-                    // Close all other dropdowns
-                    allDropdowns.forEach(dropdown => {
-                        if (dropdown !== options) {
-                            dropdown.classList.add('hidden');
-                        }
-                    });
-                    
-                    options.classList.toggle('hidden');
-                    
-                    if (!options.classList.contains('hidden')) {
-                        // Ensure this dropdown is on top
-                        options.style.zIndex = '9999';
-                    }
-                });
-                
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function() {
-                    document.querySelectorAll('.custom-options').forEach(options => {
-                        options.classList.add('hidden');
-                    });
-                });
-                
-                // Prevent dropdown close when clicking inside
-                customSelect.querySelector('.custom-options').addEventListener('click', function(e) {
-                    e.stopPropagation();
-                });
-            }
-
-            // Webshops toggle functionality
-            const allWebshopsCheckbox = document.getElementById('all_webshops');
-            const specificWebshops = document.getElementById('specific-webshops');
-            
-            allWebshopsCheckbox.addEventListener('change', function() {
-                if (this.checked) {
-                    specificWebshops.classList.add('hidden');
-                    // Uncheck all specific webshops
-                    document.querySelectorAll('input[name="webshops"]').forEach(checkbox => {
-                        checkbox.checked = false;
-                    });
-                } else {
-                    specificWebshops.classList.remove('hidden');
-                }
-            });
-
-            // Password validation
-            const passwordInput = document.getElementById('password');
-            const confirmPasswordInput = document.getElementById('confirm_password');
-            const submitBtn = document.getElementById('submit-btn');
-            
-            const lengthCheck = document.getElementById('length-check');
-            const lowercaseCheck = document.getElementById('lowercase-check');
-            const uppercaseCheck = document.getElementById('uppercase-check');
-            const numberCheck = document.getElementById('number-check');
-            const specialCheck = document.getElementById('special-check');
-            
-            function validatePassword() {
-                const password = passwordInput.value;
-                const confirmPassword = confirmPasswordInput.value;
-                
-                // Check individual requirements
-                const hasMinLength = password.length >= 8;
-                const hasLowercase = /[a-z]/.test(password);
-                const hasUppercase = /[A-Z]/.test(password);
-                const hasNumber = /[0-9]/.test(password);
-                const hasSpecial = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password);
-                
-                // Count how many character types are present
-                const typeCount = [hasLowercase, hasUppercase, hasNumber, hasSpecial].filter(Boolean).length;
-                const hasRequiredTypes = typeCount >= 3;
-                
-                // Update checkmarks
-                updateCheckmark(lengthCheck, hasMinLength);
-                updateCheckmark(lowercaseCheck, hasLowercase);
-                updateCheckmark(uppercaseCheck, hasUppercase);
-                updateCheckmark(numberCheck, hasNumber);
-                updateCheckmark(specialCheck, hasSpecial);
-                
-                // Check if passwords match
-                const passwordsMatch = password === confirmPassword && password !== '';
-                
-                // Enable submit button only if all requirements are met
-                const isPasswordValid = hasMinLength && hasRequiredTypes && passwordsMatch;
-                submitBtn.disabled = !isPasswordValid;
-                
-                return isPasswordValid;
-            }
-            
-            function updateCheckmark(element, isValid) {
-                if (isValid) {
-                    element.textContent = 'check_circle';
-                    element.classList.add('password-valid');
-                    element.classList.remove('password-invalid');
-                } else {
-                    element.textContent = 'radio_button_unchecked';
-                    element.classList.remove('password-valid');
-                    element.classList.add('password-invalid');
-                }
-            }
-            
-            // Add event listeners for password validation
-            passwordInput.addEventListener('input', validatePassword);
-            confirmPasswordInput.addEventListener('input', validatePassword);
-            
-            // Form validation for required fields
-            const requiredFields = document.querySelectorAll('input[required]');
-            
-            function validateForm() {
-                let allFieldsValid = true;
-                
-                requiredFields.forEach(field => {
-                    if (!field.value.trim()) {
-                        allFieldsValid = false;
-                    }
-                });
-                
-                // Also check password validation
-                const passwordValid = validatePassword();
-                
-                submitBtn.disabled = !(allFieldsValid && passwordValid);
-            }
-            
-            // Add event listeners to required fields
-            requiredFields.forEach(field => {
-                field.addEventListener('input', validateForm);
-                field.addEventListener('change', validateForm);
-            });
-            
-            // Initial validation
-            validateForm();
-        });
-    </script>
+    <script src="../src/js/tailmater.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Dropdown functionality
@@ -943,8 +739,149 @@
             });
         });
     </script>
+    <!-- Javeascript for this page -->
+     <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize custom selects
+    initializeCustomSelect('carrier');
+    initializeCustomSelect('address');
+    initializeCustomSelect('pickup_time');
+    
+    function initializeCustomSelect(selectId) {
+        const hiddenSelect = document.getElementById(selectId);
+        const customSelect = document.querySelector(`.custom-select[data-target="${selectId}"]`);
+        const trigger = customSelect.querySelector('.custom-select-trigger');
+        const optionsContainer = customSelect.querySelector('.options-container');
+        const selectedValue = trigger.querySelector('.selected-value');
+        
+        // Populate options
+        function populateOptions() {
+            optionsContainer.innerHTML = '';
+            const options = Array.from(hiddenSelect.options);
+            
+            options.forEach(option => {
+                const div = document.createElement('div');
+                div.className = 'option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600';
+                div.textContent = option.text;
+                div.dataset.value = option.value;
+                
+                if (option.selected) {
+                    div.classList.add('bg-blue-100', 'dark:bg-blue-900');
+                    selectedValue.textContent = option.text;
+                }
+                
+                div.addEventListener('click', function() {
+                    // Update hidden select
+                    hiddenSelect.value = option.value;
+                    
+                    // Update displayed value
+                    selectedValue.textContent = option.text;
+                    
+                    // Close dropdown
+                    customSelect.querySelector('.custom-options').classList.add('hidden');
+                    
+                    // Remove selected class from all options
+                    optionsContainer.querySelectorAll('.option-item').forEach(item => {
+                        item.classList.remove('bg-blue-100', 'dark:bg-blue-900');
+                    });
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('bg-blue-100', 'dark:bg-blue-900');
+                });
+                
+                optionsContainer.appendChild(div);
+            });
+        }
+        
+        // Initial population
+        populateOptions();
+        
+        // Toggle dropdown
+        trigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const options = customSelect.querySelector('.custom-options');
+            const allDropdowns = document.querySelectorAll('.custom-options');
+            
+            // Close all other dropdowns
+            allDropdowns.forEach(dropdown => {
+                if (dropdown !== options) {
+                    dropdown.classList.add('hidden');
+                }
+            });
+            
+            options.classList.toggle('hidden');
+            
+            if (!options.classList.contains('hidden')) {
+                // Ensure this dropdown is on top
+                options.style.zIndex = '9999';
+            }
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function() {
+            document.querySelectorAll('.custom-options').forEach(options => {
+                options.classList.add('hidden');
+            });
+        });
+        
+        // Prevent dropdown close when clicking inside
+        customSelect.querySelector('.custom-options').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+
+    // Create pickup form toggle
+    const createPickupBtn = document.getElementById('create-pickup-btn');
+    const createPickupForm = document.getElementById('create-pickup-form');
+    const cancelPickupBtn = document.getElementById('cancel-pickup-btn');
+    
+    createPickupBtn.addEventListener('click', function() {
+        createPickupForm.classList.remove('hidden');
+        createPickupBtn.classList.add('hidden');
+    });
+    
+    cancelPickupBtn.addEventListener('click', function() {
+        createPickupForm.classList.add('hidden');
+        createPickupBtn.classList.remove('hidden');
+    });
+
+    // Tab indicator functionality
+    const tabs = document.querySelectorAll('.tab');
+    const indicator = document.getElementById('indicator');
+
+    function setIndicatorPosition() {
+        const activeTab = document.querySelector('.tab.active') || tabs[0];
+        const tabRect = activeTab.getBoundingClientRect();
+        const containerRect = indicator.parentElement.getBoundingClientRect();
+
+        const tabOffset = tabRect.left - containerRect.left;
+        const tabWidth = tabRect.width;
+
+        indicator.style.width = `${tabWidth}px`;
+        indicator.style.transform = `translateX(${tabOffset}px)`;
+    }
+
+    // Set initial position
+    setIndicatorPosition();
+
+    // Update indicator position on tab click
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function(e) {
+            e.preventDefault();
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            setIndicatorPosition();
+        });
+    });
+
+    // Adjust indicator position on window resize
+    window.addEventListener('resize', setIndicatorPosition);
+
+    // Set default date to today
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById('pickup_date').value = today;
+});
+</script>
 </body>
 
 </html>
-
-
