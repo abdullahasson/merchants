@@ -439,122 +439,195 @@
             </div>
         </aside>
 
-        <!-- Main Content Area -->
-        <div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
+        <!-- Replace the main content section with this clean layout -->
+<div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
 
-            <!-- Page Header -->
-            <div class="flex flex-row justify-between items-center pt-2 pb-6">
-                <h2 class="text-title-lg">Dashboard</h2>
+    <!-- Page Header -->
+    <div class="flex flex-row justify-between items-center pt-2 pb-6">
+        <div>
+            <h2 class="text-title-lg mb-1">Dashboard Overview</h2>
+            <p class="text-gray-600 dark:text-gray-400">Summary of your store performance</p>
+        </div>
+        <div class="text-right">
+            <p class="text-sm text-gray-500 dark:text-gray-400">Updated just now</p>
+        </div>
+    </div>
+
+    <!-- Main Grid Layout -->
+    <div class="grid grid-cols-1 xl:grid-cols-4 gap-6">
+
+        <!-- Left Column - Key Metrics -->
+        <div class="xl:col-span-3">
+            <!-- Stats in Clean Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <!-- Total Orders -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-title-md font-medium">Total Orders</h3>
+                        <span class="material-symbols-outlined text-gray-400">shopping_bag</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <span class="text-display-lg font-bold">8</span>
+                        <div class="text-right">
+                            <div class="text-green-600 dark:text-green-400 text-sm">+12%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Orders -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-title-md font-medium">Pending</h3>
+                        <span class="material-symbols-outlined text-gray-400">pending_actions</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <span class="text-display-lg font-bold">8</span>
+                        <div class="text-right">
+                            <div class="text-orange-600 dark:text-orange-400 text-sm">Action needed</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- In Transit -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-title-md font-medium">In Transit</h3>
+                        <span class="material-symbols-outlined text-gray-400">local_shipping</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <span class="text-display-lg font-bold">0</span>
+                        <div class="text-right">
+                            <div class="text-gray-500 dark:text-gray-400 text-sm">No shipments</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Total COD -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                    <div class="flex items-start justify-between mb-3">
+                        <h3 class="text-title-md font-medium">Total COD</h3>
+                        <span class="material-symbols-outlined text-gray-400">payments</span>
+                    </div>
+                    <div class="flex items-end justify-between">
+                        <span class="text-display-lg font-bold">$2,450</span>
+                        <div class="text-right">
+                            <div class="text-green-600 dark:text-green-400 text-sm">+8%</div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!-- Stats Cards -->
-            <div class="max-sm:flex gap-4 sm:grid sm:grid-cols-2 md:grid-cols-4 md:gap-6 mb-4 md:mb-6">
-                <div
-                    class="max-sm:w-60 max-sm:flex-shrink-0 flex flex-col justify-between rounded-xl bg-white dark:bg-gray-900 overflow-hidden">
-                    <div class="flex flex-col gap-2 py-8 px-6 relative">
-                        <div class="flex flex-row justify-between items-center">
-                            <h3 class="text-title-md text-gray-800 dark:text-gray-200">Total orders</h3>
-                        </div>
-                        <h4 class="text-display-sm text-gray-800 dark:text-gray-200">8</h4>
-                        <div
-                            class="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-                            shopping_bag</div>
-                    </div>
+            <!-- Recent Activity Section -->
+            <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 mb-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-title-lg font-semibold">Recent Activity</h3>
+                    <a href="#" class="text-gray-600 dark:text-gray-400 text-sm hover:text-gray-800 dark:hover:text-gray-200">View All</a>
                 </div>
-                <div
-                    class="max-sm:w-60 max-sm:flex-shrink-0 flex flex-col justify-between rounded-xl bg-white dark:bg-gray-900 overflow-hidden">
-                    <div class="flex flex-col gap-2 py-8 px-6 relative">
-                        <div class="flex flex-row justify-between items-center">
-                            <h3 class="text-title-md text-gray-800 dark:text-gray-200">Pending orders</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+                                <span class="material-symbols-outlined text-gray-600 dark:text-gray-400 text-sm">shopping_bag</span>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium">New order received</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Order #ORD-7842</p>
+                            </div>
                         </div>
-                        <h4 class="text-display-sm text-gray-800 dark:text-gray-200">8</h4>
-                        <div
-                            class="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-                            pending_actions</div>
-                    </div>
-                </div>
-                <div
-                    class="max-sm:w-60 max-sm:flex-shrink-0 flex flex-col justify-between rounded-xl bg-white dark:bg-gray-900 overflow-hidden">
-                    <div class="flex flex-col gap-2 py-8 px-6 relative">
-                        <div class="flex flex-row justify-between items-center">
-                            <h3 class="text-title-md text-gray-800 dark:text-gray-200">Shipment in transit</h3>
+                        <div class="text-right">
+                            <p class="text-sm font-medium">$149.99</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400">2 hours ago</p>
                         </div>
-                        <h4 class="text-display-sm text-gray-800 dark:text-gray-200">0</h4>
-                        <div
-                            class="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-                            local_shipping</div>
                     </div>
-                </div>
-                <div
-                    class="max-sm:w-60 max-sm:flex-shrink-0 flex flex-col justify-between rounded-xl bg-white dark:bg-gray-900 overflow-hidden">
-                    <div class="flex flex-col gap-2 py-8 px-6 relative">
-                        <div class="flex flex-row justify-between items-center">
-                            <h3 class="text-title-md text-gray-800 dark:text-gray-200">Total COD</h3>
-                        </div>
-                        <h4 class="text-display-sm text-gray-800 dark:text-gray-200">TODO</h4>
-                        <div
-                            class="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-                            payments</div>
-                    </div>
+                    <!-- Add more activity items -->
                 </div>
             </div>
 
-            <!-- Quick Action Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-4 md:mb-6">
-                <div
-                    class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-10 px-6 rounded-xl max-sm:w-full">
-                    <div class="flex flex-col relative">
-                        <h3 class="text-title-lg">Step 1</h3>
-                        <p class="text-body-lg">Connect Store</p>
-                        <div
-                            class="absolute right-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-                            store</div>
-                    </div>
-                    <a href="/en/sales-channels/"
-                        class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200"><span
-                            class="material-symbols-outlined">arrow_forward</span></a>
-                </div>
-                <div
-                    class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-10 px-6 rounded-xl max-sm:w-full">
-                    <div class="flex flex-col relative">
-                        <h3 class="text-title-lg">Step 2</h3>
-                        <p class="text-body-lg">Connect Courier</p>
-                        <div
-                            class="absolute right-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-                            Local_Shipping</div>
-                    </div>
-                    <a href="/en/carriers/carriers/"
-                        class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200"><span
-                            class="material-symbols-outlined">arrow_forward</span></a>
-                </div>
-                <div
-                    class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-10 px-6 rounded-xl max-sm:w-full">
-                    <div class="flex flex-col relative">
-                        <h3 class="text-title-lg">Step 3</h3>
-                        <p class="text-body-lg">Create Order</p>
-                        <div
-                            class="absolute right-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-                            orders</div>
-                    </div>
-                    <a href="/en/orders/orders/"
-                        class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200"><span
-                            class="material-symbols-outlined">arrow_forward</span></a>
-                </div>
-                <div
-                    class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-10 px-6 rounded-xl max-sm:w-full">
-                    <div class="flex flex-col relative">
-                        <h3 class="text-title-lg">Step 4</h3>
-                        <p class="text-body-lg">Track a shipment</p>
-                        <div
-                            class="absolute right-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-                            package</div>
-                    </div>
-                    <a href="/en/shipments/shipments/"
-                        class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200"><span
-                            class="material-symbols-outlined">arrow_forward</span></a>
+            <!-- Performance Chart Area -->
+            <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                <h3 class="text-title-lg font-semibold mb-6">Order Trends</h3>
+                <div class="h-48 flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg">
+                    <p class="text-gray-500 dark:text-gray-400">Chart visualization would appear here</p>
                 </div>
             </div>
         </div>
+
+        <!-- Right Column - Setup Guide -->
+        <div class="xl:col-span-1">
+            <!-- Setup Progress -->
+            <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 mb-6">
+                <h3 class="text-title-lg font-semibold mb-6">Setup Guide</h3>
+                <div class="space-y-4">
+                    <!-- Step 1 -->
+                    <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-medium text-sm">Connect Store</h4>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Step 1</span>
+                        </div>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Link your e-commerce platform</p>
+                        <a href="/en/sales-channels/" class="w-full btn-outline text-center py-2 text-sm">
+                            Connect
+                        </a>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-medium text-sm">Connect Courier</h4>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Step 2</span>
+                        </div>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Set up shipping providers</p>
+                        <a href="/en/carriers/carriers/" class="w-full btn-outline text-center py-2 text-sm">
+                            Connect
+                        </a>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-medium text-sm">Create Order</h4>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Step 3</span>
+                        </div>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Start managing orders</p>
+                        <a href="/en/orders/orders/" class="w-full btn-outline text-center py-2 text-sm">
+                            Create
+                        </a>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-medium text-sm">Track Shipment</h4>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Step 4</span>
+                        </div>
+                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Monitor delivery status</p>
+                        <a href="/en/shipments/shipments/" class="w-full btn-outline text-center py-2 text-sm">
+                            Track
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                <h3 class="text-title-lg font-semibold mb-4">Quick Stats</h3>
+                <div class="space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Completion Rate</span>
+                        <span class="font-semibold">85%</span>
+                    </div>
+                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-gray-600 dark:bg-gray-400 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-600 dark:text-gray-400">Avg. Response</span>
+                        <span class="font-semibold">2.1s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     </main>
 
     <!-- Footer -->

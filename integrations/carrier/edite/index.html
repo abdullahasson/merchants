@@ -1,0 +1,1003 @@
+<!-- Layout for logged in merchants -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Shpd Dashboard</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" id="stylesheet" href="../../../src/css/style.css">
+    <link rel="stylesheet" id="color" href="../../../src/css/colors.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../../../src/img/favicon.png">
+
+    <style>
+        /* Enhanced Carrier Selection Styles */
+        .carrier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .carrier-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dark .carrier-card {
+            border-color: #4b5563;
+            background: #1f2937;
+        }
+
+        .carrier-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .carrier-card.active {
+            border-color: #0ea5e9;
+            background-color: rgba(14, 165, 233, 0.05);
+        }
+
+        .dark .carrier-card.active {
+            border-color: #bae6fd;
+            background-color: rgba(186, 230, 253, 0.05);
+        }
+
+        .carrier-logo {
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            background: white;
+            padding: 4px;
+        }
+
+        .dark .carrier-logo {
+            background: #374151;
+        }
+
+        .carrier-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 0.875rem;
+        }
+
+        .carrier-status {
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .dark .status-active {
+            background-color: #166534;
+            color: #dcfce7;
+        }
+
+        .status-inactive {
+            background-color: #fef2f2;
+            color: #991b1b;
+        }
+
+        .dark .status-inactive {
+            background-color: #991b1b;
+            color: #fef2f2;
+        }
+
+        .carrier-features {
+            margin-top: 8px;
+            font-size: 0.75rem;
+            color: #6b7280;
+            line-height: 1.4;
+        }
+
+        .dark .carrier-features {
+            color: #9ca3af;
+        }
+
+        .carrier-card.active .carrier-features {
+            color: #0ea5e9;
+        }
+
+        .dark .carrier-card.active .carrier-features {
+            color: #bae6fd;
+        }
+
+        .carrier-checkmark {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 20px;
+            height: 20px;
+            background: #0ea5e9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .dark .carrier-checkmark {
+            background: #bae6fd;
+            color: #1e293b;
+        }
+
+        .carrier-card.active .carrier-checkmark {
+            opacity: 1;
+        }
+
+        .carrier-section-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #374151;
+        }
+
+        .dark .carrier-section-title {
+            color: #d1d5db;
+        }
+
+        .carrier-description {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .dark .carrier-description {
+            color: #9ca3af;
+        }
+    </style>
+</head>
+
+<body id="body-layout"
+    class="text-body-md relative font-sans font-normal text-gray-700 dark:text-gray-300 bg-surface-500 dark:bg-surfacedark-500 show">
+
+    <!-- Header Section -->
+    <header data-type="navtop"
+        class="nav-top bg-white dark:bg-gray-900 border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 lg:px-8 lg:pr-3 left-0 lg:left-72 right-0 flex flex-row items-center justify-between gap-3 z-50 transition-all duration-300 ease-in-out">
+
+        <!-- Mobile Menu Button -->
+        <button data-type="dialogs" data-target="#sidebar"
+            class="relative inline-flex lg:hidden items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+            <span class="material-symbols-outlined !text-[28px]">
+                menu
+            </span>
+        </button>
+
+        <!-- Compact Layout Toggle -->
+        <button data-type="toggle" data-target="#body-layout"
+            class="compact-btn group relative hidden !items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+            <span class="material-symbols-outlined !text-[28px] menu-close">
+                menu_open
+            </span>
+            <span class="material-symbols-outlined !text-[28px] menu-open">
+                menu
+            </span>
+        </button>
+
+        <!-- Search Bar -->
+        <div class="relative w-full hidden md:block"></div>
+
+        <!-- Right Navigation -->
+        <div class="flex flex-row items-center gap-3 ml-auto md:ml-12">
+
+            <!-- Add Button Dropdown -->
+            <div class="relative">
+                <button data-type="dropdown" data-target="#adddropdown"
+                    class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                    <span aria-label="Add" data-microtip-position="bottom" role="tooltip"
+                        class="material-symbols-outlined !text-[28px] pointer-events-none">
+                        add
+                    </span>
+                </button>
+
+                <!-- Dropdown Menu -->
+                <ul id="adddropdown" data-type="dropdownmenu"
+                    class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-[3.1rem] z-30 transition duration-400 ease-in-out left-auto right-0 transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10">
+                    <li class="relative">
+                        <a href="#"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                            New Order
+                        </a>
+                    </li>
+                    <li class="relative">
+                        <a href="#"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                            New Shipment
+                        </a>
+                    </li>
+                    <li class="relative">
+                        <a href="#"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                            Connect Courier
+                        </a>
+                    </li>
+                    <li class="relative">
+                        <a href="#"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+                            Connect Sales Channel
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Balance Display -->
+            <div class="relative">
+                <a href="#">
+                    <button
+                        class="btn relative flex flex-col items-center justify-center w-24 h-12 p-2.5 rounded-[6.25rem] bg-white text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:bg-gray-900 dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                        <span class="text-sm text-neutral-900 dark:text-neutral-100 leading-tight">
+                            Balance
+                        </span>
+                        <span class="text-xs text-green-600 dark:text-green-400 leading-tight">
+                            17466.99 ج.م
+                        </span>
+                    </button>
+                </a>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div class="relative">
+                <button id="theme-toggle"
+                    class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                    <span id="theme-icon" class="material-symbols-outlined !text-[28px] pointer-events-none">
+                        light_mode
+                    </span>
+                </button>
+            </div>
+
+            <!-- Language Selector -->
+            <div class="relative">
+                <button data-type="dropdown" data-target="#dropdown0"
+                    class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                    <span aria-label="Languages" data-microtip-position="bottom" role="tooltip"
+                        class="material-symbols-outlined !text-[28px] pointer-events-none">
+                        translate
+                    </span>
+                </button>
+
+                <!-- Language Menu -->
+                <ul id="dropdown0" data-type="dropdownmenu"
+                    class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-[3.1rem] z-30 transition duration-400 ease-in-out left-auto right-0 transform translate-x-1/3 min-w-[150px] inline-flex flex-col py-2 rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10">
+                    <li class="relative">
+                        <a href="/"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200">
+                            <img src="/merchants/src/img/flags/US.svg" class="h-4" alt="English">
+                            English
+                        </a>
+                    </li>
+                    <li class="relative">
+                        <a href="/ar/users/index.html"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200">
+                            <img src="/merchants/src/img/flags/SA.svg" class="h-4" alt="Arabic">
+                            العربية
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- User Profile Menu -->
+            <div class="relative">
+                <button data-type="dropdown" data-target="#dropdown1"
+                    class="btn w-12 h-12 gap-x-2 py-2.5 flex items-center gap-2 justify-center rounded-full text-sm tracking-[0.15px]">
+                    <img src="/merchants/src/img/avatar.png" alt="ari budin"
+                        class="w-10 h-10 flex-none rounded-full bg-primary-600 dark:bg-primary-200">
+                </button>
+
+                <!-- Profile Dropdown -->
+                <ul id="dropdown1" data-type="dropdownmenu"
+                    class="[&amp;.show]:!opacity-100 [&amp;.show]:!visible opacity-0 invisible absolute top-[3.1rem] z-30 transition duration-400 ease-in-out left-auto right-0 min-w-[200px] inline-flex flex-col py-2 rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10 max-sm:fixed max-sm:mt-3 max-sm:left-4 max-sm:right-4">
+                    <li class="relative">
+                        <a href="/en/users/edit-profile/"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200">
+                            <span class="material-symbols-outlined">
+                                person
+                            </span>
+
+                            Profile
+                        </a>
+                    </li>
+                    <li class="relative">
+                        <a href="#"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200">
+                            <span class="material-symbols-outlined">
+                                settings
+                            </span>
+
+                            Settings
+                        </a>
+                    </li>
+                    <li class="relative">
+                        <a href="/en/users/support/"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200">
+                            <span class="material-symbols-outlined">
+                                help_center
+                            </span>
+
+                            Support
+                        </a>
+                    </li>
+                    <li class="relative border-t border-gray-100 dark:border-gray-800">
+                        <a href="/en/users/logout/"
+                            class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200">
+                            <span class="material-symbols-outlined">
+                                power_settings_new
+                            </span>
+
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main class="lg:flex">
+        <!-- Sidebar -->
+        <aside 
+            id="sidebar"
+            class="sidebar bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-500 ease-in-out fixed max-lg:z-[60] lg:shrink-0 lg:relative lg:w-72 h-screen max-lg:[&amp;.show_.sidebar-bg]:opacity-60 dark:max-lg:[&amp;.show_.sidebar-bg]:opacity-60 [&amp;.show_.sidebar-bg]:inset-0 [&amp;.show_.sidebar-content]:translate-x-0"
+        >
+            <!-- Sidebar Content -->
+            <div 
+                id="sidebar-content"
+                class="sidebar-content bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 left-0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars"
+            >
+                <!-- Logo -->
+                <a 
+                    href="/merchants/users/index.html"
+                    class="sidebar-logo py-[11.3px] border-b border-gray-300 pl-6 flex items-center w-full"
+                >
+                    <img 
+                        src="/merchants/src/img/logo-light-ltr.png" 
+                        alt="logo-light" 
+                        class="h-10 w-auto dark:hidden">
+                    <img 
+                        src="/merchants/src/img/logo-dark-ltr.png" 
+                        alt="logo-dark" 
+                        class="h-10 w-auto hidden dark:block"
+                    >
+                </a>
+
+                <!-- Navigation Menu -->
+                <div class="w-full inline-flex flex-col px-3 pb-3">
+                    <!-- Home Section -->
+                    <div class="pt-6 pb-2 px-4 compact-hide">
+                        <p class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400">Home</p>
+                    </div>
+                    <ul class="sidebar-menu flex flex-col">
+                        <!-- Dashboard -->
+                        <li class="relative">
+                            <a 
+                                href="/merchants/users/index.html"
+                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                            >
+                                <span 
+                                    class="material-symbols-outlined"
+                                >
+                                    house
+                                </span>
+                                <span 
+                                    class="compact-title"
+                                >
+                                    Dashboard
+                                </span>
+                            </a>
+                        </li>
+
+                        <!-- Orders Submenu -->
+                        <li class="relative">
+                            <a 
+                                href="javascript:void(0)" 
+                                data-type="collapse" 
+                                data-target="#dashboard6"
+                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                >
+                                    orders
+                                </span>
+                                <span
+                                    class="compact-title"
+                                >
+                                    Orders
+                                </span>
+                            </a>
+                            <ul 
+                                id="dashboard6" 
+                                data-type="collapsed"
+                                class="sidebar-submenu [&amp;.active]:block hidden"
+                            >
+                                <li>
+                                    <a 
+                                        href="/merchants/orders/orders/index.html"
+                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                                    >
+                                        All Orders
+                                    </a>
+                                </li>
+                                <li>
+                                    <a 
+                                        href="/merchants/orders/links/index.html"
+                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                                    >
+                                        Checkout Links
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Shipments Submenu -->
+                        <li class="relative">
+                            <a 
+                                href="/merchants/shipments/shipments/index.html"
+                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                            >
+                                <span 
+                                    class="material-symbols-outlined"
+                                >
+                                    package_2
+                                </span>
+                                <span 
+                                    class="compact-title"
+                                >
+                                    Shipments
+                                </span>
+                            </a>
+                        </li>
+
+                        <!-- Finance Submenu -->
+                        <li class="relative">
+                            <a 
+                                href="javascript:void(0)" 
+                                data-type="collapse" 
+                                data-target="#dashboard1"
+                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                >
+                                    savings
+                                </span>
+                                <span
+                                    class="compact-title"
+                                >   
+                                    Finance
+                                </span>
+                            </a>
+                            <ul 
+                                id="dashboard1" 
+                                data-type="collapsed"
+                                class="sidebar-submenu [&amp;.active]:block hidden"
+                            >
+                                <li>
+                                    <a 
+                                        href="/merchants/finance/rates/index.html"
+                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                                    >
+                                        Shipment Rate
+                                    </a>
+                                </li>
+                                <li>
+                                    <a 
+                                        href="/merchants/finance/cod/index.html"
+                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                                    >
+                                        COD
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <!-- Settings Section -->
+                    <div class="pt-6 pb-2 px-4 compact-hide">
+                        <p class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400">Settings</p>
+                    </div>
+                    <ul class="sidebar-menu flex flex-col">
+                        <!-- Integrations Submenu -->
+                        <li class="relative">
+                            <a 
+                                href="javascript:void(0)" 
+                                data-type="collapse" 
+                                data-target="#dashboard2"
+                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                >
+                                    integration_instructions
+                                </span>
+                                <span
+                                    class="compact-title"
+                                >
+                                    Integrations
+                                </span>
+                            </a>
+                            <ul 
+                                id="dashboard2" 
+                                data-type="collapsed"
+                                class="sidebar-submenu [&amp;.active]:block hidden"
+                            >
+                                <li>
+                                    <a 
+                                        href="/merchants/integrations/sales-channels/index.html"
+                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                                    >
+                                        Sales channels
+                                    </a>
+                                </li>
+                                <li>
+                                    <a 
+                                        href="/merchants/integrations/carrier/index.html"
+                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                                    >
+                                        Carrier connections
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Shipping Submenu -->
+                        <li class="relative">
+                            <a 
+                                href="javascript:void(0)" 
+                                data-type="collapse"
+                                data-target="#dashboard3"
+                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                >
+                                    local_shipping
+                                </span>
+                                <span
+                                    class="compact-title"
+                                >
+                                    Shipping
+                                </span>
+                            </a>
+                            <ul 
+                                id="dashboard3" 
+                                data-type="collapsed"
+                                class="sidebar-submenu [&amp;.active]:block hidden"
+                            >
+                                <li>
+                                    <a 
+                                        href="/merchants/shipping/address-book/index.html"
+                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                                    >
+                                        Address Book
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Billing Submenu -->
+                        <li class="relative">
+                            <a 
+                                href="javascript:void(0)" 
+                                data-type="collapse" 
+                                data-target="#dashboard4"
+                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-secondary-100 dark:[&amp;.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                            >
+                                <span
+                                    class="material-symbols-outlined"
+                                >
+                                    wallet
+                                </span>
+                                <span
+                                    class="compact-title"
+                                >
+                                    Billing
+                                </span>
+                            </a>
+                            <ul 
+                                id="dashboard4" 
+                                data-type="collapsed"
+                                class="sidebar-submenu [&amp;.active]:block hidden"
+                            >
+                                <li>
+                                    <a 
+                                        href="/merchants/billing/plans/index.html"
+                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                                    >
+                                        Plans
+                                    </a>
+                                </li>
+                                <li>
+                                    <a 
+                                        href="/merchants/billing/payment-methods/"
+                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&amp;.active]:text-gray-900 dark:[&amp;.active]:text-gray-100 [&amp;.active]:bg-primary-600/[0.08] dark:[&amp;.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                                    >
+                                        Payment Methods
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- content -->
+        <div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
+            <!-- heading -->
+            <div class="flex flex-row justify-between items-center pt-2 pb-6">
+                <h2 class="text-title-lg">
+                    Edit Carrier
+                </h2>
+            </div>
+
+            <!-- content 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-4 md:mb-6">
+                <div class="md:col-span-2 flex flex-col gap-6">
+                    <!-- card -->
+                    <div
+                        class="p-6 bg-white dark:bg-gray-900 rounded-xl shadow-lg shadow-cyan-100/10 dark:shadow-cyan-700/10 h-full">
+                        <div class="relative">
+                            <!-- tabs -->
+                            <div class="tabs flex flex-col w-full">
+                                <!-- tabs header -->
+                                <div class="relative flex flex-row items-center">
+
+                                    <button data-type="tabs" data-target="#tab-1"
+                                        class="border-primary-600 dark:border-primary-200 border-b-2 active tab w-1/3 sm:w-[120px] h-16 px-4 flex justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100">
+                                        <span class="material-symbols-outlined">edit</span>
+                                        <span class="text-sm tracking-[.00714em]">General</span>
+                                    </button>
+
+                                    <button data-type="tabs" data-target="#tab-2"
+                                        class="border-primary-600 dark:border-primary-200  tab w-1/3 sm:w-[120px] h-16 px-4 flex justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100">
+                                        <span class="material-symbols-outlined">lock</span>
+                                        <span class="text-sm tracking-[.00714em]">Credentials</span>
+                                    </button>
+
+                                    <!-- indicator -->
+                                </div>
+
+                                <hr class="border-gray-200 dark:border-gray-700">
+
+                                <!-- tabs content -->
+                                <div class="flex flex-col mt-4">
+                                    <form 
+                                        action="" 
+                                        method="POST"
+                                    >
+                                        <input 
+                                            type="hidden" 
+                                            name="csrfmiddlewaretoken"
+                                            value="W07u5uIElXzMzJ9ppLRiynUOQFoO1HgDaoUqZetDd9sgXnGPOYjNFVm1xgQGPO0h"
+                                        >
+                                            <div 
+                                                id="tab-1" 
+                                                role="tabpanel"
+                                                class="active [&amp;.active]:block hidden py-4 transition duration-400 ease-in-out"
+                                            >
+                                                <div class="flex flex-col gap-6">
+                                                    <!-- Carrier Selection Section -->
+                                                    <div>
+                                                        <p class="carrier-section-title">
+                                                            {% trans 'Select Carrier' %}
+                                                        </p>
+
+                                                        <p class="carrier-description">
+                                                            {% trans 'Choose your preferred shipping carrier from the options below.' %}
+                                                        </p>
+                                                        
+                                                        <!-- Carrier Cards Grid -->
+                                                        <div 
+                                                            class="carrier-grid" 
+                                                            id="carrierGrid"
+                                                        >
+                                                            <!-- Carrier cards will be populated by JavaScript -->
+                                                        </div>
+                                                        
+                                                        <!-- Hidden input to store selected carrier -->
+                                                        <input 
+                                                            type="hidden" 
+                                                            name="carrier_name" 
+                                                            id="carrier_name" 
+                                                            value="smsa"
+                                                        >
+                                                    </div>
+                                                    
+                                                    <div class="relative z-0">
+                                                        <p class="mb-2">Is active</p>
+
+                                                        <div class="toggle-switch relative inline-flex w-[52px] h-8">
+                                                            <input 
+                                                                id="is_active" 
+                                                                name="is_active"
+                                                                class="toggle-checkbox hidden" 
+                                                                type="checkbox" 
+                                                                checked
+                                                            >
+
+                                                            <label for="is_active"
+                                                                class="toggle-icon relative block w-12 h-8 rounded-full transition-color duration-150 ease-out">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div id="tab-2" role="tabpanel"
+                                                class="[&amp;.active]:block hidden py-4 transition duration-400 ease-in-out">
+                                                <div class="flex flex-col gap-6">
+                                                    <!-- input api_key -->
+                                                    <div class="relative z-0">
+                                                        <input type="text" aria-label="api_key" name="api_key" id="api_key"
+                                                            class="w-full h-12 block leading-5 relative py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 overflow-x-auto focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400 dark:focus:border-primary-200 peer"
+                                                            placeholder=" " value="">
+
+                                                        <label for="api_key"
+                                                            class="absolute tracking-[.03125em] text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-6 scale-75 top-3 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:bg-neutral-10 dark:peer-focus:bg-neutral-900 peer-focus:px-1 peer-invalid:text-error-600 dark:peer-invalid:text-error-200">API
+                                                            Key</label>
+                                                    </div>
+
+                                                    <!-- input username -->
+                                                    <div class="relative z-0">
+                                                        <input type="text" aria-label="username" name="username"
+                                                            id="username"
+                                                            class="w-full h-12 block leading-5 relative py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 overflow-x-auto focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400 dark:focus:border-primary-200 peer"
+                                                            placeholder=" " value="">
+
+                                                        <label for="username"
+                                                            class="absolute tracking-[.03125em] text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-6 scale-75 top-3 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:bg-neutral-10 dark:peer-focus:bg-neutral-900 peer-focus:px-1 peer-invalid:text-error-600 dark:peer-invalid:text-error-200">Username</label>
+                                                    </div>
+
+                                                    <!-- input password -->
+                                                    <div class="relative z-0">
+                                                        <input type="text" aria-label="password" name="password"
+                                                            id="password"
+                                                            class="w-full h-12 block leading-5 relative py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 overflow-x-auto focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400 dark:focus:border-primary-200 peer"
+                                                            placeholder=" " value="">
+
+                                                        <label for="password"
+                                                            class="absolute tracking-[.03125em] text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-6 scale-75 top-3 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:bg-neutral-10 dark:peer-focus:bg-neutral-900 peer-focus:px-1 peer-invalid:text-error-600 dark:peer-invalid:text-error-200">Password</label>
+                                                    </div>
+
+                                                    <div class="relative">
+                                                        <p class="text-xs text-pink-500 mb-2"><b>Warning:</b> Double check
+                                                            your credentials for carrier integrations</p>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="relative flex justify-end pt-4">
+                                                <button type="submit"
+                                                    class="btn relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
+                                                    <span class="material-symbols-outlined">save</span>
+                                                    Edit carrier
+                                                </button>
+                                            </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer absolute px-4 lg:px-8 lg:pl-3 left-0 lg:left-72 bottom-0 right-0 border-t border-gray-300">
+        <div class="text-center py-6">
+            <p>
+                <script>document.write(new Date().getFullYear())</script> GoZagel - All rights reserved
+            </p>
+        </div>
+    </footer>
+
+    <!-- Carrier Selection Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Carrier data with logos
+            const carriers = [
+                {
+                    id: 'fedex',
+                    name: 'FedEx',
+                    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/FedEx_Express_2016_logo.svg/320px-FedEx_Express_2016_logo.svg.png',
+                    status: 'inactive',
+                    features: 'Express shipping worldwide'
+                },
+                {
+                    id: 'aramex',
+                    name: 'Aramex',
+                    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Aramex_logo.svg/320px-Aramex_logo.svg.png',
+                    status: 'inactive',
+                    features: 'Middle East specialist'
+                },
+                {
+                    id: 'smsa',
+                    name: 'SMSA',
+                    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/SMSA_Express_logo.svg/320px-SMSA_Express_logo.svg.png',
+                    status: 'active',
+                    features: 'Saudi Arabia coverage'
+                },
+                {
+                    id: 'jnt',
+                    name: 'J&T Express',
+                    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/J%26T_Express_logo.svg/320px-J%26T_Express_logo.svg.png',
+                    status: 'inactive',
+                    features: 'Fast Asian delivery'
+                },
+                {
+                    id: 'ups',
+                    name: 'UPS',
+                    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/United_Parcel_Service_logo_2014.svg/320px-United_Parcel_Service_logo_2014.svg.png',
+                    status: 'inactive',
+                    features: 'Global logistics'
+                },
+                {
+                    id: 'dhl',
+                    name: 'DHL',
+                    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/DHL_Logo.svg/320px-DHL_Logo.svg.png',
+                    status: 'inactive',
+                    features: 'International express'
+                }
+            ];
+
+            // Initialize carrier grid
+            function initCarrierGrid() {
+                const carrierGrid = document.getElementById('carrierGrid');
+                const hiddenInput = document.getElementById('carrier_name');
+                
+                carrierGrid.innerHTML = '';
+                
+                carriers.forEach(carrier => {
+                    const card = document.createElement('div');
+                    card.className = `carrier-card ${carrier.id === hiddenInput.value ? 'active' : ''}`;
+                    card.dataset.id = carrier.id;
+                    
+                    card.innerHTML = `
+                        <div class="carrier-checkmark">
+                            <span class="material-symbols-outlined" style="font-size: 14px;">check</span>
+                        </div>
+                        <img src="${carrier.logo}" alt="${carrier.name}" class="carrier-logo">
+                        <div class="carrier-name">${carrier.name}</div>
+                        <div class="carrier-status ${carrier.status === 'active' ? 'status-active' : 'status-inactive'}">
+                            ${carrier.status === 'active' ? 'Active' : 'Inactive'}
+                        </div>
+                        <div class="carrier-features">${carrier.features}</div>
+                    `;
+                    
+                    card.addEventListener('click', () => selectCarrier(carrier.id));
+                    carrierGrid.appendChild(card);
+                });
+            }
+
+            // Select carrier function
+            function selectCarrier(carrierId) {
+                const hiddenInput = document.getElementById('carrier_name');
+                hiddenInput.value = carrierId;
+                
+                // Update UI
+                document.querySelectorAll('.carrier-card').forEach(card => {
+                    card.classList.remove('active');
+                });
+                
+                document.querySelector(`.carrier-card[data-id="${carrierId}"]`).classList.add('active');
+                
+                // Update the toggle based on carrier status
+                const carrier = carriers.find(c => c.id === carrierId);
+                document.getElementById('is_active').checked = carrier.status === 'active';
+            }
+
+            // Initialize the carrier grid
+            initCarrierGrid();
+            
+            // Tab switching functionality
+            const tabs = document.querySelectorAll('.tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    const targetId = this.getAttribute('data-target');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active', 'border-b-2'));
+                    this.classList.add('active', 'border-b-2');
+                    
+                    // Update active content
+                    document.querySelectorAll('[role="tabpanel"]').forEach(panel => {
+                        panel.classList.remove('active');
+                    });
+                    document.querySelector(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+
+    <!-- Active Border Tabs -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll('.tab');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(t => t.classList.remove('active', 'border-b-2'));
+                    this.classList.add('active', 'border-b-2');
+                });
+            });
+        });
+    </script>
+
+    <!-- Tailmater javascript -->
+    <script src="../../../src/js/tailmater.js"></script>
+    <script src="../../../vendors/glightbox/dist/js/glightbox.min.js"></script>
+    <!-- Vendor Configuration -->
+    <script src="../../../src/js/vendor.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const themeToggle = document.getElementById('theme-toggle');
+            const themeIcon = document.getElementById('theme-icon');
+            const htmlElement = document.documentElement;
+
+            const currentTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+            if (currentTheme === 'dark') {
+                htmlElement.classList.add('dark');
+                themeIcon.textContent = 'light_mode';
+                themeIcon.setAttribute('aria-label', 'الوضع الليلي');
+            } else {
+                htmlElement.classList.remove('dark');
+                themeIcon.textContent = 'dark_mode';
+                themeIcon.setAttribute('aria-label', 'الوضع النهاري');
+            }
+
+            themeToggle.addEventListener('click', function () {
+                if (htmlElement.classList.contains('dark')) {
+                    htmlElement.classList.remove('dark');
+                    localStorage.setItem('theme', 'light');
+                    themeIcon.textContent = 'dark_mode';
+                    themeIcon.setAttribute('aria-label', 'الوضع النهاري');
+                } else {
+                    htmlElement.classList.add('dark');
+                    localStorage.setItem('theme', 'dark');
+                    themeIcon.textContent = 'light_mode';
+                    themeIcon.setAttribute('aria-label', 'الوضع الليلي');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
