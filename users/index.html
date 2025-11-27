@@ -25,6 +25,163 @@
 <body id="body-layout"
     class="text-body-md relative font-sans font-normal text-gray-700 dark:text-gray-300 bg-surface-500 dark:bg-surfacedark-500 show">
 
+    <!-- preloader -->
+    <div class="fixed inset-0 z-50 bg-surface-500 dark:bg-surfacedark-500 h-screen w-screen overflow-hidden">
+        <div class="w-screen h-screen">
+            <header
+                class="nav-top bg-white dark:bg-gray-900 border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 lg:px-8 lg:pr-3 left-0 lg:left-72 right-0 flex flex-row items-center justify-between gap-3 z-50 transition-all duration-300 ease-in-out">
+
+            </header>
+
+            <!-- Main Content -->
+            <main class="lg:flex">
+                <!-- Sidebar -->
+                <aside 
+                    class="sidebar overflow-hidden bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-500 ease-in-out fixed max-lg:z-[60] lg:shrink-0 lg:relative lg:w-72 h-screen max-lg:[&amp;.show_.sidebar-bg]:opacity-60 dark:max-lg:[&amp;.show_.sidebar-bg]:opacity-60 [&amp;.show_.sidebar-bg]:inset-0 [&amp;.show_.sidebar-content]:translate-x-0">
+                    <!-- Sidebar Content -->
+                    <div 
+                        class="sidebar-content bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 left-0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars">
+                        <!-- Logo -->
+                        <a href="#"
+                            class="sidebar-logo py-[11.3px] border-b border-gray-300 pl-6 flex items-center w-full">
+                            <img 
+                                src="/merchants/src/img/logo-light-ltr.png" 
+                                alt="logo-light"
+                                class="h-10 w-auto dark:hidden"
+                            >
+
+                            <img 
+                                src="/merchants/src/img/logo-dark-ltr.png" 
+                                alt="logo-dark"
+                                class="h-10 w-auto hidden dark:block"
+                            >
+                        </a>
+
+                        <!-- Navigation Menu -->
+                        <div class="w-full inline-flex flex-col px-3 pb-3">
+                            <!-- Home Section -->
+                            <div class="pt-6 pb-2 px-4 compact-hide">
+                                <p class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400">Home</p>
+                            </div>
+                            <ul class="sidebar-menu flex flex-col">
+                                <!-- Dashboard -->
+                                <li class="relative">
+                                    <a href="#"
+                                        class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]">
+                                        <span class="material-symbols-outlined">
+                                            house
+                                        </span>
+                                        <span class="compact-title">
+                                            Dashboard
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <!-- Orders Submenu -->
+                                <li class="relative">
+                                    <a href="#"
+                                        class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]">
+                                        <span class="material-symbols-outlined">
+                                            orders
+                                        </span>
+                                        <span class="compact-title">
+                                            Orders
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <!-- Shipments Submenu -->
+                                <li class="relative">
+                                    <a href="#"
+                                        class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]">
+                                        <span class="material-symbols-outlined">
+                                            package_2
+                                        </span>
+                                        <span class="compact-title">
+                                            Shipments
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <!-- Finance Submenu -->
+                                <li class="relative">
+                                    <a href="#"
+                                        class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]">
+                                        <span class="material-symbols-outlined">
+                                            savings
+                                        </span>
+                                        <span class="compact-title">
+                                            Finance
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <!-- Settings Section -->
+                            <div class="pt-6 pb-2 px-4 compact-hide">
+                                <p class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400">
+                                    Settings
+                                </p>
+                            </div>
+
+                            <ul class="sidebar-menu flex flex-col">
+                                <!-- Integrations Submenu -->
+                                <li class="relative">
+                                    <a href="#"
+                                        class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]">
+                                        <span class="material-symbols-outlined">
+                                            integration_instructions
+                                        </span>
+                                        <span class="compact-title">
+                                            Integrations
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <!-- Shipping Submenu -->
+                                <li class="relative">
+                                    <a href="#"
+                                        class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]">
+                                        <span class="material-symbols-outlined">
+                                            local_shipping
+                                        </span>
+                                        <span class="compact-title">
+                                            Shipping
+                                        </span>
+                                    </a>
+                                </li>
+
+                                <!-- Billing Submenu -->
+                                <li class="relative">
+                                    <a href="#"
+                                        class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]">
+                                        <span class="material-symbols-outlined">
+                                            wallet
+                                        </span>
+                                        <span class="compact-title">
+                                            Billing
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+
+
+                <!-- Replace the main content section with this clean layout -->
+                <div
+                    class="main-content flex-grow flex items-center justify-center min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
+                    <!-- loader -->
+                    <svg class="circular-loader relative w-[100px] h-[100px]">
+                        <circle class="path stroke-primary-600 dark:stroke-primary-200" cx="50" cy="50" r="20"
+                            fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+                    </svg>
+                </div>
+            </main>
+        </div>
+    </div>
+
     <!-- Header Section -->
     <header data-type="navtop"
         class="nav-top bg-white dark:bg-gray-900 border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 lg:px-8 lg:pr-3 left-0 lg:left-72 right-0 flex flex-row items-center justify-between gap-3 z-50 transition-all duration-300 ease-in-out">
@@ -151,483 +308,214 @@
     <!-- Main Content -->
     <main class="lg:flex">
 
-        <!-- Sidebar -->
-        <aside 
-            id="sidebar"
-            class="sidebar bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-500 ease-in-out fixed max-lg:z-[60] lg:shrink-0 lg:relative lg:w-72 h-screen max-lg:[&amp;.show_.sidebar-bg]:opacity-60 dark:max-lg:[&amp;.show_.sidebar-bg]:opacity-60 [&amp;.show_.sidebar-bg]:inset-0 [&amp;.show_.sidebar-content]:translate-x-0"
-        >
-            <!-- Sidebar Content -->
-            <div 
-                id="sidebar-content"
-                class="sidebar-content bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 left-0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars"
-            >
-                <!-- Logo -->
-                <a 
-                    href="/users/index.html"
-                    class="sidebar-logo py-[11.3px] border-b border-gray-300 pl-6 flex items-center w-full"
-                >
-                    <img 
-                        src="/merchants/src/img/logo-light-ltr.png" 
-                        alt="logo-light" 
-                        class="h-10 w-auto dark:hidden">
-                    <img 
-                        src="/merchants/src/img/logo-dark-ltr.png" 
-                        alt="logo-dark" 
-                        class="h-10 w-auto hidden dark:block"
-                    >
-                </a>
 
-                <!-- Navigation Menu -->
-                <div class="w-full inline-flex flex-col px-3 pb-3">
-                    <!-- Home Section -->
-                    <div class="pt-6 pb-2 px-4 compact-hide">
-                        <p class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400">Home</p>
-                    </div>
-                    <ul class="sidebar-menu flex flex-col">
-                        <!-- Dashboard -->
-                        <li class="relative">
-                            <a 
-                                href="/users/index.html"
-                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                            >
-                                <span 
-                                    class="material-symbols-outlined"
-                                >
-                                    house
-                                </span>
-                                <span 
-                                    class="compact-title"
-                                >
-                                    Dashboard
-                                </span>
-                            </a>
-                        </li>
-
-                        <!-- Orders Submenu -->
-                        <li class="relative">
-                            <a 
-                                href="javascript:void(0)" 
-                                data-type="collapse" 
-                                data-target="#dashboard6"
-                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                            >
-                                <span
-                                    class="material-symbols-outlined"
-                                >
-                                    orders
-                                </span>
-                                <span
-                                    class="compact-title"
-                                >
-                                    Orders
-                                </span>
-                            </a>
-                            <ul 
-                                id="dashboard6" 
-                                data-type="collapsed"
-                                class="sidebar-submenu [&.active]:block hidden"
-                            >
-                                <li>
-                                    <a 
-                                        href="/orders/orders/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        All Orders
-                                    </a>
-                                </li>
-                                <li>
-                                    <a 
-                                        href="/orders/links/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        Checkout Links
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- Shipments Submenu -->
-                        <li class="relative">
-                            <a 
-                                href="/shipments/shipments/index.html"
-                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                            >
-                                <span 
-                                    class="material-symbols-outlined"
-                                >
-                                    package_2
-                                </span>
-                                <span 
-                                    class="compact-title"
-                                >
-                                    Shipments
-                                </span>
-                            </a>
-                        </li>
-
-                        <!-- Finance Submenu -->
-                        <li class="relative">
-                            <a 
-                                href="javascript:void(0)" 
-                                data-type="collapse" 
-                                data-target="#dashboard1"
-                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                            >
-                                <span
-                                    class="material-symbols-outlined"
-                                >
-                                    savings
-                                </span>
-                                <span
-                                    class="compact-title"
-                                >   
-                                    Finance
-                                </span>
-                            </a>
-                            <ul 
-                                id="dashboard1" 
-                                data-type="collapsed"
-                                class="sidebar-submenu [&.active]:block hidden"
-                            >
-                                <li>
-                                    <a 
-                                        href="/finance/rates/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        Shipment Rate
-                                    </a>
-                                </li>
-                                <li>
-                                    <a 
-                                        href="/finance/cod/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        COD
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <!-- Settings Section -->
-                    <div class="pt-6 pb-2 px-4 compact-hide">
-                        <p class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400">Settings</p>
-                    </div>
-                    <ul class="sidebar-menu flex flex-col">
-                        <!-- Integrations Submenu -->
-                        <li class="relative">
-                            <a 
-                                href="javascript:void(0)" 
-                                data-type="collapse" 
-                                data-target="#dashboard2"
-                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                            >
-                                <span
-                                    class="material-symbols-outlined"
-                                >
-                                    integration_instructions
-                                </span>
-                                <span
-                                    class="compact-title"
-                                >
-                                    Integrations
-                                </span>
-                            </a>
-                            <ul 
-                                id="dashboard2" 
-                                data-type="collapsed"
-                                class="sidebar-submenu [&.active]:block hidden"
-                            >
-                                <li>
-                                    <a 
-                                        href="/integrations/sales-channels/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        Sales channels
-                                    </a>
-                                </li>
-                                <li>
-                                    <a 
-                                        href="/integrations/carrier/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        Carrier connections
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- Shipping Submenu -->
-                        <li class="relative">
-                            <a 
-                                href="javascript:void(0)" 
-                                data-type="collapse"
-                                data-target="#dashboard3"
-                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                            >
-                                <span
-                                    class="material-symbols-outlined"
-                                >
-                                    local_shipping
-                                </span>
-                                <span
-                                    class="compact-title"
-                                >
-                                    Shipping
-                                </span>
-                            </a>
-                            <ul 
-                                id="dashboard3" 
-                                data-type="collapsed"
-                                class="sidebar-submenu [&.active]:block hidden"
-                            >
-                                <li>
-                                    <a 
-                                        href="/shipping/address-book/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        Address Book
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <!-- Billing Submenu -->
-                        <li class="relative">
-                            <a 
-                                href="javascript:void(0)" 
-                                data-type="collapse" 
-                                data-target="#dashboard4"
-                                class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                            >
-                                <span
-                                    class="material-symbols-outlined"
-                                >
-                                    wallet
-                                </span>
-                                <span
-                                    class="compact-title"
-                                >
-                                    Billing
-                                </span>
-                            </a>
-                            <ul 
-                                id="dashboard4" 
-                                data-type="collapsed"
-                                class="sidebar-submenu [&.active]:block hidden"
-                            >
-                                <li>
-                                    <a 
-                                        href="/billing/plans/index.html"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        Plans
-                                    </a>
-                                </li>
-                                <li>
-                                    <a 
-                                        href="/billing/payment-methods/"
-                                        class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
-                                    >
-                                        Payment Methods
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </aside>
 
         <!-- Replace the main content section with this clean layout -->
-<div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
+        <div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
 
-    <!-- Page Header -->
-    <div class="flex flex-row justify-between items-center pt-2 pb-6">
-        <div>
-            <h2 class="text-title-lg mb-1">Dashboard Overview</h2>
-            <p class="text-gray-600 dark:text-gray-400">Summary of your store performance</p>
-        </div>
-        <div class="text-right">
-            <p class="text-sm text-gray-500 dark:text-gray-400">Updated just now</p>
-        </div>
-    </div>
-
-    <!-- Main Grid Layout -->
-    <div class="grid grid-cols-1 xl:grid-cols-4 gap-6">
-
-        <!-- Left Column - Key Metrics -->
-        <div class="xl:col-span-3">
-            <!-- Stats in Clean Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <!-- Total Orders -->
-                <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <div class="flex items-start justify-between mb-3">
-                        <h3 class="text-title-md font-medium">Total Orders</h3>
-                        <span class="material-symbols-outlined text-gray-400">shopping_bag</span>
-                    </div>
-                    <div class="flex items-end justify-between">
-                        <span class="text-display-lg font-bold">8</span>
-                        <div class="text-right">
-                            <div class="text-green-600 dark:text-green-400 text-sm">+12%</div>
-                        </div>
-                    </div>
+            <!-- Page Header -->
+            <div class="flex flex-row justify-between items-center pt-2 pb-6">
+                <div>
+                    <h2 class="text-title-lg mb-1">Dashboard Overview</h2>
+                    <p class="text-gray-600 dark:text-gray-400">Summary of your store performance</p>
                 </div>
-
-                <!-- Pending Orders -->
-                <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <div class="flex items-start justify-between mb-3">
-                        <h3 class="text-title-md font-medium">Pending</h3>
-                        <span class="material-symbols-outlined text-gray-400">pending_actions</span>
-                    </div>
-                    <div class="flex items-end justify-between">
-                        <span class="text-display-lg font-bold">8</span>
-                        <div class="text-right">
-                            <div class="text-orange-600 dark:text-orange-400 text-sm">Action needed</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- In Transit -->
-                <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <div class="flex items-start justify-between mb-3">
-                        <h3 class="text-title-md font-medium">In Transit</h3>
-                        <span class="material-symbols-outlined text-gray-400">local_shipping</span>
-                    </div>
-                    <div class="flex items-end justify-between">
-                        <span class="text-display-lg font-bold">0</span>
-                        <div class="text-right">
-                            <div class="text-gray-500 dark:text-gray-400 text-sm">No shipments</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Total COD -->
-                <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                    <div class="flex items-start justify-between mb-3">
-                        <h3 class="text-title-md font-medium">Total COD</h3>
-                        <span class="material-symbols-outlined text-gray-400">payments</span>
-                    </div>
-                    <div class="flex items-end justify-between">
-                        <span class="text-display-lg font-bold">$2,450</span>
-                        <div class="text-right">
-                            <div class="text-green-600 dark:text-green-400 text-sm">+8%</div>
-                        </div>
-                    </div>
+                <div class="text-right">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Updated just now</p>
                 </div>
             </div>
 
-            <!-- Recent Activity Section -->
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 mb-6">
-                <div class="flex items-center justify-between mb-6">
-                    <h3 class="text-title-lg font-semibold">Recent Activity</h3>
-                    <a href="#" class="text-gray-600 dark:text-gray-400 text-sm hover:text-gray-800 dark:hover:text-gray-200">View All</a>
-                </div>
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
-                                <span class="material-symbols-outlined text-gray-600 dark:text-gray-400 text-sm">shopping_bag</span>
+            <!-- Main Grid Layout -->
+            <div class="grid grid-cols-1 xl:grid-cols-4 gap-6">
+
+                <!-- Left Column - Key Metrics -->
+                <div class="xl:col-span-3">
+                    <!-- Stats in Clean Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                        <!-- Total Orders -->
+                        <div
+                            class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                            <div class="flex items-start justify-between mb-3">
+                                <h3 class="text-title-md font-medium">Total Orders</h3>
+                                <span class="material-symbols-outlined text-gray-400">shopping_bag</span>
                             </div>
-                            <div>
-                                <p class="text-sm font-medium">New order received</p>
-                                <p class="text-xs text-gray-500 dark:text-gray-400">Order #ORD-7842</p>
+                            <div class="flex items-end justify-between">
+                                <span class="text-display-lg font-bold">8</span>
+                                <div class="text-right">
+                                    <div class="text-green-600 dark:text-green-400 text-sm">+12%</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <p class="text-sm font-medium">$149.99</p>
-                            <p class="text-xs text-gray-500 dark:text-gray-400">2 hours ago</p>
+
+                        <!-- Pending Orders -->
+                        <div
+                            class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                            <div class="flex items-start justify-between mb-3">
+                                <h3 class="text-title-md font-medium">Pending</h3>
+                                <span class="material-symbols-outlined text-gray-400">pending_actions</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <span class="text-display-lg font-bold">8</span>
+                                <div class="text-right">
+                                    <div class="text-orange-600 dark:text-orange-400 text-sm">Action needed</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- In Transit -->
+                        <div
+                            class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                            <div class="flex items-start justify-between mb-3">
+                                <h3 class="text-title-md font-medium">In Transit</h3>
+                                <span class="material-symbols-outlined text-gray-400">local_shipping</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <span class="text-display-lg font-bold">0</span>
+                                <div class="text-right">
+                                    <div class="text-gray-500 dark:text-gray-400 text-sm">No shipments</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Total COD -->
+                        <div
+                            class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                            <div class="flex items-start justify-between mb-3">
+                                <h3 class="text-title-md font-medium">Total COD</h3>
+                                <span class="material-symbols-outlined text-gray-400">payments</span>
+                            </div>
+                            <div class="flex items-end justify-between">
+                                <span class="text-display-lg font-bold">$2,450</span>
+                                <div class="text-right">
+                                    <div class="text-green-600 dark:text-green-400 text-sm">+8%</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <!-- Add more activity items -->
-                </div>
-            </div>
 
-            <!-- Performance Chart Area -->
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                <h3 class="text-title-lg font-semibold mb-6">Order Trends</h3>
-                <div class="h-48 flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg">
-                    <p class="text-gray-500 dark:text-gray-400">Chart visualization would appear here</p>
+                    <!-- Recent Activity Section -->
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 mb-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-title-lg font-semibold">Recent Activity</h3>
+                            <a href="#"
+                                class="text-gray-600 dark:text-gray-400 text-sm hover:text-gray-800 dark:hover:text-gray-200">View
+                                All</a>
+                        </div>
+                        <div class="space-y-3">
+                            <div
+                                class="flex items-center justify-between p-3 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
+                                <div class="flex items-center space-x-3">
+                                    <div
+                                        class="w-8 h-8 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+                                        <span
+                                            class="material-symbols-outlined text-gray-600 dark:text-gray-400 text-sm">shopping_bag</span>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-medium">New order received</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Order #ORD-7842</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <p class="text-sm font-medium">$149.99</p>
+                                    <p class="text-xs text-gray-500 dark:text-gray-400">2 hours ago</p>
+                                </div>
+                            </div>
+                            <!-- Add more activity items -->
+                        </div>
+                    </div>
+
+                    <!-- Performance Chart Area -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                        <h3 class="text-title-lg font-semibold mb-6">Order Trends</h3>
+                        <div
+                            class="h-48 flex items-center justify-center border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg">
+                            <p class="text-gray-500 dark:text-gray-400">Chart visualization would appear here</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Setup Guide -->
+                <div class="xl:col-span-1">
+                    <!-- Setup Progress -->
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 mb-6">
+                        <h3 class="text-title-lg font-semibold mb-6">Setup Guide</h3>
+                        <div class="space-y-4">
+                            <!-- Step 1 -->
+                            <div
+                                class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-medium text-sm">Connect Store</h4>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Step 1</span>
+                                </div>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Link your e-commerce platform
+                                </p>
+                                <a href="/en/sales-channels/" class="w-full btn-outline text-center py-2 text-sm">
+                                    Connect
+                                </a>
+                            </div>
+
+                            <!-- Step 2 -->
+                            <div
+                                class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-medium text-sm">Connect Courier</h4>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Step 2</span>
+                                </div>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Set up shipping providers</p>
+                                <a href="/en/carriers/carriers/" class="w-full btn-outline text-center py-2 text-sm">
+                                    Connect
+                                </a>
+                            </div>
+
+                            <!-- Step 3 -->
+                            <div
+                                class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-medium text-sm">Create Order</h4>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Step 3</span>
+                                </div>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Start managing orders</p>
+                                <a href="/en/orders/orders/" class="w-full btn-outline text-center py-2 text-sm">
+                                    Create
+                                </a>
+                            </div>
+
+                            <!-- Step 4 -->
+                            <div
+                                class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h4 class="font-medium text-sm">Track Shipment</h4>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Step 4</span>
+                                </div>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Monitor delivery status</p>
+                                <a href="/en/shipments/shipments/" class="w-full btn-outline text-center py-2 text-sm">
+                                    Track
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+                        <h3 class="text-title-lg font-semibold mb-4">Quick Stats</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">Completion Rate</span>
+                                <span class="font-semibold">85%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
+                                <div class="bg-gray-600 dark:bg-gray-400 h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm text-gray-600 dark:text-gray-400">Avg. Response</span>
+                                <span class="font-semibold">2.1s</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Right Column - Setup Guide -->
-        <div class="xl:col-span-1">
-            <!-- Setup Progress -->
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700 mb-6">
-                <h3 class="text-title-lg font-semibold mb-6">Setup Guide</h3>
-                <div class="space-y-4">
-                    <!-- Step 1 -->
-                    <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 class="font-medium text-sm">Connect Store</h4>
-                            <span class="text-xs text-gray-500 dark:text-gray-400">Step 1</span>
-                        </div>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Link your e-commerce platform</p>
-                        <a href="/en/sales-channels/" class="w-full btn-outline text-center py-2 text-sm">
-                            Connect
-                        </a>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 class="font-medium text-sm">Connect Courier</h4>
-                            <span class="text-xs text-gray-500 dark:text-gray-400">Step 2</span>
-                        </div>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Set up shipping providers</p>
-                        <a href="/en/carriers/carriers/" class="w-full btn-outline text-center py-2 text-sm">
-                            Connect
-                        </a>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 class="font-medium text-sm">Create Order</h4>
-                            <span class="text-xs text-gray-500 dark:text-gray-400">Step 3</span>
-                        </div>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Start managing orders</p>
-                        <a href="/en/orders/orders/" class="w-full btn-outline text-center py-2 text-sm">
-                            Create
-                        </a>
-                    </div>
-
-                    <!-- Step 4 -->
-                    <div class="p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-gray-300 dark:hover:border-gray-600 transition-colors">
-                        <div class="flex items-center justify-between mb-2">
-                            <h4 class="font-medium text-sm">Track Shipment</h4>
-                            <span class="text-xs text-gray-500 dark:text-gray-400">Step 4</span>
-                        </div>
-                        <p class="text-xs text-gray-600 dark:text-gray-400 mb-3">Monitor delivery status</p>
-                        <a href="/en/shipments/shipments/" class="w-full btn-outline text-center py-2 text-sm">
-                            Track
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Quick Stats -->
-            <div class="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
-                <h3 class="text-title-lg font-semibold mb-4">Quick Stats</h3>
-                <div class="space-y-3">
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Completion Rate</span>
-                        <span class="font-semibold">85%</span>
-                    </div>
-                    <div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                        <div class="bg-gray-600 dark:bg-gray-400 h-2 rounded-full" style="width: 85%"></div>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="text-sm text-gray-600 dark:text-gray-400">Avg. Response</span>
-                        <span class="font-semibold">2.1s</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
     </main>
 
     <!-- Footer -->
@@ -640,19 +528,19 @@
     </footer>
 
     <!-- JavaScript Libraries -->
-  <!-- Charts js -->
-  <script src="../vendors/chart.js/dist/chart.umd.js"></script>
-  <!-- Chart config -->
-  <script src="../src/js/charts/analytics.js"></script>
+    <!-- Charts js -->
+    <script src="../vendors/chart.js/dist/chart.umd.js"></script>
+    <!-- Chart config -->
+    <script src="../src/js/charts/analytics.js"></script>
 
-  <!-- Vendor -->
-  <script src="../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
-  <script src="../vendors/jsvectormap/dist/maps/world.js"></script>
-  <!-- Vendor Configuration -->
-  <script src="../src/js/vendor.js"></script>
+    <!-- Vendor -->
+    <script src="../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
+    <script src="../vendors/jsvectormap/dist/maps/world.js"></script>
+    <!-- Vendor Configuration -->
+    <script src="../src/js/vendor.js"></script>
 
-  <!-- Tailmater javascript -->
-  <script src="../src/js/tailmater.js"></script>
+    <!-- Tailmater javascript -->
+    <script src="../src/js/tailmater.js"></script>
     <!-- Theme Toggle Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {

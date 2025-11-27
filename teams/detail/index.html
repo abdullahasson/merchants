@@ -21,7 +21,10 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
     <!-- Favicon -->
-    <link rel="icon" href="../../src/img/favicon.png">
+    <link 
+        rel="icon" 
+        href="https://abdullahasson.github.io/merchants/src/img/favicon.svg"
+    >
 </head>
 
 <body id="body-layout"
@@ -152,7 +155,6 @@
 
     <!-- Main Content -->
     <main class="lg:flex">
-
         <!-- Sidebar -->
         <aside id="sidebar"
             class="sidebar bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-500 ease-in-out fixed max-lg:z-[60] lg:shrink-0 lg:relative lg:w-72 h-screen max-lg:[&amp;.show_.sidebar-bg]:opacity-60 dark:max-lg:[&amp;.show_.sidebar-bg]:opacity-60 [&amp;.show_.sidebar-bg]:inset-0 [&amp;.show_.sidebar-content]:translate-x-0">
@@ -341,7 +343,7 @@
 
         <div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
             <!-- Breadcrumb -->
-            <div class="flex flex-row justify-between items-center pt-2 pb-6">
+            <div class="flex flex-row justify-between items-center pb-20">
                 <nav class="flex" aria-label="Breadcrumb">
                     <ol class="inline-flex items-center space-x-1 md:space-x-3">
                         <!-- Home -->
@@ -377,37 +379,38 @@
                         </li>
                     </ol>
                 </nav>
-                
-                <!-- Action Buttons -->
-                <div class="flex flex-row gap-3 items-center">
-                    <a href="/teams/edit.html"
-                        class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                        <span class="material-symbols-outlined">edit</span>
-                        Edit
-                    </a>
-                    <a href="#"
-                        class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-red-600 text-white dark:bg-red-200 dark:text-red-800">
-                        <span class="material-symbols-outlined">delete</span>
-                        Delete
-                    </a>
-                </div>
             </div>
 
             <!-- content -->
             <div class="grid grid-cols-1 gap-6">
                 <!-- Main Information Card -->
                 <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-md p-6 max-w-4xl">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
-                            <span class="material-symbols-outlined text-primary-600 dark:text-primary-200 text-3xl">
-                                person
-                            </span>
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-primary-100 dark:bg-primary-900 rounded-full flex items-center justify-center">
+                                <span class="material-symbols-outlined text-primary-600 dark:text-primary-200 text-3xl">
+                                    person
+                                </span>
+                            </div>
+                            <div>
+                                <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100">
+                                    Ahmad Qarem
+                                </h1>
+                                <p class="text-gray-600 dark:text-gray-400">ahmed.sa3eed@hotmail.com</p>
+                            </div>
                         </div>
-                        <div>
-                            <h1 class="text-2xl font-bold text-gray-900 dark:text-gray-100">
-                                Ahmad Qarem
-                            </h1>
-                            <p class="text-gray-600 dark:text-gray-400">ahmed.sa3eed@hotmail.com</p>
+                        <!-- Action Buttons -->
+                        <div class="flex flex-row gap-3 items-center">
+                            <a href="/teams/edit.html"
+                                class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
+                                <span class="material-symbols-outlined">edit</span>
+                                Edit
+                            </a>
+                            <a href="#"
+                                class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-red-600 text-white dark:bg-red-200 dark:text-red-800">
+                                <span class="material-symbols-outlined">delete</span>
+                                Delete
+                            </a>
                         </div>
                     </div>
 
