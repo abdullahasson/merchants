@@ -158,12 +158,29 @@
             <div id="sidebar-content"
                 class="sidebar-content bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 left-0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars">
                 <!-- Logo -->
-                <a href="/users/index.html"
-                    class="sidebar-logo py-[11.3px] border-b border-gray-300 pl-6 flex items-center w-full">
-                    <img src="/merchants/src/img/logo-light-ltr.png" alt="logo-light" class="h-10 w-auto dark:hidden">
-                    <img src="/merchants/src/img/logo-dark-ltr.png" alt="logo-dark"
-                        class="h-10 w-auto hidden dark:block">
-                </a>
+                <div class="flex justify-between items-center px-6 border-b border-gray-300">
+                    <a 
+                        href="/users/index.html"
+                        class="sidebar-logo py-[11.3px] flex items-center"
+                    >
+                        <img 
+                            src="../src/img/logo-light-ltr.png" 
+                            alt="logo-light" 
+                            class="h-10 w-auto dark:hidden"
+                        >
+                        <img 
+                            src="/merchants/src/img/logo-dark-ltr.png" 
+                            alt="logo-dark"
+                            class="h-10 w-auto hidden dark:block"
+                        >
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button data-type="dialogs" data-target="#sidebar"
+                        class="relative inline-flex items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+                        <span class="material-symbols-outlined !text-[28px]">menu</span>
+                    </button>
+                </div>
 
                 <!-- Navigation Menu -->
                 <div class="w-full inline-flex flex-col px-3 pb-3">

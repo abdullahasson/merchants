@@ -1,15 +1,13 @@
-
 <!-- Layout for logged in merchants -->
 <!DOCTYPE html>
 <html 
-  lang="ar" 
-  dir="rtl"
-  class="light"
+  lang="en" 
+  dir="ltr"
 >
 <head>
     <!-- Title  -->
     <title>
-      GoZagel | المحفظة
+      GoZagel | Wallet
     </title>
 
     <!-- head -->
@@ -173,323 +171,1429 @@
         align-items: center;
         justify-content: center;
     }
-
-        /* Payment Container */
-        .payment-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            width: 100%;
-        }
-        
-        /* Payment Option Base Styles */
-        .payment-option {
-            display: inline-flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100% !important;
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-            border: 1px solid transparent;
-            cursor: pointer;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .payment-option:hover {
-            background-color: #e2e8f0; /* slate-200 */
-        }
-        
-        /* Checked State */
-        .payment-option:has(:checked) {
-            background-color: #e2e8f0; /* indigo-50 */
-            font-weight: bold;
-            transition: all 0.5s ease;
-        }
-        
-        /* Icon Container */
-        .icon-container {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            position: relative;
-        }
-        
-        /* Text Animation */
-        .option-text {
-            position: absolute;
-            font-weight: 600;
-            white-space: nowrap;
-            transition: all 0.7s ease;
-            opacity: 0;
-            width: 100%;
-            top: 0.25rem;
-            left: 3.5rem;
-            font-weight: 700;
-        }
-        
-        /* InstaPay Text */
-        .instapay-text {
-            transform: translateY(-110%) translateX(100%);
-        }
-        
-        /* Visa/Mastercard Text */
-        .visa-text {
-            transform: translateY(110%) translateX(100%);
-        }
-        
-        /* Checked State for Text */
-        .payment-option:has(:checked) .option-text {
-            transform: translateY(0) translateX(0);
-            opacity: 1;
-            transition: transform 0.5s ease, opacity 0.5s ease;
-        }
-        
-        /* Radio Input */
-        .payment-option input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        /* Custom Radio Indicator */
-        .custom-radio {
-            width: 1.25rem;
-            height: 1.25rem;
-            border: 2px solid #d1d5db; /* gray-300 */
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .payment-option:has(:checked) .custom-radio {
-            border-color: #6366f1; /* indigo-500 */
-            background-color: #6366f1; /* indigo-500 */
-        }
-        
-        .custom-radio::after {
-            content: '';
-            width: 0.625rem;
-            height: 0.625rem;
-            background-color: white;
-            border-radius: 50%;
-            opacity: 0;
-            transform: scale(0);
-            transition: all 0.3s ease;
-        }
-        
-        .payment-option:has(:checked) .custom-radio::after {
-            opacity: 1;
-            transform: scale(1);
-        }
-        
-        /* SVG Styling */
-        .payment-svg {
-            width: 2rem;
-            height: 2rem;
-            fill: currentColor;
-        }
-        
-        /* Focus States */
-        .payment-option:focus-within {
-            outline: 2px solid #6366f1; /* indigo-500 */
-            outline-offset: 2px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 640px) {
-            .payment-container {
-                padding: 0.25rem;
-                gap: 0.25rem;
-            }
-            
-            .payment-option {
-                padding: 0.75rem;
-            }
-            
-            .payment-svg {
-                width: 1.5rem;
-                height: 1.5rem;
-            }
-            
-            .option-text {
-                font-size: 0.875rem;
-            }
-        }
-        
-        /* Dark Mode Support */
-        .dark .payment-option:hover {
-                background-color: #374151; /* gray-700 */
-            }
-            
-        .dark .payment-option:has(:checked) {
-                background-color: #374151; /* indigo-900 */
-            }
-            
-        .dark .custom-radio {
-                border-color: #4b5563; /* gray-600 */
-            }
-        
-    
 </style>
     
+<style>
+    /* Payment Method Styles */
+    .payment-method-option {
+        border: 2px solid #e5e7eb;
+        border-radius: 12px;
+        padding: 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background-color: white;
+    }
     
+    .dark .payment-method-option {
+        background-color: #1f2937;
+        border-color: #4b5563;
+    }
+    
+    .payment-method-option:hover {
+        border-color: #3b82f6;
+        transform: translateY(-2px);
+    }
+    
+    .payment-method-option.active {
+        border-color: #3b82f6;
+        background-color: #eff6ff;
+    }
+    
+    .dark .payment-method-option.active {
+        border-color: #3b82f6;
+        background-color: #1e3a8a;
+    }
+    
+    .payment-icon {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .instapay-icon {
+        color: #ec4899;
+    }
+    
+    .card-icon {
+        color: #1e40af;
+    }
+    
+    /* Progress bar styles */
+    .progress-container {
+        margin-top: 20px;
+    }
+    
+    .progress-bar {
+        height: 8px;
+        background-color: #e5e7eb;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    
+    .dark .progress-bar {
+        background-color: #4b5563;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        background: linear-gradient(90deg, #ec4899, #f472b6);
+        border-radius: 4px;
+    }
+    
+    /* Account info styles */
+    .account-info-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid #e5e7eb;
+    }
+    
+    .dark .account-info-item {
+        border-bottom-color: #4b5563;
+    }
+    
+    .info-label {
+        font-weight: 600;
+        color: #6b7280;
+    }
+    
+    .dark .info-label {
+        color: #9ca3af;
+    }
+    
+    .info-value {
+        color: #111827;
+        font-weight: 500;
+    }
+    
+    .dark .info-value {
+        color: #f3f4f6;
+    }
+    
+    /* Card info styles */
+    .card-info-box {
+        background-color: #f8fafc;
+        border-radius: 12px;
+        padding: 20px;
+        border-left: 4px solid #3b82f6;
+        margin-top: 20px;
+    }
+    
+    .dark .card-info-box {
+        background-color: #1e293b;
+        border-left-color: #60a5fa;
+    }
+    
+    /* Payment modal styles */
+    .payment-modal-content {
+        max-height: 80vh;
+        overflow-y: auto;
+    }
+    
+    .payment-form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    /* Card input styling */
+    .card-input-container {
+        position: relative;
+    }
+    
+    .card-icons {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        gap: 8px;
+    }
+    
+    .card-icon-small {
+        font-size: 24px;
+        color: #9ca3af;
+    }
+    
+    .card-icon-small.active {
+        color: #3b82f6;
+    }
+    
+    .dark .card-icon-small.active {
+        color: #60a5fa;
+    }
+</style>
+
 </head>
 
 <body 
-    id="body-layout" 
-    class="text-body-md relative font-sans font-normal text-gray-700 dark:text-gray-300 bg-surface-500 dark:bg-surfacedark-500 show"
+  id="body-layout" 
+  class="text-body-md relative font-sans font-normal text-gray-700 dark:text-gray-300 bg-surface-500 dark:bg-surfacedark-500 show"
 >
-    <main class="lg:flex">
-        <!-- content -->
-        <div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
-            <!-- heading -->
-            <div class="flex flex-row justify-between items-center pt-2 pb-6">
-                <!-- action -->
-                <div class="flex flex-row gap-3 items-center pr-4">
-                <button data-type="dialogs" data-target="#add_credits" class="btn relative flex flex-row items-center justify-center gap-x-2 py-2 px-4 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
-                    <span class="material-symbols-outlined">add</span>
-                    إضافة رصيد
-                </button>
-                </div>
+  <!-- preloader -->
+  <div class="preloader fixed inset-0 z-50 bg-surface-500 dark:bg-surfacedark-500 h-screen w-screen overflow-hidden">
+    <div class="w-screen h-screen">
+      <header 
+        class="nav-top bg-white dark:bg-gray-900 border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 lg:px-8 lg:pr-3 left-0 lg:left-72 right-0 flex flex-row items-center justify-between gap-3 transition-all duration-300 ease-in-out"
+        style="z-index: 40;"
+      >
+          <!-- navbar right -->
+          <div class="flex flex-row items-center gap-3 ml-auto">
+
+            <!-- Add Button -->
+            <div class="relative">
+              <button 
+                class="btn-outline relative flex flex-row items-center justify-center w-10 h-10 gap-x-2 py-2 px-4 rounded-full text-sm tracking-[.00714em] font-medium border border-gray-200 dark:border-gray-700"
+              >
+                <span class="material-symbols-outlined !text-base">add</span>
+              </button>
             </div>
 
+            <!-- Balance -->
+            <div class="relative">
+              <a href="#">
+                <button class="btn relative flex flex-col items-center justify-center w-24 h-12 p-2.5 rounded-[6.25rem] bg-white text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:bg-gray-900 dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08] border border-gray-200 dark:border-gray-700">
+                  <span class="text-sm text-neutral-900 dark:text-neutral-100 leading-tight">
+                    Balance
+                  </span>
+                  <span class="text-xs text-green-600 dark:text-green-400 leading-tight">
+                    loading..
+                  </span>
+                </button>
+              </a>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div class="relative">
+                  <button 
+                      class="btn-outline relative flex flex-row items-center justify-center w-10 h-10 gap-x-2 py-2 px-4 rounded-full text-sm tracking-[.00714em] font-medium border border-gray-200 dark:border-gray-700"
+                  >
+                    <span class="material-symbols-outlined !text-base dark-block">light_mode</span>
+                    <span class="material-symbols-outlined !text-base dark-hidden">dark_mode</span>
+                  </button>
+            </div>
+
+            <!-- translate -->
+            <div class="relative">
+                  <button 
+                      class="btn-outline relative flex flex-row items-center justify-center w-10 h-10 gap-x-2 py-2 px-4 rounded-full text-sm tracking-[.00714em] font-medium border border-gray-200 dark:border-gray-700"
+                  >
+                    <span class="material-symbols-outlined !text-base">translate</span>
+                </button>
+            </div>
+
+            <!-- Profile -->
+            <div class="relative">
+              <button class="btn w-12 h-12 gap-x-2 py-2.5 flex items-center gap-2 justify-center rounded-full text-sm tracking-[0.15px]">
+                  <div 
+                      class="w-10 h-10 flex-none rounded-full bg-primary-600 dark:bg-primary-200"
+                  ></div>
+              </button>
+            </div>
+          </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="lg:flex">
+        <!-- Sidebar Loading Skeleton -->
+        <!-- Sidebar Loading Skeleton -->
+        <aside
+          class="sidebar overflow-hidden bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-500 ease-in-out fixed max-lg:z-[60] lg:shrink-0 lg:relative lg:w-72 h-screen max-lg:[&.show_.sidebar-bg]:opacity-60 dark:max-lg:[&.show_.sidebar-bg]:opacity-60 [&.show_.sidebar-bg]:inset-0 [&.show_.sidebar-content]:translate-x-0"
+          
+            dir="ltr"
+          
+        >
+          <!-- menu -->
+          <div
+            class="sidebar-content bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 left-0 top-0 bottom-0 h-screen w-72 overflow-hidden"
+          >
+            <!-- logo -->
+            <a
+              href="#"
+              class="sidebar-logo border-b border-gray-300 pl-6 flex items-center w-full"
+              style="padding-top: 11.3px; padding-bottom: 11.3px; z-index: 100;"
+            >
+              <img
+                src="https://abdullahasson.github.io/merchants/src/img/logo-light-ltr.png"
+                alt="logo-light"
+                class="h-10 w-auto dark-hidden"
+              />
+
+              <img
+                src="https://abdullahasson.github.io/merchants/src/img/logo-dark-ltr.png"
+                alt="logo-dark"
+                class="h-10 w-auto dark-block"
+              />
+            </a>
+
+            <!-- Standart drawer -->
+            <div class="w-full inline-flex flex-col px-3 pb-3">
+              <!-- title & menu -->
+              <div class="pt-6 pb-2 px-4 compact-hide">
+                <p
+                  class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400"
+                >
+                  Home
+                </p>
+              </div>
+              
+              <ul class="sidebar-menu flex flex-col">
+                <!-- dashboards -->
+                <li class="relative">
+                  <a
+                    href="#"
+                    class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+                  >
+                    <span class="material-symbols-outlined">house</span>
+                    <span class="compact-title">Dashboard</span>
+                  </a>
+                </li>
+
+                <!-- Orders -->
+                <li class="relative">
+                  <a
+                    href="#"
+                    class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+                  >
+                    <span class="material-symbols-outlined">orders</span>
+                    <span class="compact-title">Orders</span>
+                  </a>
+                </li>
+
+                <!-- Shipments -->
+                <li class="relative">
+                  <a
+                    href="#"
+                    class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+                  >
+                    <span class="material-symbols-outlined">package_2</span>
+                    <span class="compact-title">Shipments</span>
+                  </a>
+                </li>
+
+                <!-- Finance -->
+                <li class="relative">
+                  <a
+                    href="#"
+                    class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+                  >
+                    <span class="material-symbols-outlined">savings</span>
+                    <span class="compact-title">Finance</span>
+                  </a>
+                </li>
+
+                <!-- Integrations -->
+                <li class="relative">
+                  <a
+                    href="#"
+                    class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+                  >
+                    <span class="material-symbols-outlined">integration_instructions</span>
+                    <span class="compact-title">Integrations</span>
+                  </a>
+                </li>
+              </ul>
+
+              <!-- title & menu -->
+              <div class="pt-6 pb-2 px-4 compact-hide">
+                <p
+                  class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400"
+                >
+                  Settings
+                </p>
+              </div>
+
+              <ul class="sidebar-menu flex flex-col">
+                <!-- Shipping -->
+                <li class="relative">
+                  <a
+                    href="#"
+                    class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                  >
+                    <span class="material-symbols-outlined">local_shipping</span>
+                    <span class="compact-title">Shipping</span>
+                  </a>
+                </li>
+
+                <!-- Billing -->
+                <li class="relative">
+                  <a
+                    href="#"
+                    class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+                  >
+                    <span class="material-symbols-outlined">wallet</span>
+                    <span class="compact-title">Billing</span>
+                  </a>
+                </li>
+
+                <!-- Account -->
+                <li class="relative">
+                  <a
+                    href="#"
+                    class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08]"
+                  >
+                    <span class="material-symbols-outlined">Account_Circle</span>
+                    <span class="compact-title">Account</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+        <div class="main-content flex-grow flex items-center justify-center min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
+            <!-- loader -->
+            <svg class="circular-loader relative w-[100px] h-[100px]">
+                <circle class="path stroke-primary-600 dark:stroke-primary-200" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+            </svg>
+        </div>
+      </main>
+    </div>
+  </div>
+  
+  <!-- header -->
+  
+<header 
+  data-type="navtop" 
+  class="nav-top bg-white dark:bg-gray-900 border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 
+          lg:px-8 lg:pr-3 left-0 lg:left-72 right-0 
+          flex flex-row items-center justify-between gap-3 transition-all duration-300 ease-in-out"
+  style="z-index: 40;"
+>
+    
+    <!-- trigger sidebar -->
+    <button 
+      data-type="dialogs" 
+      data-target="#sidebar" 
+      class="relative inline-flex lg:hidden items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+      <span class="material-symbols-outlined !text-[28px]">menu</span>
+    </button>
+
+    <!-- trigger compact layout -->
+    <button data-type="toggle" data-target="#body-layout" class="compact-btn group relative hidden  !items-center justify-center w-12 h-12 gap-x-2 py-2.5 px-6 rounded-[6.25rem] tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]">
+      <span class="material-symbols-outlined !text-[28px] menu-close">menu_open</span>
+      <span class="material-symbols-outlined !text-[28px] menu-open">menu</span>
+    </button>
+
+    <!-- search form -->
+    <div class="relative w-full hidden md:block">
+      
+    </div>
+
+    <!-- navbar right -->
+    <div class="flex flex-row items-center gap-3 ml-auto md:ml-12">
+      
+
+      <!-- Add Button -->
+      <div class="relative">
+        <button 
+          data-type="dropdown" 
+          data-target="#adddropdown" 
+          class="btn-outline relative flex flex-row items-center justify-center w-10 h-10 gap-x-2 py-2 px-4 rounded-full text-sm tracking-[.00714em] font-medium border border-gray-200 dark:border-gray-700"
+        >
+          <span class="material-symbols-outlined !text-base">add</span>
+        </button>
+
+        <!-- menus -->
+        <ul id="adddropdown" data-type="dropdownmenu" class="[&.show]:!opacity-100 [&.show]:!visible opacity-0 invisible absolute top-[3.1rem] z-30 transition duration-400 ease-in-out left-auto right-0 transform translate-x-1/3 inline-flex flex-col py-2 rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10">
+          <li class="relative">
+            <a href="/en/orders/orders/create" class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+              New Order
+            </a>
+          </li>
+          <li class="relative border-t border-gray-100 dark:border-gray-800">
+            <a href="/en/orders/orders-links/create" class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+              New Checkout Link
+            </a>
+          </li>
+          <li class="relative border-t border-gray-100 dark:border-gray-800">
+            <a href="/en/sales-channels/integrations/" class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+              Connect Sales Channel
+            </a>
+          </li>
+          <li class="relative border-t border-gray-100 dark:border-gray-800">
+            <a href="/en/carriers/carriers/create" class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap">
+              Connect Courier
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      
+
+      <!-- Balance -->
+      <div class="relative">
+        <a href="/en/payments/wallet/">
+          <button class="btn relative flex flex-col items-center justify-center w-24 h-12 p-2.5 rounded-[6.25rem] bg-white text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:bg-gray-900 dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08] border border-gray-200 dark:border-gray-700">
+            <span class="text-sm text-neutral-900 dark:text-neutral-100 leading-tight">
+              Balance
+            </span>
+            <span class="text-xs text-green-600 dark:text-green-400 leading-tight">
+              10906.87 ج.م
+            </span>
+          </button>
+        </a>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div class="relative">
+            <button 
+              data-type="theme" 
+              id="lightdark" 
+              class="btn-outline relative flex flex-row items-center justify-center w-10 h-10 gap-x-2 py-2 px-4 rounded-full text-sm tracking-[.00714em] font-medium border border-gray-200 dark:border-gray-700"
+            >
+              <span class="material-symbols-outlined !text-base dark-block">light_mode</span>
+              <span class="material-symbols-outlined !text-base dark-hidden">dark_mode</span>
+            </button>
+      </div>
+
+      
+
+      <!-- translate -->
+      <div class="relative">
+          <button 
+              data-type="dropdown" 
+              data-target="#dropdown0" 
+              class="btn-outline relative flex flex-row items-center justify-center w-10 h-10 gap-x-2 py-2 px-4 rounded-full text-sm tracking-[.00714em] font-medium border border-gray-200 dark:border-gray-700"
+          >
+              <span class="material-symbols-outlined !text-base">translate</span>
+          </button>
+
+          <!-- menus -->
+          <ul 
+              id="dropdown0" 
+              data-type="dropdownmenu" 
+              class="[&.show]:!opacity-100 [&.show]:!visible opacity-0 invisible absolute top-[3.1rem] z-30 transition duration-400 ease-in-out left-auto right-0 transform translate-x-1/3 min-w-[150px] inline-flex flex-col py-2 rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10"
+          >
+              <li class="relative">
+                  <a 
+                      href="#" 
+                      onclick="switchLanguage('en')"
+                      class="flex flex-row items-center gap-1 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 bg-gray-100 dark:bg-gray-800"
+                  >
+                      <img 
+                          src="../src/img/flags/US.svg" 
+                          class="h-4" 
+                          alt="English"
+                      >
+                      English
+                  </a>
+              </li>
+              <li class="relative border-t border-gray-100 dark:border-gray-800">
+                  <a 
+                      href="#" 
+                      onclick="switchLanguage('ar')"
+                      class="flex flex-row items-center gap-1 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 "
+                  >
+                      <img 
+                          src="../src/img/flags/SA.svg" 
+                          class="h-4" 
+                          alt="Arabic"
+                      >
+                      العربية
+                  </a>
+              </li>
+          </ul>
+      </div>
+
+      <!-- Profile -->
+      <div class="relative">
+        <button data-type="dropdown" data-target="#dropdown1" class="btn w-12 h-12 gap-x-2 py-2.5 flex items-center gap-2 justify-center rounded-full text-sm tracking-[0.15px]">
+          <img src="../src/img/avatar.png" alt="ari budin" class="w-10 h-10 flex-none rounded-full bg-primary-600 dark:bg-primary-200">
+        </button>
+
+        <!-- menus -->
+        <ul id="dropdown1" data-type="dropdownmenu" class="[&.show]:!opacity-100 [&.show]:!visible opacity-0 invisible absolute top-[3.1rem] z-30 transition duration-400 ease-in-out left-auto right-0 min-w-[200px] inline-flex flex-col py-2 rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10 max-sm:fixed max-sm:mt-3 max-sm:left-4 max-sm:right-4">
+          <li class="relative">
+            <a href="/en/users/edit-profile/" class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200">
+            <span class="material-symbols-outlined">person</span>
+              Profile
+            </a>
+          </li>
+
+          <li class="relative">
+            <a href="/en/users/support/" class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200">
+            <span class="material-symbols-outlined">help_center</span>
+              Support
+            </a>
+          </li>
+          <li class="relative border-t border-gray-100 dark:border-gray-800">
+            <button 
+              data-type="dialogs" 
+              data-target="#dialog_xa" 
+              class="flex flex-row items-center w-full gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200"
+            >
+              <span 
+                class="material-symbols-outlined"
+              >
+                power_settings_new
+              </span>
+              Logout
+          </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div id="dialog_xa" class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show_.backDialog]:block [&.show_.backDialog]:inset-0 [&.show]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center">
+  <div data-close="#dialog_xa" class="backDialog hidden z-40 overflow-auto fixed bg-black"></div>
+  <!-- dialogs -->
+  <div class="z-50 flex flex-col pt-8 w-11/12 sm:w-[480px] h-auto bg-surface-300 dark:bg-surfacedark-300 rounded-[28px]">
+    <div 
+      class="w-20 h-20 flex items-center justify-center mx-auto rounded-full overflow-hidden"
+      style="background-color: #ff000075;"
+    >
+        <span 
+            class="material-symbols-outlined text-white"
+            style="font-size: 55px;"
+        >
+            Priority_High
+        </span>
+    </div>
+    <div class="flex flex-col gap-4 justify-start px-8 pt-8 pb-0">
+      <h3 class="text-title-lg text-gray-900 dark:text-gray-100 text-center">
+        Are You Sure ?
+      </h3>
+    </div>
+
+    <div 
+      class="flex flex-row px-8 py-8"
+      style="justify-content: space-around;"
+    >
+      <button 
+        data-close="#dialog_xa" 
+        class="closeDialog relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium text-primary-600 hover:bg-surface-200 focus:bg-surface-400 dark:text-primary-200 dark:hover:bg-surfacedark-200 dark:focus:bg-surfacedark-400"
+      >
+        No
+      </button>
+
+      <a href="/en/users/logout/"  class="btn relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800">
+        Yes
+      </a>
+    </div>
+  </div>
+</div>
+</header>
+
+
+
+
+<script>
+function switchLanguage(lang) {
+    const currentPath = window.location.pathname;
+    let newPath = currentPath;
+    
+    // Replace any existing language code
+    if (currentPath.startsWith('/en/')) {
+        newPath = currentPath.replace('/en/', `/${lang}/`);
+    } else if (currentPath.startsWith('/ar/')) {
+        newPath = currentPath.replace('/ar/', `/${lang}/`);
+    } else {
+        // If no language code, add it
+        newPath = `/${lang}${currentPath}`;
+    }
+    
+    window.location.href = newPath;
+}
+</script>
+
+
+  <main class="lg:flex">
+    <!-- sidebar -->
+    
+
+<aside
+  id="sidebar"
+  class="sidebar bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-500 ease-in-out fixed max-lg:z-[60] lg:shrink-0 lg:relative lg:w-72 h-screen max-lg:[&.show_.sidebar-bg]:opacity-60 dark:max-lg:[&.show_.sidebar-bg]:opacity-60 [&.show_.sidebar-bg]:inset-0 [&.show_.sidebar-content]:translate-x-0"
+  dir="ltr"
+>
+  <!-- menu -->
+  <div
+    id="sidebar-content"
+    class="sidebar-content bg-white dark:bg-gray-900 border-r border-gray-300 transition-all duration-300 ease-in-out fixed z-40 max-lg:-translate-x-full max-lg:bg-surface-500 dark:max-lg:bg-surfacedark-500 left-0 top-0 bottom-0 h-screen w-72 overflow-auto scrollbars"
+  >
+    <!-- logo -->
+    <a
+      id="logo"
+      href="/en/users/dashboard/"
+      class="sidebar-logo border-b border-gray-300 pl-6 flex items-center w-full"
+      style="padding-top: 11.3px; padding-bottom: 11.3px; z-index: 100;"
+    >
+      <img
+        src="https://abdullahasson.github.io/merchants/src/img/logo-light-ltr.png"
+        alt="logo-light"
+        class="h-10 w-auto dark-hidden"
+      />
+
+      <img
+        src="https://abdullahasson.github.io/merchants/src/img/logo-dark-ltr.png"
+        alt="logo-dark"
+        class="h-10 w-auto dark-block"
+      />
+    </a>
+
+    <!-- Standart drawer -->
+    <div class="w-full inline-flex flex-col px-3 pb-3">
+      <!-- title & menu -->
+      <div class="pt-6 pb-2 px-4 compact-hide">
+        <p
+          class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400"
+        >
+          Home
+        </p>
+      </div>
+      <ul class="sidebar-menu flex flex-col">
+        <!-- dashboards -->
+        <li class="relative">
+          <a
+            href="/en/users/dashboard/"
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+          >
+            <span class="material-symbols-outlined">house</span>
+            <span class="compact-title">Dashboard</span>
+          </a>
+        </li>
+
+        <!-- Orders -->
+        <li class="relative">
+          <a
+            href="javascript:void(0)"
+            data-type="collapse"
+            data-target="#dashboard8"
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+          >
+            <span class="material-symbols-outlined">orders</span>
+            <span class="compact-title">Orders</span>
+          </a>
+          <ul
+            id="dashboard8"
+            data-type="collapsed"
+            class="sidebar-submenu [&.active]:block hidden "
+          >
+            <li>
+              <a
+                href="/en/orders/orders/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                All Orders
+              </a>
+            </li>
+            <li>
+              <a
+                href="/en/orders/orders-links/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                Checkout Links
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Shipments -->
+        <li class="relative">
+          <a
+            href="/en/shipments/shipments/"
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+          >
+            <span class="material-symbols-outlined">package_2</span>
+            <span class="compact-title">Shipments</span>
+          </a>
+        </li>
+
+        <!-- Finance -->
+        <li class="relative">
+          <a
+            href="javascript:void(0)"
+            data-type="collapse"
+            data-target="#dashboard1"
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] active"
+          >
+            <span class="material-symbols-outlined">savings</span>
+            <span class="compact-title">Finance</span>
+          </a>
+          <ul
+            id="dashboard1"
+            data-type="collapsed"
+            class="sidebar-submenu [&.active]:block hidden active"
+          >
+            <li>
+              <a
+                href="/en/shipments/shipments/carriers-cod"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                COD Reports
+              </a>
+            </li>
+            <li>
+              <a
+                href="/en/rates/fetch/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                Shipping Rates
+              </a>
+            </li>
+            <li>
+              <a
+                href="/en/payments/wallet/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] active"
+              >
+                Wallet
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        
+        <!-- Integrations -->
+        <li class="relative">
+          <a
+            href="javascript:void(0)"
+            data-type="collapse"
+            data-target="#dashboard2"
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+          >
+            <span class="material-symbols-outlined">integration_instructions</span>
+            <span class="compact-title">Integrations</span>
+          </a>
+          <ul
+            id="dashboard2"
+            data-type="collapsed"
+            class="sidebar-submenu [&.active]:block hidden "
+          >
+            <li>
+              <a
+                href="/en/sales-channels/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                Sales channels
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="/en/carriers/carriers/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                Courier Connections
+              </a>
+            </li>
+          </ul>
+        </li>
+        
+      </ul>
+
+      <!-- title & menu -->
+      <div class="pt-6 pb-2 px-4 compact-hide">
+        <p
+          class="text-title-sm font-medium uppercase text-gray-600 dark:text-gray-400"
+        >
+          Settings
+        </p>
+      </div>
+
+      <ul class="sidebar-menu flex flex-col">
+        <!-- Shipping -->
+        <li class="relative">
+          <a
+            href="javascript:void(0)"
+            data-type="collapse"
+            data-target="#dashboard3"
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+          >
+            <span class="material-symbols-outlined">local_shipping</span>
+            <span class="compact-title">Shipping</span>
+          </a>
+          <ul
+            id="dashboard3"
+            data-type="collapsed"
+            class="sidebar-submenu [&.active]:block hidden "
+          >
+            <li>
+              <a
+                href="/en/users/address-book/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                Address Book
+              </a>
+            </li>
+            
+          </ul>
+        </li>
+
+        <!-- Billing -->
+        <li class="relative">
+          <a
+            href="javascript:void(0)"
+            data-type="collapse"
+            data-target="#dashboard4"
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+          >
+            <span class="material-symbols-outlined">wallet</span>
+            <span class="compact-title">Billing</span>
+          </a>
+          <ul
+            id="dashboard4"
+            data-type="collapsed"
+            class="sidebar-submenu [&.active]:block hidden "
+          >
+            <li>
+              <a
+                href="/en/payments/billing-plan/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                Plans
+              </a>
+            </li>
+            <li>
+              <a
+                href="/en/payments/payment-methods/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                Payment Methods
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <!-- Account -->
+        <li class="relative">
+          <a
+            href="javascript:void(0)"
+            data-type="collapse"
+            data-target="#dashboard9"
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+          >
+            <span class="material-symbols-outlined">Account_Circle</span>
+            <span class="compact-title">Account</span>
+          </a>
+          <ul
+            id="dashboard9"
+            data-type="collapsed"
+            class="sidebar-submenu [&.active]:block hidden "
+          >
+            <li>
+              <a
+                href="/en/users/edit-profile/"
+                class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+              >
+                Profile
+              </a>
+            </li>
+            
+              <li>
+                <a
+                  href="/en/users/teams/"
+                  class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+                >
+                  Teams
+                </a>
+              </li>
+              <!-- <li>
+                <a
+                  href="/en/users/teams/create/"
+                  class="flex items-center py-3 pl-12 pr-6 mb-1 leading-none gap-2.5 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-primary-600/[0.08] dark:[&.active]:bg-primary-200/10 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+                >
+                  Add Team Member
+                </a>
+              </li> -->
+            
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <!-- content -->
+    
+<!-- content -->
+<div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
+    <!-- heading -->
+    <div class="flex flex-row justify-between items-center pt-2 pb-6">
+        <div class="flex flex-row justify-between items-center">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol
+                    class="inline-flex items-center space-x-1 md:space-x-3 ">
+                    <!-- Home -->
+                    <li class="inline-flex items-center">
+                        <a href="/en/users/dashboard/"
+                            class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-200 transition-colors duration-200">
+                            <span
+                                class="material-symbols-outlined text-lg mr-2 ">
+                                home
+                            </span>
+                            Home
+                        </a>
+                    </li>
+
+                    <!-- Current Page -->
+                    <li class="inline-flex items-center">
+                        <span class="mx-2 text-gray-400 flex items-center justify-center">
+                            <span class="material-symbols-outlined">
+                                
+                                    chevron_right
+                                
+                            </span>
+                        </span>
+                        <span class="inline-flex items-center text-sm font-medium text-primary-600 dark:text-primary-200">
+                            <span
+                                class="material-symbols-outlined text-lg mr-2 ">
+                                Account_Balance_Wallet
+                            </span>
+
+                            Wallet
+                        </span>
+                    </li>
+                </ol>
+            </nav>
         </div>
 
+        <!-- action -->
+        <div class="flex flex-row gap-3 items-center pr-4">
+            <button 
+                data-type="dialogs" 
+                data-target="#add_credits" 
+                class="btn relative flex flex-row items-center justify-center gap-x-2 py-2 px-4 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+            >
+                <span class="material-symbols-outlined">add</span>
+                Add Credits
+            </button>
+        </div>
+    </div>
 
-        <!-- Add customer -->
-        <div 
-            id="add_credits" 
-            class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show]:inset-0 [&.show_.backDialog]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
-        >
-        <div data-close="#add_credits" class="backDialog z-40 overflow-auto fixed bg-black"></div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-6">
+        <div>
+            <div class="relative py-8 px-6 overflow-hidden flex flex-col gap-2 rounded-xl bg-white dark:bg-gray-900 mb-6">
+                <!-- bg -->
+                <span class="absolute right-0 top-0 opacity-50 text-surface-400 dark:text-surfacedark-400 !text-[100px] material-symbols-outlined">account_balance_wallet</span>
 
-        <!-- dialogs -->
-        <div class="z-50 flex flex-col w-11/12 sm:w-[480px] h-auto bg-surface-100 dark:bg-surfacedark-100 rounded-[28px]">
-            <div class="flex flex-col gap-4 justify-start py-6">
-                <div class="flex justify-between items-center px-6">
-                    <h3 class="text-title-lg leading-7 font-normal text-gray-900 dark:text-gray-100">
-                        إضافة رصيد
-                    </h3>
+                <h2 class="text-headline-md mt-1">10906.87 ج.م</h2>
+                <div class="flex justify-between items-center gap-2 z-10">
+                    <h3 class="body-md text-gray-800 dark:text-gray-200">Balance</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-                    <!-- close -->
-                    <div 
-                        data-close="#add_credits" 
-                        class="cursor-pointer"
+<!-- Add Credits Modal with Payment Options -->
+<div id="add_credits" class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show]:inset-0 [&.show_.backDialog]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center">
+    <div data-close="#add_credits" class="backDialog z-40 overflow-auto fixed bg-black"></div>
+
+    <!-- dialogs -->
+    <div class="z-50 flex flex-col w-11/12 sm:w-[600px] h-auto bg-surface-100 dark:bg-surfacedark-100 rounded-[28px] payment-modal-content">
+        <div class="flex flex-col gap-4 justify-start py-6">
+            <div class="flex justify-between items-center px-6">
+                <h3 class="text-title-lg leading-7 font-normal text-gray-900 dark:text-gray-100">Add Credit</h3>
+                <!-- close -->
+                <div data-close="#add_credits" class="material-symbols-outlined cursor-pointer">close</div>
+            </div>
+
+            <!-- Payment Form -->
+            <form id="payment-form" class="flex flex-col gap-4 py-2 px-6 md:max-h-[60vh] overflow-auto scrollbars show" method="POST">
+                <input type="hidden" name="csrfmiddlewaretoken" value="dbXGm7iwv7GTnPsB1MCYk1ypOKBcK4zga8xXyHE7upHlHM7EJJBPq1yImgVKIExo">
+                
+                <!-- Amount Input -->
+                <div class="relative z-0 mb-4">
+                    <input 
+                        type="number" 
+                        aria-label="credit_amount" 
+                        name="credit_amount" 
+                        id="credit_amount" 
+                        class="w-full h-14 block leading-5 relative py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 overflow-x-auto focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400 dark:focus:border-primary-200 peer" 
+                        placeholder="100" 
+                        value="100"
+                        min="1"
+                        step="0.01"
+                        required
                     >
-                        <span class="material-symbols-outlined">
-                            close
-                        </span>
-                    </div>
+                    <label 
+                        for="credit_amount" 
+                        class="absolute tracking-[.03125em] text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:bg-surface-300 dark:peer-focus:bg-surfacedark-300 peer-focus:px-1 peer-invalid:text-error-600 dark:peer-invalid:text-error-200"
+                    >
+                        Amount to Add (EGP)
+                    </label>
                 </div>
 
-                <!-- Form -->
-                <form class="flex flex-col gap-4 py-2 px-6 md:max-h-[45vw] overflow-auto scrollbars show" method="POST">
-                    <input type="hidden" name="csrfmiddlewaretoken" value="uaFt1eo3S3fgmRaB8CUTicilnMq34FC5r7fKdOKERlgIGOPEQzTKociEViKB2fAd">
-
-                    <div class="flex flex-col gap-4">
-                        <!-- Amount Input -->
-                        <div class="relative z-0">
-                            <input 
-                            type="number" 
-                            aria-label="credit_amount" 
-                            name="credit_amount"  
-                            id="credit_amount" 
-                            class="w-full h-14 block leading-5 relative py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 overflow-x-auto focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400 dark:focus:border-primary-200 peer" 
-                            placeholder="EGP" 
-                            value="100"
-                            >
-
-                            <label 
-                            for="credit_amount" 
-                            class="absolute tracking-[.03125em] text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:bg-surface-300 dark:peer-focus:bg-surfacedark-300 peer-focus:px-1 peer-invalid:text-error-600 dark:peer-invalid:text-error-200"
-                            >
-                            مبلغ الرصيد - EGP
-                            </label>
-                        </div>
-
-                        <!-- Options -->
-                        <div class="flex flex-col gap-2">
-                            <h2>
-                                اختر طريقة الدفع
-                            </h2>
-
-                            <div dir="ltr">
-                                <div class="payment-container">
-                                    <!-- InstaPay Option -->
-                                    <label class="payment-option">
-                                        <div class="icon-container">
-                                            <img src="../src/instapay.svg" alt="InstaPay" class="payment-svg">
-                                            <span class="option-text instapay-text">InstaPay</span>
-                                        </div>
-                                        <div class="custom-radio"></div>
-
-                                        <input 
-                                            type="radio" 
-                                            name="payment" 
-                                            value="instapay" />
-                                    </label>
-
-                                    <!-- Visa/Mastercard Option -->
-                                    <label class="payment-option">
-                                        <div class="icon-container">
-                                            <img src="../src/visa.svg" alt="Visa" class="payment-svg">
-                                            <span class="option-text visa-text">visa/mastercard</span>
-                                        </div>
-                                        <div class="custom-radio"></div>
-                                        <input 
-                                            type="radio" 
-                                            name="payment" 
-                                            value="stripe" 
-                                            checked 
-                                        />
-                                    </label>
+                <!-- Payment Method Selection -->
+                <div class="mb-6">
+                    <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">Select Payment Method</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Instapay Option -->
+                        <div class="payment-method-option active" id="instapay-option">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="payment-icon instapay-icon">
+                                    <img src="../src/instapay.svg" alt="" class="w-auto h-10">
                                 </div>
+                                <h5 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Instapay</h5>
+                            </div>
+                        </div>
+                        
+                        <!-- Visa/Mastercard Option -->
+                        <div class="payment-method-option" id="card-option">
+                            <div class="flex flex-col items-center text-center">
+                                <div class="payment-icon card-icon">
+                                    <img src="../src/visa.svg" alt="" class="w-auto h-10">
+                                </div>
+                                <h5 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-2">Visa/Mastercard</h5>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <div class="relative">
-                        <button 
-                            class="btn w-full relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
-                        >
-                            <span class="ml-1 compact-hide">
-                                متابعة
-                            </span>
-                        </button>
-
-                                  <div class="text-center mt-4">
-              <div class="flex items-center justify-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                  <span class="material-symbols-outlined text-sm">shield</span>
-                  <span>جميع المدفوعات مشفرة وآمنة</span>
-              </div>
-          </div>
+                <!-- Payment Method Details -->
+                <div class="payment-form-container">
+                    <!-- Instapay Details (Visible by default) -->
+                    <div id="instapay-details" class="method-details active">
+                        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                            <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary-600 dark:text-primary-200">account_circle</span>
+                                Instapay Account Information
+                            </h4>
+                            
+                            <!-- Account Information -->
+                            <div class="space-y-3 mb-6">
+                                <div class="account-info-item">
+                                    <span class="info-label">Bank Name (AR)</span>
+                                    <span class="info-value text-right">البنك المصري لتنمية الصادرات</span>
+                                </div>
+                                <div class="account-info-item">
+                                    <span class="info-label">Bank Name (EN)</span>
+                                    <span class="info-value text-right">EXPORT DEVELOPMENT BANK OF EGYPT</span>
+                                </div>
+                                <div class="account-info-item">
+                                    <span class="info-label">Account Name</span>
+                                    <span class="info-value text-right">Royal Works For Trade</span>
+                                </div>
+                                <div class="account-info-item">
+                                    <span class="info-label">Account Number</span>
+                                    <span class="info-value text-right font-mono">2022103250101012</span>
+                                </div>
+                                <div class="account-info-item">
+                                    <span class="info-label">IBAN</span>
+                                    <span class="info-value text-right font-mono">EG530061023402022103250101012</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Optional Fields -->
+                            <div class="space-y-4 mb-6">
+                                <!-- Phone Number (Optional) -->
+                                <div class="relative z-0">
+                                    <input 
+                                        type="tel" 
+                                        aria-label="instapay_phone" 
+                                        name="instapay_phone" 
+                                        id="instapay_phone"
+                                        class="w-full h-14 block leading-5 relative py-2 px-4 rounded bg-white dark:bg-gray-700 border focus:border-2 border-gray-300 dark:border-gray-600 overflow-x-auto focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:focus:border-primary-200 peer" 
+                                        placeholder="+20 10XXXXXXXX"
+                                    >
+                                    <label 
+                                        for="instapay_phone" 
+                                        class="absolute tracking-[.03125em] text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-700 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-7 peer-focus:bg-white dark:peer-focus:bg-gray-700 peer-focus:px-1"
+                                    >
+                                        Phone Number (Optional)
+                                    </label>
+                                </div>
+                                
+                                <!-- Screenshot Upload (Optional) -->
+                                <div class="relative z-0">
+                                    <div class="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-4 text-center hover:border-primary-500 dark:hover:border-primary-400 transition-colors duration-200">
+                                        <input 
+                                            type="file" 
+                                            aria-label="payment_screenshot" 
+                                            name="payment_screenshot" 
+                                            id="payment_screenshot"
+                                            class="hidden"
+                                            accept="image/*"
+                                        >
+                                        <label 
+                                            for="payment_screenshot" 
+                                            class="cursor-pointer flex flex-col items-center justify-center gap-2"
+                                        >
+                                            <span class="material-symbols-outlined text-4xl text-gray-400 dark:text-gray-500">
+                                                cloud_upload
+                                            </span>
+                                            <span class="text-sm text-gray-600 dark:text-gray-400 font-medium">
+                                                Upload Payment Screenshot (Optional)
+                                            </span>
+                                            <span class="text-xs text-gray-500 dark:text-gray-500">
+                                                PNG, JPG, or JPEG up to 5MB
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div id="screenshot-preview" class="mt-2 hidden">
+                                        <div class="flex items-center gap-2 p-2 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                            <span class="material-symbols-outlined text-green-600 dark:text-green-400">
+                                                check_circle
+                                            </span>
+                                            <span class="text-sm text-green-700 dark:text-green-300">
+                                                File selected
+                                            </span>
+                                            <button 
+                                                type="button" 
+                                                onclick="clearScreenshot()"
+                                                class="ml-auto text-red-600 dark:text-red-400 text-sm hover:underline"
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Instapay Action Button -->
+                            <div class="mt-6">
+                                <button 
+                                    type="submit" 
+                                    name="payment_method" 
+                                    value="instapay"
+                                    class="btn relative w-full flex flex-row items-center justify-center gap-x-2 py-2 px-4 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                >
+                                    <span class="material-symbols-outlined">check_circle</span>
+                                    Confirm Instapay Payment
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                </form>
-            </div>
+                    
+                    <!-- Card Details (Hidden by default) -->
+                    <div id="card-details" class="method-details" style="display: none;">
+                        <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+                            <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary-600 dark:text-primary-200">lock</span>
+                                Secure Card Payment
+                            </h4>
+                            
+                            <!-- Stripe Action Button -->
+                            <div class="mt-6">
+                                <button 
+                                    type="button" 
+                                    id="proceed-to-stripe"
+                                    class="btn relative w-full flex flex-row items-center justify-center gap-x-2 py-2 px-4 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                >
+                                    <span class="material-symbols-outlined">lock</span>
+                                    Proceed to Secure Payment
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
-        </div>
+    </div>
+</div>
 
-    </main>
+
+  </main>
+
+
+  <!-- Footer -->
+  <footer 
+    class="footer bg-white dark:bg-gray-900 absolute px-4 lg:px-8  lg:pl-3 left-0 lg:left-72 bottom-0 right-0 border-t border-gray-300"
+  >
+      <div class="text-center py-6">
+          <!-- Copyright text -->
+          <p>
+              <script>document.write(new Date().getFullYear())</script> 
+                
+                  © Shpd – All rights reserved
+                
+          </p>
+      </div>
+  </footer>
+
   
-
-
+  
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // DOM Elements
+    const instapayOption = document.getElementById('instapay-option');
+    const cardOption = document.getElementById('card-option');
+    const instapayDetails = document.getElementById('instapay-details');
+    const cardDetails = document.getElementById('card-details');
+    const creditAmountInput = document.getElementById('credit_amount');
+    const proceedToStripeBtn = document.getElementById('proceed-to-stripe');
+    const stripePaymentModal = document.getElementById('stripe-payment-modal');
+    const stripePaymentAmount = document.getElementById('stripe-payment-amount');
+    const cardNumberInput = document.getElementById('card_number');
+    const expiryDateInput = document.getElementById('expiry_date');
+    const cvvInput = document.getElementById('cvv');
+    const stripeForm = document.getElementById('stripe-form');
+    const stripeSubmitButton = document.getElementById('stripe-submit-button');
     
-    <!-- Tailmater javascript -->
-    <script src="../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
-    <script src="../vendors/glightbox/dist/js/glightbox.min.js"></script>
-    <script src="../vendors/chart.js/dist/chart.umd.js"></script>
-    <script src="../src/js/charts/analytics.js"></script>
-    <script src="../vendors/jsvectormap/dist/maps/world.js"></script>
-    <!-- Vendor Configuration -->
-    <script src="../src/js/vendor.js"></script>
-    <script src="../src/js/tailmater.js"></script>
+    // Payment method selection
+    instapayOption.addEventListener('click', function() {
+        selectPaymentMethod('instapay');
+    });
+    
+    cardOption.addEventListener('click', function() {
+        selectPaymentMethod('card');
+    });
+    
+    function selectPaymentMethod(method) {
+        // Update UI for payment options
+        if (method === 'instapay') {
+            instapayOption.classList.add('active');
+            cardOption.classList.remove('active');
+            instapayDetails.classList.add('active');
+            instapayDetails.style.display = 'block';
+            cardDetails.classList.remove('active');
+            cardDetails.style.display = 'none';
+        } else {
+            instapayOption.classList.remove('active');
+            cardOption.classList.add('active');
+            instapayDetails.classList.remove('active');
+            instapayDetails.style.display = 'none';
+            cardDetails.classList.add('active');
+            cardDetails.style.display = 'block';
+        }
+    }
+    
+    // Update Stripe payment amount when credit amount changes
+    creditAmountInput.addEventListener('input', function() {
+        stripePaymentAmount.textContent = `${this.value} EGP`;
+    });
+    
+    // Handle proceed to Stripe payment modal
+    proceedToStripeBtn.addEventListener('click', function() {
+        // Update payment amount in Stripe modal
+        stripePaymentAmount.textContent = `${creditAmountInput.value} EGP`;
+        
+        // Close the add credits modal
+        const addCreditsModal = document.getElementById('add_credits');
+        if (addCreditsModal) {
+            addCreditsModal.classList.remove('show');
+        }
+        
+        // Show Stripe payment modal
+        stripePaymentModal.classList.add('show');
+    });
+    
+    // Card number formatting
+    cardNumberInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+        let formattedValue = value.replace(/(\d{4})/g, '$1 ').trim();
+        e.target.value = formattedValue;
+        
+        // Update card icon based on first digit
+        updateCardIcon(value.charAt(0));
+    });
+    
+    // Expiry date formatting
+    expiryDateInput.addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length >= 2) {
+            value = value.substring(0, 2) + '/' + value.substring(2, 4);
+        }
+        e.target.value = value;
+    });
+    
+    // CVV formatting
+    cvvInput.addEventListener('input', function(e) {
+        e.target.value = e.target.value.replace(/\D/g, '');
+    });
+    
+    // Helper function to update card icon
+    function updateCardIcon(firstDigit) {
+        const cardIcons = document.querySelectorAll('.card-icon-small');
+        
+        // Reset all icons
+        cardIcons.forEach(icon => {
+            icon.classList.remove('active');
+        });
+        
+        // Activate appropriate icon based on first digit
+        if (firstDigit === '4') {
+            cardIcons[0].classList.add('active');
+        } else if (firstDigit === '5') {
+            cardIcons[1].classList.add('active');
+        } else {
+            // Default to first icon if unknown
+            cardIcons[0].classList.add('active');
+        }
+    }
+    
+    // Form validation and submission for Stripe
+    stripeForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        if (!validateCardForm()) {
+            return;
+        }
+        
+        // Show processing state
+        stripeSubmitButton.innerHTML = `
+            <span class="material-symbols-outlined animate-spin">refresh</span>
+            Processing...
+        `;
+        stripeSubmitButton.disabled = true;
+        
+        // Simulate payment processing
+        setTimeout(function() {
+            alert('Payment successful! Credits have been added to your wallet.');
+            
+            // Reset form and close modal
+            stripeSubmitButton.innerHTML = `
+                <span class="material-symbols-outlined">payments</span>
+                Pay Now
+            `;
+            stripeSubmitButton.disabled = false;
+            
+            // Close the stripe modal
+            stripePaymentModal.classList.remove('show');
+            
+            // Reset the form
+            stripeForm.reset();
+            
+            // Optionally refresh the page to update wallet balance
+            // window.location.reload();
+        }, 2000);
+    });
+    
+    // Form validation function
+    function validateCardForm() {
+        const cardNumber = cardNumberInput.value.replace(/\s/g, '');
+        const cardholderName = document.getElementById('cardholder_name').value;
+        const expiryDate = expiryDateInput.value;
+        const cvv = cvvInput.value;
+        
+        if (cardNumber.length < 16) {
+            alert('Please enter a valid 16-digit card number');
+            return false;
+        }
+        
+        if (!cardholderName.trim()) {
+            alert('Please enter the name on your card');
+            return false;
+        }
+        
+        if (!expiryDate.match(/\d{2}\/\d{2}/)) {
+            alert('Please enter a valid expiry date in MM/YY format');
+            return false;
+        }
+        
+        if (cvv.length < 3) {
+            alert('Please enter a valid CVV code');
+            return false;
+        }
+        
+        return true;
+    }
+    
+    // Initialize card icons
+    updateCardIcon('4');
+});
+</script>
+
+  <!-- Tailmater javascript -->
+  <script src="../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
+  <script src="../vendors/glightbox/dist/js/glightbox.min.js"></script>
+  <script src="../vendors/chart.js/dist/chart.umd.js"></script>
+  <script src="../src/js/charts/analytics.js"></script>
+  <script src="../vendors/jsvectormap/dist/maps/world.js"></script>
+  <!-- Vendor Configuration -->
+  <script src="../src/js/vendor.js"></script>
+  <script src="../src/js/tailmater.js"></script>
+
 </body>
 </html>
