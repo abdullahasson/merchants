@@ -1,4 +1,3 @@
-<!-- Layout for logged in merchants -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -33,6 +32,57 @@
         href="https://abdullahasson.github.io/merchants/src/img/favicon-bg-removebg-preview.png" />
 
     <style>
+        .custom-select-wrapper {
+            position: relative;
+        }
+
+        .hidden-country-select {
+            display: none;
+        }
+
+        .custom-select-trigger {
+            background: var(--bg-color);
+            border: 1px solid #6b7280;
+        }
+
+        .custom-options {
+            background: white;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .dark .custom-options {
+            background: #374151;
+            border-color: #4b5563;
+        }
+
+        .option-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+        }
+
+        .option-item:hover {
+            background: #f3f4f6;
+        }
+
+        .dark .option-item:hover {
+            background: #4b5563;
+        }
+
+        .option-item.selected {
+            background: #3b82f6;
+            color: white;
+        }
+
+        /* Ensure dropdown appears above all other content */
+        .custom-options {
+            z-index: 9999 !important;
+        }
+
+        .custom-select-wrapper {
+            z-index: 30;
+        }
+
         .starter-gradient {
             background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
         }
@@ -200,8 +250,10 @@
 
 </head>
 
-<body id="body-layout"
-    class="text-body-md relative font-sans font-normal text-gray-700 dark:text-gray-300 bg-surface-500 dark:bg-surfacedark-500 show">
+<body 
+    id="body-layout"
+    class="text-body-md relative font-sans font-normal text-gray-700 dark:text-gray-300 bg-surface-500 dark:bg-surfacedark-500 show"
+>
     <!-- preloader -->
     <div class="preloader fixed inset-0 z-50 bg-surface-500 dark:bg-surfacedark-500 h-screen w-screen overflow-hidden">
         <div class="w-screen h-screen">
@@ -392,7 +444,6 @@
     </div>
 
     <!-- header -->
-
     <header data-type="navtop" class="nav-top bg-white dark:bg-gray-900 border-b border-gray-300 [&amp;.show]:translate-y-0 top-0 fixed h-16 px-4 
           lg:px-8 lg:pr-3 left-0 lg:left-72 right-0 
           flex flex-row items-center justify-between gap-3 transition-all duration-300 ease-in-out"
@@ -602,7 +653,6 @@
             window.location.href = newPath;
         }
     </script>
-
 
     <main class="lg:flex">
         <!-- sidebar -->
@@ -829,12 +879,12 @@
             <!-- Breadcrumb -->
             <div class="flex flex-row justify-between items-center pt-2 pb-6">
                 <nav class="flex" aria-label="Breadcrumb">
-                    <ol class="inline-flex items-center space-x-1 md:space-x-3 ">
+                    <ol class="inline-flex items-center space-x-1 md:space-x-3">
                         <!-- Home -->
                         <li class="inline-flex items-center">
                             <a href="/en/users/dashboard/"
                                 class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-200 transition-colors duration-200">
-                                <span class="material-symbols-outlined text-lg mr-2 ">
+                                <span class="material-symbols-outlined text-lg mr-2">
                                     home
                                 </span>
                                 Home
@@ -843,19 +893,16 @@
 
                         <!-- Shipping Rates -->
                         <li class="inline-flex items-center">
-                            <span class="mx-2 text-gray-400 flex-center">
+                            <span class="mx-2 text-gray-400 flex items-center justify-center">
                                 <span class="material-symbols-outlined">
-
                                     chevron_right
-
                                 </span>
                             </span>
                             <a href="/en/rates/fetch/"
                                 class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-200 transition-colors duration-200 ms-1">
-                                <span class="material-symbols-outlined hidden-sm text-lg mr-2 ">
+                                <span class="material-symbols-outlined hidden-sm text-lg mr-2">
                                     Request_Quote
                                 </span>
-
                                 <span class="hidden-sm">Fetch Rates</span>
                                 <span class="block-sm">...</span>
                             </a>
@@ -863,16 +910,14 @@
 
                         <!-- Current Page - Quote and Book -->
                         <li class="inline-flex items-center">
-                            <span class="mx-2 text-gray-400 flex-center">
+                            <span class="mx-2 text-gray-400 flex items-center justify-center">
                                 <span class="material-symbols-outlined">
-
                                     chevron_right
-
                                 </span>
                             </span>
                             <span
                                 class="inline-flex items-center text-sm font-medium text-primary-600 dark:text-primary-200">
-                                <span class="material-symbols-outlined text-lg mr-2 ">
+                                <span class="material-symbols-outlined text-lg mr-2">
                                     Money_Range
                                 </span>
                                 Quote and Book
@@ -882,114 +927,466 @@
                 </nav>
             </div>
 
-            <!-- Order Summary -->
-            <div class="flex-1 min-w-0 mb-6">
-                <div
-                    class="bg-white dark:bg-gray-900 rounded-xl shadow-sm p-3 border border-gray-100 dark:border-gray-700">
-                    <div id="summary" class="grid grid-cols-1 md:grid-cols-3 gap-2">
-                        <!-- From -->
-                        <div class="flex items-center gap-2 p-2 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-800 flex-center">
-                                <span class="material-symbols-outlined text-red-500 text-xs">
-                                    location_on
-                                </span>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <div class="text-[10px] text-red-500 font-medium truncate">From</div>
-                                <div class="font-semibold text-gray-800 dark:text-gray-200 text-xs truncate">
-                                    Cairo
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Arrow -->
-                        <div class="flex-center">
-                            <div class="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-800 flex-center">
-                                <span
-                                    class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-xs hidden-sm">
-
-                                    arrow_forward
-
-                                </span>
-                                <span
-                                    class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-xs block-sm">
-                                    arrow_downward
-                                </span>
-                            </div>
-                        </div>
-
-                        <!-- To -->
-                        <div class="flex items-center gap-2 p-2 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <div class="w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-800 flex-center">
-                                <span class="material-symbols-outlined text-green-500 text-xs">
-                                    location_on
-                                </span>
-                            </div>
-                            <div class="flex-1 min-w-0">
-                                <div class="text-[10px] text-green-500 font-medium truncate">To</div>
-                                <div class="font-semibold text-gray-800 dark:text-gray-200 text-xs truncate">
-                                    الرمضانى
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Package - All Details Visible -->
-                        <div id="dimensions-summary" class="hidden items-center gap-2 p-2 rounded-lg border border-gray-200 dark:border-gray-700">
-                            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-500 flex-center">
-                                <span class="material-symbols-outlined text-white text-sm">
-                                    inventory_2
-                                </span>
-                            </div>
-                            <div class="flex-1 min-w-0">
+            <!-- COMPACT SEARCH SUMMARY FORM -->
+            <div 
+                class="bg-white relative dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-t-xl rounded-b-xl mb-6 transition-all duration-300"
+                id="searchSummary"
+            >
+                <!-- Order Summary -->
+                <div class="flex items-center justify-between p-4 cursor-pointer">
+                    <!-- Order Summary -->
+                    <div class="flex-1 min-w-0">
+                        <div class="pr-3">
+                            <div class="grid grid-cols-1 md:grid-cols-4 gap-2">
+                                <!-- From -->
                                 <div
-                                    class="text-[10px] text-blue-700 dark:text-blue-300 font-medium uppercase truncate">
-                                    Parcel</div>
-                                <div class="grid grid-cols-2 gap-x-1 gap-y-0.5 text-[10px]">
-                                    <div class="text-gray-800 dark:text-gray-200">
-                                        <span class="font-semibold">12.0</span>
-                                        <span class="text-gray-500 dark:text-gray-400 text-[9px]">L</span>
+                                    class="flex items-center gap-2 p-2 rounded-lg border border-gray-200 dark:border-gray-700">
+                                    <div class="w-6 h-6 rounded-full flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-red-500 text-xs">
+                                            location_on
+                                        </span>
                                     </div>
-                                    <div class="text-gray-800 dark:text-gray-200">
-                                        <span class="font-semibold">12.0</span>
-                                        <span class="text-gray-500 dark:text-gray-400 text-[9px]">W</span>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="text-[10px] text-red-500 font-medium truncate">From</div>
+                                        <div class="font-semibold text-gray-800 dark:text-gray-200 text-xs truncate">
+                                            Cairo, Egypt
+                                        </div>
                                     </div>
-                                    <div class="text-gray-800 dark:text-gray-200">
-                                        <span class="font-semibold">12.0</span>
-                                        <span class="text-gray-500 dark:text-gray-400 text-[9px]">H</span>
+                                </div>
+
+                                <!-- Arrow -->
+                                <div class="flex items-center justify-center">
+                                    <div class="w-8 h-8 rounded-full flex items-center justify-center">
+                                        <span
+                                            class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-xs hidden-sm">
+                                            arrow_forward
+                                        </span>
+                                        <span
+                                            class="material-symbols-outlined text-gray-600 dark:text-gray-300 text-xs block-sm">
+                                            arrow_downward
+                                        </span>
                                     </div>
-                                    <div class="text-gray-800 dark:text-gray-200">
-                                        <span class="font-semibold">12.0</span>
-                                        <span class="text-gray-500 dark:text-gray-400 text-[9px]">kg</span>
+                                </div>
+
+                                <!-- To -->
+                                <div
+                                    class="flex items-center gap-2 p-2 rounded-lg border border-gray-200 dark:border-gray-700">
+                                    <div class="w-6 h-6 rounded-full flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-green-500 text-xs">
+                                            location_on
+                                        </span>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="text-[10px] text-green-500 font-medium truncate">To</div>
+                                        <div class="font-semibold text-gray-800 dark:text-gray-200 text-xs truncate">
+                                            الرمضانى, Egypt
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Package - All Details Visible -->
+                                <div
+                                    class="hidden items-center gap-2 p-2 rounded-lg border border-gray-200 dark:border-gray-700">
+                                    <div class="w-8 h-8 rounded-lg flex items-center justify-center">
+                                        <span class="material-symbols-outlined text-white text-sm">
+                                            inventory_2
+                                        </span>
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <div class="text-[10px] font-medium uppercase truncate">
+                                            Parcel</div>
+                                        <div class="grid grid-cols-2 gap-x-1 gap-y-0.5 text-[10px]">
+                                            <div class="text-gray-800 dark:text-gray-200">
+                                                <span class="font-semibold">12.0</span>
+                                                <span class="text-gray-500 dark:text-gray-400 text-[9px]">L</span>
+                                            </div>
+                                            <div class="text-gray-800 dark:text-gray-200">
+                                                <span class="font-semibold">12.0</span>
+                                                <span class="text-gray-500 dark:text-gray-400 text-[9px]">W</span>
+                                            </div>
+                                            <div class="text-gray-800 dark:text-gray-200">
+                                                <span class="font-semibold">12.0</span>
+                                                <span class="text-gray-500 dark:text-gray-400 text-[9px]">H</span>
+                                            </div>
+                                            <div class="text-gray-800 dark:text-gray-200">
+                                                <span class="font-semibold">12.0</span>
+                                                <span class="text-gray-500 dark:text-gray-400 text-[9px]">kg</span>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="rounded-md bg-white p-5 mb-5">
-                The main objective of this page is to achieve the best and clearest user experience. <br>
-                These modifications will be incorporated into the project using validation codes and conditional statements.
+                    <button
+                        class="flex items-center gap-3 bg-blue-600 text-center hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 w-full lg:w-auto"
+                        id="toggleSearchForm">
+                        <span>Edit Search</span>
+                        <span class="material-symbols-outlined text-xl transition-transform">
+                            expand_more
+                        </span>
+                    </button>
+                </div>
+
+                <!-- Search Form -->
+                <div 
+                    class="w-full transition-all z-50 bg-white rounded-b-xl dark:bg-gray-900 absolute p-6 border-gray-200 dark:border-gray-700" 
+                    id="searchForm"
+                    style="clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);"
+                >
+                    <form method="POST" action="/en/rates/fetch/">
+                        <input 
+                            type="hidden" 
+                            name="csrfmiddlewaretoken"
+                            value="Zhy1PsLRHko1hRzZu5wx9C72aH6T8ImiEmbSovVehMqXnDCvdFjaKsYiBEhUslio"
+                        >
+
+
+                        <div class="active [&.active]:flex hidden py-4 transition duration-400 ease-in-out flex-col gap-6">
+                            <!-- Country -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <!-- Shipper Country with Enhanced Search -->
+                                <div class="relative z-30"> 
+                                    <div class="custom-select-wrapper relative z-30">
+                                        <select 
+                                            name="shipper_country" 
+                                            id="shipper_country" 
+                                            class="hidden-country-select w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        >
+                                            <option value="AF">Afghanistan</option>
+                                            <option value="AX">Aland Islands</option>
+                                            <option value="AL">Albania</option>
+                                            <option value="DZ">Algeria</option>
+                                            <option value="AS">American Samoa</option>
+                                            <option value="AD">Andorra</option>
+                                            <option value="AO">Angola</option>
+                                            <option value="AI">Anguilla</option>
+                                            <!-- Need Fetch -->
+                                        </select>
+
+                                        <div class="custom-select" data-target="shipper_country">
+                                            <div
+                                                class="custom-select-trigger flex justify-between items-center h-14 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border border-gray-500 dark:border-gray-400 cursor-pointer">
+                                                <span class="selected-value">
+                                                    Select country...
+                                                </span>
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                                </svg>
+                                            </div>
+                                            <div
+                                                class="custom-options scrollbars hidden absolute z-50 w-full mt-1 max-h-60 overflow-auto rounded-md bg-white dark:bg-gray-800 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                <div
+                                                    class="p-2 border-b border-gray-200 dark:border-gray-600 sticky top-0 bg-white dark:bg-gray-800 z-10">
+                                                    <input type="text"
+                                                        class="search-input w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                                        placeholder="Search countries...">
+                                                </div>
+                                                <div class="options-container max-h-48 overflow-y-auto">
+                                                    <!-- Options will be populated by JavaScript -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <label 
+                                        for="shipper_country"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-40 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >
+                                        From
+                                    </label>
+                                </div>
+
+                                <!-- Recipient Country with Enhanced Search -->
+                                <div class="relative z-30"> 
+                                    <div class="custom-select-wrapper relative z-30">
+                                        <select 
+                                            name="recipient_country" 
+                                            id="recipient_country" 
+                                            class="hidden-country-select w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        >
+                                            <option value="AF">Afghanistan</option>
+                                            <option value="AX">Aland Islands</option>
+                                            <option value="AL">Albania</option>
+                                            <option value="DZ">Algeria</option>
+                                            <option value="AS">American Samoa</option>
+                                            <option value="AD">Andorra</option>
+                                            <option value="AO">Angola</option>
+                                            <option value="AI">Anguilla</option>
+                                            <!-- Need Fetch -->
+                                        </select>
+
+                                        <div 
+                                            class="custom-select" 
+                                            data-target="recipient_country"
+                                        >
+                                            <div class="custom-select-trigger flex justify-between items-center h-14 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border border-gray-500 dark:border-gray-400 cursor-pointer">
+                                                <span class="selected-value">
+                                                    Select country...
+                                                </span>
+
+                                                <svg 
+                                                    class="w-4 h-4" 
+                                                    fill="none" 
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path 
+                                                        stroke-linecap="round" 
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2" 
+                                                        d="M19 9l-7 7-7-7"
+                                                    ></path>
+                                                </svg>
+                                            </div>
+
+                                            <div class="custom-options scrollbars hidden absolute z-50 w-full mt-1 max-h-60 overflow-auto rounded-md bg-white dark:bg-gray-800 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                                <div class="p-2 border-b border-gray-200 dark:border-gray-600 sticky top-0 bg-white dark:bg-gray-800 z-10">
+                                                    <input 
+                                                        type="text"
+                                                        class="search-input w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                                        placeholder="Search countries..."
+                                                    >
+                                                </div>
+
+                                                <div class="options-container max-h-48 overflow-y-auto">
+                                                    <!-- Options will be populated by JavaScript -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <label 
+                                        for="recipient_country"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-40 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >
+                                        To
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- City -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <!-- Shipper City -->
+                                <div class="relative z-0">
+                                    <input 
+                                        type="text"
+                                        name="shipper_city" 
+                                        id="shipper_city"
+                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        placeholder=" " 
+                                        value=""
+                                    >
+
+                                    <label 
+                                        for="shipper_city"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >   
+                                        City
+                                    </label>
+                                </div>
+
+                                <!-- Recipient City -->
+                                <div class="relative z-0">
+                                    <input 
+                                        type="text"
+                                        name="recipient_city" 
+                                        id="recipient_city"
+                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        placeholder=" " 
+                                        value=""
+                                    >
+
+                                    <label 
+                                        for="recipient_city"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >
+                                        City
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Postal Code -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <!-- Postal Code -->
+                                <div class="relative z-0">
+                                    <input 
+                                        type="text" 
+                                        name="shipper_postal_code" 
+                                        id="shipper_postal_code"
+                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        placeholder=" " 
+                                        value=""
+                                    >
+
+                                    <label 
+                                        for="shipper_postal_code"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >
+                                        Postal Code From
+                                    </label>
+                                </div>
+
+                                <!-- Recipient Postal Code -->
+                                <div class="relative z-0">
+                                    <input 
+                                        type="text" 
+                                        name="recipient_postal_code" 
+                                        id="recipient_postal_code"
+                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        placeholder=" " 
+                                        value=""
+                                    >
+
+                                    <label 
+                                        for="recipient_postal_code"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >
+                                        Postal Code To
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Dimnis & w -->
+                            <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
+                                <!-- Length -->
+                                <div class="relative z-0">
+                                    <input 
+                                        type="number" 
+                                        min="1" 
+                                        step="0.1" 
+                                        name="length" 
+                                        id="length"
+                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        placeholder=" " 
+                                        value=""
+                                    >
+
+                                    <label 
+                                        for="length"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >
+                                        Length
+                                    </label>
+                                </div>
+
+                                <!-- Width -->
+                                <div class="relative z-0">
+                                    <input 
+                                        type="number" 
+                                        min="1" 
+                                        step="0.1" 
+                                        name="width" 
+                                        id="width"
+                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        placeholder=" " 
+                                        value=""
+                                    >
+
+                                    <label 
+                                        for="width"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >
+                                        Width
+                                    </label>
+                                </div>
+
+                                <!-- Height -->
+                                <div class="relative z-0">
+                                    <input 
+                                        type="number" 
+                                        min="1" 
+                                        step="0.1" 
+                                        name="height" 
+                                        id="height"
+                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        placeholder=" " 
+                                        value=""
+                                    >
+
+                                    <label 
+                                        for="height"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >
+                                        Height
+                                    </label>
+                                </div>
+
+                                <!-- Weight -->
+                                <div class="relative z-0">
+                                    <input 
+                                        type="number"
+                                        min="0.5" 
+                                        step="0.1" 
+                                        name="weight" 
+                                        id="weight"
+                                        class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400"
+                                        placeholder=" " 
+                                        value=""
+                                    >
+
+                                    <label 
+                                        for="weight"
+                                        class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200"
+                                    >
+                                        Weight
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Is Document -->
+                            <div class="flex flex-col">
+                                <div class="flex items-center">
+                                    <input 
+                                        type="checkbox" 
+                                        name="is_document" 
+                                        id="is_document"
+                                        class="focus:ring-pink-800 h-4 w-4 text-pink-900 border-gray-300 rounded relative"
+                                        aria-describedby="is_document-description"
+                                    >
+
+                                    <label 
+                                        for="is_document" 
+                                        class="ml-2 text-sm text-gray-900 dark:text-gray-200"
+                                    >
+                                        Is Document
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Actions Button -->
+                            <div class="flex justify-end gap-3">
+                                <button type="button" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors" id="cancelEdit">
+                                    Cancel
+                                </button>
+                                <button type="submit" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white font-medium rounded-lg transition-colors">
+                                    Update Rates
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
 
             <!-- Rates List -->
             <div class="space-y-4">
-                <h3>
-                    If the user does not provide the dimensions and weight, the shipping companies will need to provide a price quote.
-                </h3>
-                <!-- add dimensions and weight to get price -->
-                <div
-                    class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300">
+                <!-- If the user does not provide the dimensions and weight, the shipping companies will need to provide a price quote. -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300">
                     <div class="p-4">
                         <div class="flex flex-col sm:flex-row lg:items-center lg:justify-between gap-4">
                             <!-- Left: Service Info -->
                             <div class="flex items-center sm:flex-row flex-col gap-4 flex-1" style="flex: 6">
                                 <div class="flex-[0.2]">
-
-                                    <img src="https://test.dashboard.gozagel.com/static/assets/courier_logos/saver.png"
-                                        alt="Zagel Saver" type="image/svg+xml" class="h-full" style="width: 200px">
-
+                                    <img 
+                                        src="https://test.dashboard.gozagel.com/static/assets/courier_logos/saver.png"
+                                        alt="Zagel Saver" 
+                                        type="image/svg+xml" 
+                                        class="h-full" 
+                                        style="width: 200px"
+                                    >
                                 </div>
                                 <div class="flex-1">
                                     <div class="flex items-center space-x-3 mb-2">
@@ -997,8 +1394,6 @@
                                             class="text-xl text-center sm:text-start font-bold text-gray-900 dark:text-white">
                                             5-6 days
                                         </h3>
-
-
                                     </div>
                                     <p class="text-gray-600 dark:text-gray-400 mb-4">
                                         Door-to-Door
@@ -1080,31 +1475,20 @@
                                 <!-- Action buttons -->
                                 <div class="flex flex-col gap-3 w-full">
                                     <!-- Add Dimensions Button -->
-                                    <button id="add-dimensions-btn"
+                                    <button 
+                                        id="add-dimensions-btn"
                                         class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 w-full lg:w-auto flex items-center justify-center gap-2"
-                                        onclick="openDimensionsModal()">
+                                    >
                                         Add Dimensions
                                     </button>
-
-                                    <!-- Create Shipment Button (disabled until dimensions added) -->
-                                    <a href="#" id="create-shipment-btn"
-                                        class="bg-blue-600 text-center hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200 w-full lg:w-auto">
-                                        Create shipment
-                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
-                <h3>
-                    Shipping companies that do not require dimensions or weight
-                </h3>
-
-                <!-- add dimensions and weight to get price -->
-                <div
-                    class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300">
+                <!-- Shipping companies that do not require dimensions or weight -->
+                <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300">
                     <div class="p-4">
                         <div class="flex flex-col sm:flex-row lg:items-center lg:justify-between gap-4">
                             <!-- Left: Service Info -->
@@ -1214,10 +1598,7 @@
                     </div>
                 </div>
 
-                <h3>
-                    normal 
-                </h3>
-
+                <!-- normal & old one with shipping companies that provide price -->
                 <div class="bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 transition-all duration-300">
                     <div class="p-4">
                         <div class="flex flex-col sm:flex-row lg:items-center lg:justify-between gap-4">
@@ -1312,148 +1693,6 @@
             </div>
         </div>
     </main>
-    <!-- Dimensions Modal (hidden by default) -->
-    <div 
-        id="dimensions-modal"
-        class="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full hidden z-50"
-    >
-        <div class="relative top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white dark:bg-gray-800">
-            <div class="mt-3">
-                <!-- Modal header -->
-                <div class="flex justify-between items-center pb-3">
-                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                        Add Dimensions & Weight
-                    </h3>
-                    <button 
-                        onclick="closeDimensionsModal()" 
-                        class="text-gray-400 hover:text-gray-500"
-                    >
-                        <svg 
-                            class="w-6 h-6" 
-                            fill="none" 
-                            stroke="currentColor" 
-                            viewBox="0 0 24 24"
-                        >
-                            <path 
-                                stroke-linecap="round" 
-                                stroke-linejoin="round" 
-                                stroke-width="2"
-                                d="M6 18L18 6M6 6l12 12" 
-                            />
-                        </svg>
-                    </button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="space-y-4 py-4">
-                    <!-- Length -->
-                    <div class="relative z-0">
-                        <input 
-                            type="number" 
-                            min="1" 
-                            step="0.1" 
-                            name="length" 
-                            id="length" 
-                            class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
-                            placeholder=" " 
-                            value="{{ form.length.value|default:'' }}"
-                        >
-                        
-                        <label for="length" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                            Length <span class="text-red-500">*</span>
-                        </label>
-
-                        <!-- Help text -->
-                        <div class="text-gray-500 dark:text-gray-400 text-xs mt-1">
-                            Package length in cm
-                        </div>
-                    </div>
-
-                    <!-- Width -->
-                    <div class="relative z-0">
-                        <input  
-                            type="number" 
-                            min="1" 
-                            step="0.1" 
-                            name="width" 
-                            id="width" 
-                            class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
-                            placeholder=" " 
-                            value="{{ form.width.value|default:'' }}"
-                        >
-
-                        <label for="width" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                            Width <span class="text-red-500">*</span>
-                        </label>
-
-                        <!-- Help text -->
-                        <div class="text-gray-500 dark:text-gray-400 text-xs mt-1">
-                            Package width in cm
-                        </div>
-                    </div>
-
-                    <!-- Height -->
-                    <div class="relative z-0">
-                        <input  
-                            type="number" 
-                            min="1" 
-                            step="0.1" 
-                            name="height" 
-                            id="height" 
-                            class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
-                            placeholder=" " 
-                            value="{{ form.height.value|default:'' }}"
-                        >
-
-                        <label for="height" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                            Height <span class="text-red-500">*</span>
-                        </label>
-
-                        <!-- Help text -->
-                        <div class="text-gray-500 dark:text-gray-400 text-xs mt-1">
-                            Package height in cm
-                        </div>
-                    </div>
-
-                    <!-- Weight -->
-                    <div class="relative z-0">
-                        <input  
-                            type="number" 
-                            min="0.5" 
-                            step="0.1" 
-                            name="weight" 
-                            id="weight" 
-                            class="w-full h-14 block leading-5 py-2 px-4 rounded bg-neutral-10 dark:bg-neutral-900 border focus:border-2 border-gray-500 focus:outline-none focus:border-primary-600 focus:ring-0 dark:text-gray-200 dark:border-gray-400" 
-                            placeholder=" " 
-                            value="{{ form.weight.value|default:'' }}"
-                        >
-
-                        <label for="weight" class="absolute text-gray-500 dark:text-gray-400 bg-neutral-10 dark:bg-neutral-900 duration-300 transform px-1 -translate-y-7 scale-75 top-4 z-10 origin-[0] left-4 peer-focus:left-4 peer-focus:text-primary-600 dark:peer-focus:text-primary-200">
-                            Weight <span class="text-red-500">*</span>
-                        </label>
-
-                        <!-- Help text -->
-                        <div class="text-gray-500 dark:text-gray-400 text-xs mt-1">
-                            Package weight in kg
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="flex justify-end gap-3 pt-4 border-t">
-                    <button onclick="closeDimensionsModal()"
-                        class="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-gray-900">
-                        Cancel
-                    </button>
-                    <button onclick="saveDimensions()"
-                        class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
-                        Save & Calculate Price
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
 
     <!-- Footer -->
@@ -1467,6 +1706,203 @@
         </div>
     </footer>
 
+    <!-- Toggle search form -->
+    <script>
+        // Toggle search form
+        const toggleBtn = document.getElementById('toggleSearchForm');
+        const cancelBtn = document.getElementById('cancelEdit');
+        const searchCard = document.getElementById('searchSummary');
+        const searchForm = document.getElementById('searchForm');
+        const ratesForm = document.getElementById('ratesForm');
+        const addDimensionsBtn = document.getElementById('add-dimensions-btn');
+
+        // toggle button
+        var isOpen = false
+        toggleBtn.addEventListener('click', function () {
+            if (!isOpen) {
+                searchForm.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+                searchForm.classList.add('border')
+                this.innerHTML = '<span>Close</span><span class="material-symbols-outlined text-xl transition-transform">expand_less</span>';
+                searchCard.classList.remove('rounded-b-xl')
+                isOpen = !isOpen
+            } else {
+                searchForm.style.clipPath = "polygon(0 0, 100% 0, 100% 0, 0 0)"
+                searchCard.classList.add('rounded-b-xl')
+                searchForm.classList.remove('border')
+                this.innerHTML = '<span>Edit Search</span><span class="material-symbols-outlined text-xl transition-transform">expand_more</span>';
+                isOpen = !isOpen
+            }
+        });
+
+        addDimensionsBtn.addEventListener('click', function () {
+            if (!isOpen) {
+                searchForm.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+                searchForm.classList.add('border-t')
+                toggleBtn.innerHTML = '<span>Close</span><span class="material-symbols-outlined text-xl transition-transform">expand_less</span>';
+                searchCard.classList.remove('rounded-b-xl')
+                isOpen = !isOpen
+            } else {
+                searchForm.style.clipPath = "polygon(0 0, 100% 0, 100% 0, 0 0)"
+                searchCard.classList.add('rounded-b-xl')
+                searchForm.classList.remove('border-t')
+                toggleBtn.innerHTML = '<span>Edit Search</span><span class="material-symbols-outlined text-xl transition-transform">expand_more</span>';
+                isOpen = !isOpen
+            }
+        });
+        
+
+        // cancel button
+        cancelBtn.addEventListener('click', function () {
+            searchForm.style.clipPath = "polygon(0 0, 100% 0, 100% 0, 0 0)"
+            searchCard.classList.add('rounded-b-xl')
+            searchForm.classList.remove('border-t')
+            toggleBtn.innerHTML = '<span>Edit Search</span><span class="material-symbols-outlined text-xl transition-transform">expand_more</span>';
+        });
+
+        // Update summary when form changes
+        const formInputs = ratesForm.querySelectorAll('input');
+        formInputs.forEach(input => {
+            input.addEventListener('change', updateSearchSummary);
+            input.addEventListener('input', updateSearchSummary);
+        });
+
+        function updateSearchSummary() {
+            const fromCity = document.getElementById('shipper_city').value;
+            const toCity = document.getElementById('recipient_city').value;
+            const length = document.getElementById('length').value;
+            const width = document.getElementById('width').value;
+            const height = document.getElementById('height').value;
+            const weight = document.getElementById('weight').value;
+
+            // Update summary display
+            document.getElementById('summary-from').textContent =
+                `${fromCity}, Egypt`;
+            document.getElementById('summary-to').textContent =
+                `${toCity}, Egypt`;
+            document.getElementById('summary-package').textContent =
+                `${length}×${width}×${height} cm • ${weight} kg`;
+        }
+
+        // Initialize
+        updateSearchSummary();
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Initialize custom select for both country fields
+            initializeCustomSelect('shipper_country');
+            initializeCustomSelect('recipient_country');
+
+            function initializeCustomSelect(selectId) {
+                const hiddenSelect = document.getElementById(selectId);
+                const customSelect = document.querySelector(`.custom-select[data-target="${selectId}"]`);
+                const trigger = customSelect.querySelector('.custom-select-trigger');
+                const optionsContainer = customSelect.querySelector('.options-container');
+                const searchInput = customSelect.querySelector('.search-input');
+                const selectedValue = trigger.querySelector('.selected-value');
+
+                // Populate options
+                function populateOptions(filter = '') {
+                    optionsContainer.innerHTML = '';
+                    const options = Array.from(hiddenSelect.options);
+                    const filteredOptions = options.filter(option =>
+                        option.text.toLowerCase().includes(filter.toLowerCase())
+                    );
+
+                    filteredOptions.forEach(option => {
+                        const div = document.createElement('div');
+                        div.className = 'option-item cursor-pointer px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600';
+                        div.textContent = option.text;
+                        div.dataset.value = option.value;
+
+                        if (option.selected) {
+                            div.classList.add('bg-blue-100', 'dark:bg-blue-900');
+                            selectedValue.textContent = option.text;
+                        }
+
+                        div.addEventListener('click', function () {
+                            // Update hidden select
+                            hiddenSelect.value = option.value;
+
+                            // Update displayed value
+                            selectedValue.textContent = option.text;
+
+                            // Close dropdown
+                            customSelect.querySelector('.custom-options').classList.add('hidden');
+
+                            // Remove selected class from all options
+                            optionsContainer.querySelectorAll('.option-item').forEach(item => {
+                                item.classList.remove('bg-blue-100', 'dark:bg-blue-900');
+                            });
+
+                            // Add selected class to clicked option
+                            this.classList.add('bg-blue-100', 'dark:bg-blue-900');
+                        });
+
+                        optionsContainer.appendChild(div);
+                    });
+
+                    if (filteredOptions.length === 0) {
+                        const noResults = document.createElement('div');
+                        noResults.className = 'option-item px-4 py-2 text-gray-500';
+                        noResults.textContent = 'No countries found';
+                        optionsContainer.appendChild(noResults);
+                    }
+                }
+
+                // Initial population
+                populateOptions();
+
+                // Toggle dropdown
+                trigger.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    const options = customSelect.querySelector('.custom-options');
+                    const allDropdowns = document.querySelectorAll('.custom-options');
+
+                    // Close all other dropdowns
+                    allDropdowns.forEach(dropdown => {
+                        if (dropdown !== options) {
+                            dropdown.classList.add('hidden');
+                        }
+                    });
+
+                    options.classList.toggle('hidden');
+
+                    if (!options.classList.contains('hidden')) {
+                        searchInput.focus();
+                        // Ensure this dropdown is on top
+                        options.style.zIndex = '9999';
+                    }
+                });
+
+                // Search functionality
+                searchInput.addEventListener('input', function (e) {
+                    populateOptions(e.target.value);
+                });
+
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function () {
+                    document.querySelectorAll('.custom-options').forEach(options => {
+                        options.classList.add('hidden');
+                    });
+                });
+
+                // Prevent dropdown close when clicking inside
+                customSelect.querySelector('.custom-options').addEventListener('click', function (e) {
+                    e.stopPropagation();
+                });
+
+                // Close dropdown on escape key
+                searchInput.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        customSelect.querySelector('.custom-options').classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+
+
     <!-- Tailmater javascript -->
     <script src="../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
     <script src="../vendors/glightbox/dist/js/glightbox.min.js"></script>
@@ -1476,60 +1912,6 @@
     <!-- Vendor Configuration -->
     <script src="../src/js/vendor.js"></script>
     <script src="../src/js/tailmater.js"></script>
-
-
-    <script>
-        // Modal functions
-        function openDimensionsModal() {
-            document.getElementById('dimensions-modal').classList.remove('hidden');
-        }
-
-        function closeDimensionsModal() {
-            document.getElementById('dimensions-modal').classList.add('hidden');
-        }
-
-        // Save dimensions and enable create shipment button
-        function saveDimensions() {
-            const length = document.getElementById('length').value;
-            const width = document.getElementById('width').value;
-            const height = document.getElementById('height').value;
-            const weight = document.getElementById('weight').value;
-
-            // Validate inputs
-            if (!length || !width || !height || !weight) {
-                alert('Please fill all fields');
-                return;
-            }
-
-            // Remove blur and message
-            const priceSection = document.querySelector('.sm\\:pl-4').querySelector('.relative');
-            const dimensionsSummary = document.getElementById('dimensions-summary');
-            const Summary = document.getElementById('summary');
-            const price = document.getElementById('price');
-
-            Summary.classList.replace('md:grid-cols-3', 'md:grid-cols-4');
-            dimensionsSummary.classList.replace('hidden' , "flex")
-            price.innerHTML = `
-                <div class="text-2xl text-center font-bold text-gray-900 dark:text-white">
-                    price ج.م
-                </div>
-            `;
-            const addBtn = document.getElementById('add-dimensions-btn');
-            addBtn.style.display = 'none';
-
-            // Close modal
-            closeDimensionsModal();
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function (event) {
-            const modal = document.getElementById('dimensions-modal');
-            if (event.target === modal) {
-                closeDimensionsModal();
-            }
-        }
-    </script>
-
 </body>
 
 </html>

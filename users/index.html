@@ -1,3 +1,4 @@
+
 <!-- Layout for logged in merchants -->
 <!DOCTYPE html>
 <html 
@@ -7,7 +8,7 @@
 <head>
     <!-- Title  -->
     <title>
-      GoZagel | Dashboard
+      GoZagel | Shipments
     </title>
 
     <!-- head -->
@@ -74,414 +75,30 @@
 />
 
 <style>
-    /* Modern Gray Color Palette (No Purple) */
-    :root {
-        /* Modern Dark Mode Base Colors */
-        --colors-white: #ffffff;
-        --colors-black: #000000;
-        
-        /* Primary - Blue (Main actions) */
-        --colors-primary-10: #0a1a33;
-        --colors-primary-50: #111d42;
-        --colors-primary-100: #1a295a;
-        --colors-primary-200: #2a3a7a;
-        --colors-primary-300: #3a4c9d;
-        --colors-primary-400: #4d5fc2;
-        --colors-primary-500: #6374e6;
-        --colors-primary-600: #7a8aff;
-        --colors-primary-700: #94a3ff;
-        --colors-primary-800: #b0bbff;
-        --colors-primary-900: #d1d8ff;
-        --colors-primary-950: #f0f2ff;
-        --colors-primary-10-rgb: 10, 26, 51;
-        --colors-primary-50-rgb: 17, 29, 66;
-        --colors-primary-100-rgb: 26, 41, 90;
-        --colors-primary-200-rgb: 42, 58, 122;
-        --colors-primary-300-rgb: 58, 76, 157;
-        --colors-primary-400-rgb: 77, 95, 194;
-        --colors-primary-500-rgb: 99, 116, 230;
-        --colors-primary-600-rgb: 122, 138, 255;
-        --colors-primary-700-rgb: 148, 163, 255;
-        --colors-primary-800-rgb: 176, 187, 255;
-        --colors-primary-900-rgb: 209, 216, 255;
-        --colors-primary-950-rgb: 240, 242, 255;
-        
-        /* Secondary - Blue-Gray (Subtle accents) */
-        --colors-secondary-10: #0d1117;
-        --colors-secondary-50: #161b22;
-        --colors-secondary-100: #21262d;
-        --colors-secondary-200: #30363d;
-        --colors-secondary-300: #484f58;
-        --colors-secondary-400: #6e7681;
-        --colors-secondary-500: #8b949e;
-        --colors-secondary-600: #a8b1c2;
-        --colors-secondary-700: #c6cdda;
-        --colors-secondary-800: #dde1e8;
-        --colors-secondary-900: #ecf1f8;
-        --colors-secondary-950: #f6f8fa;
-        --colors-secondary-10-rgb: 13, 17, 23;
-        --colors-secondary-50-rgb: 22, 27, 34;
-        --colors-secondary-100-rgb: 33, 38, 45;
-        --colors-secondary-200-rgb: 48, 54, 61;
-        --colors-secondary-300-rgb: 72, 79, 88;
-        --colors-secondary-400-rgb: 110, 118, 129;
-        --colors-secondary-500-rgb: 139, 148, 158;
-        --colors-secondary-600-rgb: 168, 177, 194;
-        --colors-secondary-700-rgb: 198, 205, 218;
-        --colors-secondary-800-rgb: 221, 225, 232;
-        --colors-secondary-900-rgb: 236, 241, 248;
-        --colors-secondary-950-rgb: 246, 248, 250;
-        
-        /* Tertiary - Clean Gray (Backgrounds, borders) */
-        --colors-tertiary-10: #050505;
-        --colors-tertiary-50: #0a0a0a;
-        --colors-tertiary-100: #121212;
-        --colors-tertiary-200: #1e1e1e;
-        --colors-tertiary-300: #2d2d2d;
-        --colors-tertiary-400: #3d3d3d;
-        --colors-tertiary-500: #4f4f4f;
-        --colors-tertiary-600: #666666;
-        --colors-tertiary-700: #808080;
-        --colors-tertiary-800: #9e9e9e;
-        --colors-tertiary-900: #c2c2c2;
-        --colors-tertiary-950: #e8e8e8;
-        --colors-tertiary-10-rgb: 5, 5, 5;
-        --colors-tertiary-50-rgb: 10, 10, 10;
-        --colors-tertiary-100-rgb: 18, 18, 18;
-        --colors-tertiary-200-rgb: 30, 30, 30;
-        --colors-tertiary-300-rgb: 45, 45, 45;
-        --colors-tertiary-400-rgb: 61, 61, 61;
-        --colors-tertiary-500-rgb: 79, 79, 79;
-        --colors-tertiary-600-rgb: 102, 102, 102;
-        --colors-tertiary-700-rgb: 128, 128, 128;
-        --colors-tertiary-800-rgb: 158, 158, 158;
-        --colors-tertiary-900-rgb: 194, 194, 194;
-        --colors-tertiary-950-rgb: 232, 232, 232;
-        
-        /* Error - Red/Orange */
-        --colors-error-10: #2a0a0f;
-        --colors-error-50: #3d1018;
-        --colors-error-100: #531722;
-        --colors-error-200: #6c1f2e;
-        --colors-error-300: #87283c;
-        --colors-error-400: #a4334b;
-        --colors-error-500: #c3405d;
-        --colors-error-600: #e44f71;
-        --colors-error-700: #ff6486;
-        --colors-error-800: #ff8da7;
-        --colors-error-900: #ffc2d1;
-        --colors-error-950: #fff0f4;
-        --colors-error-10-rgb: 42, 10, 15;
-        --colors-error-50-rgb: 61, 16, 24;
-        --colors-error-100-rgb: 83, 23, 34;
-        --colors-error-200-rgb: 108, 31, 46;
-        --colors-error-300-rgb: 135, 40, 60;
-        --colors-error-400-rgb: 164, 51, 75;
-        --colors-error-500-rgb: 195, 64, 93;
-        --colors-error-600-rgb: 228, 79, 113;
-        --colors-error-700-rgb: 255, 100, 134;
-        --colors-error-800-rgb: 255, 141, 167;
-        --colors-error-900-rgb: 255, 194, 209;
-        --colors-error-950-rgb: 255, 240, 244;
-        
-        /* Neutral - Professional Gray Scale */
-        --colors-neutral-10: #050505;
-        --colors-neutral-50: #0a0a0a;
-        --colors-neutral-100: #121212;
-        --colors-neutral-200: #1e1e1e;
-        --colors-neutral-300: #2d2d2d;
-        --colors-neutral-400: #3d3d3d;
-        --colors-neutral-500: #4f4f4f;
-        --colors-neutral-600: #666666;
-        --colors-neutral-700: #808080;
-        --colors-neutral-800: #9e9e9e;
-        --colors-neutral-900: #c2c2c2;
-        --colors-neutral-950: #e8e8e8;
-        --colors-neutral-10-rgb: 5, 5, 5;
-        --colors-neutral-50-rgb: 10, 10, 10;
-        --colors-neutral-100-rgb: 18, 18, 18;
-        --colors-neutral-200-rgb: 30, 30, 30;
-        --colors-neutral-300-rgb: 45, 45, 45;
-        --colors-neutral-400-rgb: 61, 61, 61;
-        --colors-neutral-500-rgb: 79, 79, 79;
-        --colors-neutral-600-rgb: 102, 102, 102;
-        --colors-neutral-700-rgb: 128, 128, 128;
-        --colors-neutral-800-rgb: 158, 158, 158;
-        --colors-neutral-900-rgb: 194, 194, 194;
-        --colors-neutral-950-rgb: 232, 232, 232;
-        
-        /* Gray - Cool Gray Tones */
-        --colors-gray-10: #0a0a0f;
-        --colors-gray-50: #111118;
-        --colors-gray-100: #1a1a24;
-        --colors-gray-200: #2a2a38;
-        --colors-gray-300: #3d3d4f;
-        --colors-gray-400: #535367;
-        --colors-gray-500: #6b6b81;
-        --colors-gray-600: #85859d;
-        --colors-gray-700: #a1a1bb;
-        --colors-gray-800: #bfbfda;
-        --colors-gray-900: #e0e0f5;
-        --colors-gray-950: #f5f5ff;
-        --colors-gray-10-rgb: 10, 10, 15;
-        --colors-gray-50-rgb: 17, 17, 24;
-        --colors-gray-100-rgb: 26, 26, 36;
-        --colors-gray-200-rgb: 42, 42, 56;
-        --colors-gray-300-rgb: 61, 61, 79;
-        --colors-gray-400-rgb: 83, 83, 103;
-        --colors-gray-500-rgb: 107, 107, 129;
-        --colors-gray-600-rgb: 133, 133, 157;
-        --colors-gray-700-rgb: 161, 161, 187;
-        --colors-gray-800-rgb: 191, 191, 218;
-        --colors-gray-900-rgb: 224, 224, 245;
-        --colors-gray-950-rgb: 245, 245, 255;
-        
-        /* Surface Colors */
-        --colors-surface-100: #0f1118;
-        --colors-surface-200: #141722;
-        --colors-surface-300: #1a1d2c;
-        --colors-surface-400: #1f2337;
-        --colors-surface-500: #252a42;
-        --colors-surface-100-rgb: 15, 17, 24;
-        --colors-surface-200-rgb: 20, 23, 34;
-        --colors-surface-300-rgb: 26, 29, 44;
-        --colors-surface-400-rgb: 31, 35, 55;
-        --colors-surface-500-rgb: 37, 42, 66;
-        --colors-surfacedark-100: #0a0a0a;
-        --colors-surfacedark-200: #0f0f0f;
-        --colors-surfacedark-300: #141414;
-        --colors-surfacedark-400: #1a1a1a;
-        --colors-surfacedark-500: #1f1f1f;
-        --colors-surfacedark-100-rgb: 10, 10, 10;
-        --colors-surfacedark-200-rgb: 15, 15, 15;
-        --colors-surfacedark-300-rgb: 20, 20, 20;
-        --colors-surfacedark-400-rgb: 26, 26, 26;
-        --colors-surfacedark-500-rgb: 31, 31, 31;
-        --colors-white-rgb: 255, 255, 255;
-        --colors-black-rgb: 0, 0, 0;
+    .starter-gradient {
+        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
     }
 
-    /* Modern Gray Effects */
-    .modern-shadow-border {
-        border: 1px solid rgba(var(--colors-secondary-400-rgb), 0.3);
-        box-shadow: 
-            0 0 20px rgba(var(--colors-gray-500-rgb), 0.2),
-            0 0 40px rgba(var(--colors-gray-500-rgb), 0.1),
-            inset 0 1px 0 rgba(var(--colors-white-rgb), 0.05);
-        background: linear-gradient(
-            145deg,
-            rgba(var(--colors-tertiary-100-rgb), 0.1),
-            rgba(var(--colors-tertiary-200-rgb), 0.05)
-        );
-        backdrop-filter: blur(8px);
+    .dark .starter-gradient {
+        background: linear-gradient(135deg, #0c4a6e 0%, #075985 100%);
     }
 
-    .gradient-border-effect {
-        border: 2px solid transparent;
-        background: 
-            linear-gradient(var(--colors-surface-300), var(--colors-surface-300)) padding-box,
-            linear-gradient(
-                90deg,
-                var(--colors-primary-500),
-                var(--colors-secondary-500),
-                var(--colors-primary-500)
-            ) border-box;
-        border-radius: 12px;
+    .growth-gradient {
+        background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 100%);
     }
 
-    .modern-glow-card {
-        background: var(--colors-surface-300);
-        border: 1px solid rgba(var(--colors-secondary-500-rgb), 0.15);
-        box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.25),
-            0 0 30px rgba(var(--colors-gray-500-rgb), 0.08);
-        position: relative;
-        transition: all 0.3s ease;
+    .dark .growth-gradient {
+        background: linear-gradient(135deg, #1e40af 0%, #1d4ed8 100%);
     }
 
-    .modern-glow-card:hover {
-        border-color: rgba(var(--colors-secondary-600-rgb), 0.3);
-        box-shadow: 
-            0 8px 32px rgba(0, 0, 0, 0.3),
-            0 0 40px rgba(var(--colors-gray-600-rgb), 0.15);
-        transform: translateY(-2px);
+    .enterprise-gradient {
+        background: linear-gradient(135deg, #c7d2fe 0%, #818cf8 100%);
     }
 
-    .neon-text {
-        color: var(--colors-primary-600);
-        text-shadow: 
-            0 0 10px rgba(var(--colors-primary-600-rgb), 0.5),
-            0 0 20px rgba(var(--colors-primary-600-rgb), 0.3);
+    .dark .enterprise-gradient {
+        background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
     }
 
-    .glass-effect {
-        background: rgba(var(--colors-surface-200-rgb), 0.7);
-        backdrop-filter: blur(12px) saturate(180%);
-        border: 1px solid rgba(var(--colors-white-rgb), 0.1);
-        box-shadow: 
-            0 4px 6px -1px rgba(0, 0, 0, 0.2),
-            inset 0 1px 0 rgba(var(--colors-white-rgb), 0.05);
-    }
-
-    /* Modernize existing components with Gray Theme */
-    .nav-top {
-        background: var(--colors-surfacedark-100) !important;
-        border-bottom: 1px solid rgba(var(--colors-secondary-300-rgb), 0.2) !important;
-    }
-
-    .sidebar {
-        background: var(--colors-surfacedark-100) !important;
-        border-right: 1px solid rgba(var(--colors-secondary-300-rgb), 0.2) !important;
-    }
-
-    .sidebar-content {
-        background: var(--colors-surfacedark-100) !important;
-    }
-
-    .sidebar-menu a:hover,
-    .sidebar-menu a.active {
-        background: rgba(var(--colors-secondary-500-rgb), 0.15) !important;
-        border: 1px solid rgba(var(--colors-secondary-500-rgb), 0.2) !important;
-        box-shadow: 0 0 15px rgba(var(--colors-secondary-500-rgb), 0.1) !important;
-    }
-
-    /* Modernize cards in dashboard */
-    .main-content .rounded-xl {
-        background: var(--colors-surfacedark-200) !important;
-        border: 1px solid rgba(var(--colors-secondary-400-rgb), 0.15) !important;
-        box-shadow: 
-            0 4px 12px rgba(0, 0, 0, 0.15),
-            0 0 20px rgba(var(--colors-gray-500-rgb), 0.05) !important;
-        transition: all 0.3s ease;
-    }
-
-    .main-content .rounded-xl:hover {
-        border-color: rgba(var(--colors-secondary-500-rgb), 0.3) !important;
-        box-shadow: 
-            0 6px 20px rgba(0, 0, 0, 0.2),
-            0 0 25px rgba(var(--colors-gray-600-rgb), 0.1) !important;
-    }
-
-    /* Quick Action Cards with Gray Gradients */
-    .main-content .bg-white.dark\:bg-gray-900 {
-        background: linear-gradient(
-            145deg,
-            var(--colors-surfacedark-200),
-            var(--colors-surfacedark-300)
-        ) !important;
-        border: 1px solid rgba(var(--colors-secondary-400-rgb), 0.2) !important;
-    }
-
-    /* Modern buttons */
-    .btn {
-        background: linear-gradient(
-            135deg,
-            var(--colors-primary-500),
-            var(--colors-primary-700)
-        ) !important;
-        border: none !important;
-        box-shadow: 0 0 20px rgba(var(--colors-primary-500-rgb), 0.3) !important;
-        color: white !important;
-        transition: all 0.3s ease !important;
-    }
-
-    .btn:hover {
-        box-shadow: 0 0 30px rgba(var(--colors-primary-500-rgb), 0.5) !important;
-        transform: translateY(-2px) !important;
-    }
-
-    .btn-outline {
-        border: 1px solid var(--colors-secondary-500) !important;
-        color: var(--colors-secondary-500) !important;
-        background: transparent !important;
-        transition: all 0.3s ease !important;
-    }
-
-    .btn-outline:hover {
-        background: rgba(var(--colors-secondary-500-rgb), 0.1) !important;
-        box-shadow: 0 0 15px rgba(var(--colors-secondary-500-rgb), 0.2) !important;
-        border-color: var(--colors-secondary-600) !important;
-        color: var(--colors-secondary-600) !important;
-    }
-
-    /* Modern dropdowns */
-    [data-type="dropdownmenu"] {
-        background: var(--colors-surfacedark-200) !important;
-        border: 1px solid rgba(var(--colors-secondary-400-rgb), 0.25) !important;
-        box-shadow: 
-            0 10px 25px rgba(0, 0, 0, 0.25),
-            0 0 30px rgba(var(--colors-gray-500-rgb), 0.1) !important;
-        backdrop-filter: blur(10px) !important;
-    }
-
-    /* Modern footer */
-    .footer {
-        background: var(--colors-surfacedark-100) !important;
-        border-top: 1px solid rgba(var(--colors-secondary-300-rgb), 0.2) !important;
-    }
-
-    /* Modern preloader */
-    .preloader {
-        background: var(--colors-surfacedark-100) !important;
-    }
-
-    .circular-loader .path {
-        stroke: var(--colors-primary-500) !important;
-        filter: drop-shadow(0 0 10px rgba(var(--colors-primary-500-rgb), 0.5));
-    }
-
-    /* Update material icons with gray tones */
-    .material-symbols-outlined.text-surface-400,
-    .material-symbols-outlined.text-surfacedark-600 {
-        color: var(--colors-secondary-400) !important;
-        filter: drop-shadow(0 0 8px rgba(var(--colors-secondary-500-rgb), 0.2));
-    }
-
-    /* Gray text colors */
-    .text-gray-700.dark\:text-gray-300 {
-        color: var(--colors-secondary-500) !important;
-    }
-
-    .text-gray-800.dark\:text-gray-200 {
-        color: var(--colors-secondary-300) !important;
-    }
-
-    .text-gray-600.dark\:text-gray-400 {
-        color: var(--colors-secondary-400) !important;
-    }
-
-    /* Gray border colors */
-    .border-gray-300 {
-        border-color: rgba(var(--colors-secondary-300-rgb), 0.3) !important;
-    }
-
-    .border-gray-200.dark\:border-gray-700 {
-        border-color: rgba(var(--colors-secondary-400-rgb), 0.2) !important;
-    }
-
-    /* Gray shadow effects */
-    .shadow-lg.dark\:shadow-gray-50\/10 {
-        box-shadow: 
-            0 10px 25px rgba(0, 0, 0, 0.2),
-            0 0 30px rgba(var(--colors-gray-500-rgb), 0.1) !important;
-    }
-
-    /* Gray background for body */
-    body.bg-surface-500.dark\:bg-surfacedark-500 {
-        background: var(--colors-surfacedark-100) !important;
-    }
-
-    /* Gray gradients for quick start cards */
-    .main-content .shadow-lg.dark\:shadow-gray-50\/10 {
-        background: linear-gradient(
-            145deg,
-            var(--colors-surfacedark-200),
-            var(--colors-surfacedark-300)
-        ) !important;
-        border: 1px solid rgba(var(--colors-secondary-400-rgb), 0.2) !important;
-    }
-
-    /* Keep your existing RTL styles */
     [dir="rtl"] [data-type="collapse"]::after {
         margin-right: auto !important;
         margin-left: 0 !important;
@@ -531,7 +148,6 @@
         right: 0;
     }
 
-    /* Responsive styles remain the same */
     .orders-links-customer-header {
         width: 58%;
     }
@@ -612,6 +228,7 @@
         transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
     }
 </style>
+    
     
 </head>
 
@@ -921,7 +538,7 @@
               Balance
             </span>
             <span class="text-xs text-green-600 dark:text-green-400 leading-tight">
-              10906.87 ج.م
+              2751.89 ج.م
             </span>
           </button>
         </a>
@@ -1116,13 +733,13 @@ function switchLanguage(lang) {
         class="sidebar-logo flex items-center w-full"
       >
         <img
-          src="https://abdullahasson.github.io/merchants/src/img/logo-light-ltr.png"
+          src="/static/frontend/merchants/src/img/logo-light.png" 
           alt="logo-light"
           class="h-10 w-auto dark-hidden"
         />
 
         <img
-          src="https://abdullahasson.github.io/merchants/src/logo.png"
+          src="/static/frontend/merchants/src/img/logo-dark.png" 
           alt="logo-dark"
           class="h-10 w-auto dark-block"
         />
@@ -1153,7 +770,7 @@ function switchLanguage(lang) {
         <li class="relative">
           <a
             href="/en/users/dashboard/"
-            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] active"
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
           >
             <span class="material-symbols-outlined">house</span>
             <span class="compact-title">Dashboard</span>
@@ -1199,7 +816,7 @@ function switchLanguage(lang) {
         <li class="relative">
           <a
             href="/en/shipments/shipments/"
-            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] "
+            class="flex flex-row items-center gap-3 py-3 pl-4 pr-6 mb-1 rounded-full hover-icon [&.active]:text-gray-900 dark:[&.active]:text-gray-100 [&.active]:bg-secondary-100 dark:[&.active]:bg-secondary-700 hover:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] active"
           >
             <span class="material-symbols-outlined">package_2</span>
             <span class="compact-title">Shipments</span>
@@ -1375,7 +992,7 @@ function switchLanguage(lang) {
           <ul
             id="dashboard9"
             data-type="collapsed"
-            class="sidebar-submenu [&.active]:block hidden "
+            class="sidebar-submenu [&.active]:block hidden active"
           >
             <li>
               <a
@@ -1414,196 +1031,1501 @@ function switchLanguage(lang) {
     <!-- content -->
     
 <div class="main-content flex-grow min-h-[100%] py-20 relative px-4 lg:pr-8 lg:pl-3">
-  <!-- heading -->
-  <div class="flex flex-row justify-between items-center pt-2 pb-6">
-    <h2 class="text-title-lg">Dashboard</h2>
-  </div>
+    <!-- Header Section -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-between items-start sm:items-center pt-2 pb-6">
+        <div class="flex flex-row justify-between items-center ">
+            <nav class="flex" aria-label="Breadcrumb">
+                <ol
+                    class="inline-flex items-center space-x-1 md:space-x-3 ">
+                    <!-- Home -->
+                    <li class="inline-flex items-center">
+                        <a href="/en/users/dashboard/"
+                            class="inline-flex items-center text-sm font-medium text-gray-500 hover:text-primary-600 dark:text-gray-400 dark:hover:text-primary-200 transition-colors duration-200">
+                            <span
+                                class="material-symbols-outlined text-lg mr-2 ">
+                                home
+                            </span>
+                            Home
+                        </a>
+                    </li>
 
-  <!-- Stats Cards -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-4 md:mb-6">
-    <!-- Total Orders Card -->
-    <div class="w-full max-sm:flex-shrink-0 flex flex-col justify-between rounded-xl bg-white dark:bg-gray-900 overflow-hidden">
-      <div class="flex flex-col gap-2 py-8 px-6 relative">
-        <div class="flex flex-row justify-between items-center">
-          <h3 class="text-title-md text-gray-800 dark:text-gray-200">
-            Total orders
-          </h3>
+                    <!-- Current Page -->
+                    <li class="inline-flex items-center">
+                        <span class="mx-2 text-gray-400 flex items-center justify-center">
+                            <span class="material-symbols-outlined">
+                                
+                                    chevron_right
+                                
+                            </span>
+                        </span>
+                        <span class="inline-flex items-center text-sm font-medium text-primary-600 dark:text-primary-200">
+                            <span
+                                class="material-symbols-outlined text-lg mr-2 ">
+                                package_2
+                            </span>
+
+                            Shipments
+                        </span>
+                    </li>
+                </ol>
+            </nav>
         </div>
-        <h4 class="text-display-sm text-gray-800 dark:text-gray-200">4</h4>
-        <span class="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-          shopping_bag
-        </span>
-      </div>
-    </div>
-    
-    <!-- Pending Orders Card -->
-    <div class="w-full max-sm:flex-shrink-0 flex flex-col justify-between rounded-xl bg-white dark:bg-gray-900 overflow-hidden">
-      <div class="flex flex-col gap-2 py-8 px-6 relative">
-        <div class="flex flex-row justify-between items-center">
-          <h3 class="text-title-md text-gray-800 dark:text-gray-200">Pending orders</h3>
+
+        <div class="flex flex-row gap-3 items-center pr-4">
+            
+
+            <a 
+                href="/en/orders/orders/create" 
+                data-type="dialogs" 
+                data-target="#dialog_detail"
+                class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+            >
+                <span class="material-symbols-outlined">add</span>
+
+                Add Order
+            </a>
         </div>
-        <h4 class="text-display-sm text-gray-800 dark:text-gray-200">1</h4>
-        <span class="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-          pending_actions
-        </span>
-      </div>
     </div>
-    
-    <!-- Shipment in Transit Card -->
-    <div class="w-full max-sm:flex-shrink-0 flex flex-col justify-between rounded-xl bg-white dark:bg-gray-900 overflow-hidden">
-      <div class="flex flex-col gap-2 py-8 px-6 relative">
-        <div class="flex flex-row justify-between items-center">
-          <h3 class="text-title-md text-gray-800 dark:text-gray-200">Shipment in transit</h3>
-        </div>
-        <h4 class="text-display-sm text-gray-800 dark:text-gray-200">0</h4>
-        <span class="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-          local_shipping
-        </span>
-      </div>
+
+    <!-- Search Input -->
+    <div class="relative w-1/3 search-container-res">
+        <button
+            class="absolute left-2 top-1/2 transform -translate-y-1/2 hidden sm:inline-flex !items-center justify-center w-10 h-10 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]"
+            style="right: auto; left: 4px;"
+        >
+            <span class="material-symbols-outlined !text-2xl">search</span>
+        </button>
+
+        <form 
+            action="" 
+            class="d-flex mb-3 row"
+        >
+            <input 
+                name="q" 
+                 
+                type="search"
+                placeholder="Search..."
+                class="pl-12 pr-4 max-sm:absolute max-sm:inset-x-0 block w-full h-12 rounded-full bg-white dark:bg-gray-900 ring-0 focus:outline-none focus:shadow"
+            >
+        </form>
     </div>
-    
-    <!-- Total COD Card -->
-  <div class="w-full max-sm:flex-shrink-0 flex flex-col justify-between rounded-xl bg-white dark:bg-gray-900 overflow-hidden">
-        <div class="flex flex-col gap-2 py-8 px-6 relative">
-          <div class="flex flex-row justify-between items-center">
-            <h3 class="text-title-md text-gray-800 dark:text-gray-200">Total COD</h3>
-          </div>
-          <h4 class="text-display-sm text-gray-800 dark:text-gray-200">
-            0.00 ج.م
-            <span class="text-sm text-gray-500">
-              (0 shipments)
+
+    <!-- Tabs -->
+    <div class="relative flex flex-row items-center mb-4 table-container-res">
+        <a 
+            href="?"
+            class="w-1/3 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab active"
+        >
+            <span class="text-sm tracking-[.00714em]">
+                All
             </span>
-          </h4>
-          <span class="absolute right-3 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-            payments
-          </span>
-        </div>
-      </div>
-  </div>
+        </a>
 
-  <!-- Quick Action Cards -->
-  <div class="flex flex-col">
-    <!-- heading -->
-    <div class="flex flex-row justify-between items-center pt-2 pb-6">
-      <h2 class="text-title-lg">Quick start</h2>
+        
+            <a 
+                href="?status=purchased"
+                class="w-1/3 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab "
+            >
+                <span class="text-sm tracking-[.00714em]">
+                    Purchased
+                </span>
+            </a>
+        
+            <a 
+                href="?status=shipped"
+                class="w-1/3 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab "
+            >
+                <span class="text-sm tracking-[.00714em]">
+                    Shipped
+                </span>
+            </a>
+        
+            <a 
+                href="?status=delivered"
+                class="w-1/3 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab "
+            >
+                <span class="text-sm tracking-[.00714em]">
+                    Delivered
+                </span>
+            </a>
+        
+            <a 
+                href="?status=cancelled"
+                class="w-1/3 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab "
+            >
+                <span class="text-sm tracking-[.00714em]">
+                    Cancelled
+                </span>
+            </a>
+        
+            <a 
+                href="?status=draft"
+                class="w-1/3 sm:w-[120px] h-16 px-4 flex flex-col justify-center items-center gap-1 relative py-2 hover:bg-surface-100 dark:hover:bg-surfacedark-100 tab "
+            >
+                <span class="text-sm tracking-[.00714em]">
+                    Draft
+                </span>
+            </a>
+        
+
+        <div 
+            id="indicator" 
+            data-type="indicator"
+            class="absolute left-0 bottom-0 transition-all duration-200 ease-in-out bg-primary-600 dark:bg-primary-200 w-1/3 sm:w-[120px] h-0.5 rounded-t-full"
+            style="left: 0px;"
+        ></div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-4 md:mb-6">
-      <!-- Step 1: Connect Store -->
-      <div class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-10 px-6 rounded-xl max-sm:w-full">
-        <div class="flex flex-col relative">
-          <h3 class="text-title-lg">
-            Step 1
-          </h3>
+    <!-- content 1 -->
+    <div class="grid grid-cols-1 sm:gap-4 md:gap-6">
+        <!-- card -->
+        <div class="px-6 py-8 flex flex-col rounded-xl bg-white dark:bg-gray-900 table-container-res">
+            <div class="relative">
+                <!-- customers table -->
+                <table class="table-bordered-bottom table-res table-hover text-left">
+                    <thead>
+                        <tr>
+                            <th>Shipment ID</th>
+                            <th>Recipient</th>
+                            <th>Destination</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
 
-          <p class="text-body-lg">
-            Connect Store
-          </p>
+                    <tbody>
+                        
+                            <tr class="[&.selected]:!bg-primary-100 dark:[&.selected]:!bg-primary-700">
+                                <td>
+                                    <a 
+                                        class="hover:text-primary-600 dark:hover:text-primary-200"
+                                        href="/en/shipments/shipments/793d2c20-d5e0-498f-8fd8-7ec06e105d2d/detail/"
+                                    >
+                                        GZ-EDDE4F52A8CA2F
+                                    </a>
+                                </td>
 
-          <span class="absolute right-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-            store
-          </span>
+                                <td>
+                                    David TEST
+                                </td>
+
+                                <td>
+                                    الرمضانى, Egypt
+                                </td>
+
+                                <td>
+                                    <div class="flex items-center gap-1">
+                                        <span class="inline-block w-3 h-3 mr-1 rounded-full bg-primary-500"></span>
+                                        Draft
+                                    </div>
+                                </td>
+
+                                <!--  -->
+                                <td>
+                                    <div class="relative">
+                                        <button 
+                                            data-type="dropdown" 
+                                            data-target="#shipment-dropdown-793d2c20-d5e0-498f-8fd8-7ec06e105d2d"
+                                            class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]"
+                                        >
+                                            <span 
+                                                aria-label="Actions" 
+                                                data-microtip-position="top" 
+                                                role="tooltip"
+                                                class="material-symbols-outlined !text-[28px] pointer-events-none"
+                                            >
+                                                More_Vert
+                                            </span>
+                                        </button>
+
+                                        <!-- menus -->
+                                        <ul 
+                                            id="shipment-dropdown-793d2c20-d5e0-498f-8fd8-7ec06e105d2d" 
+                                            data-type="dropdownmenu"
+                                            class="[&.show]:!opacity-100 overflow-hidden [&.show]:!visible opacity-0 w-[150px] invisible absolute border divide-y z-30 transition duration-400 ease-in-out inline-flex flex-col rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10"
+                                            
+                                                style="right: 100%; top: -100%;"
+                                            
+                                        >
+                                            <li class="relative">
+                                                <a 
+                                                    href="/en/shipments/shipments/793d2c20-d5e0-498f-8fd8-7ec06e105d2d/detail/"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Edit
+                                                </a>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs" 
+                                                    data-target="#track-shipment-793d2c20-d5e0-498f-8fd8-7ec06e105d2d" 
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Track
+                                                </button>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/793d2c20-d5e0-498f-8fd8-7ec06e105d2d/documents/label.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Label
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/793d2c20-d5e0-498f-8fd8-7ec06e105d2d/documents/invoice.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Invoice
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs"
+                                                    data-target="#shipment-remove-793d2c20-d5e0-498f-8fd8-7ec06e105d2d"
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+
+                                <!-- Track Dialog -->
+<div class="z-50 flex flex-col w-11/12 sm:w-[480px] h-auto bg-surface-100 dark:bg-surfacedark-100 rounded-[28px] overflow-hidden border border-gray-200 dark:border-gray-800 shadow-2xl">
+    <!-- Header -->
+    <div class="flex justify-between items-center px-6 py-5 bg-surface-400 dark:bg-surfacedark-400 border-b border-gray-200 dark:border-gray-800">
+        <div class="flex items-center gap-3">
+            <div class="flex items-center justify-center w-10 h-10 bg-primary-100 dark:bg-primary-900/30 rounded-full">
+                <span class="material-symbols-outlined text-primary-600 dark:text-primary-400 text-xl">
+                    local_shipping
+                </span>
+            </div>
+            <div>
+                <p class="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1">
+                    Tracking Number
+                </p>
+                <h3 class="text-title-lg font-bold text-gray-900 dark:text-gray-100 tracking-tight">
+                    {{ shipment.internal_tracking_number }}
+                </h3>
+            </div>
         </div>
-
-        <a 
-          href="/en/sales-channels/"
-          class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200"
+        
+        <!-- Close button -->
+        <button 
+            data-close="#track-shipment-{{ shipment.pk }}" 
+            class="flex items-center justify-center w-8 h-8 rounded-full bg-surface-200 dark:bg-surfacedark-200 hover:bg-surface-300 dark:hover:bg-surfacedark-300 transition-colors"
         >
-          <span class="material-symbols-outlined">
-            
-                arrow_forward
-            
-          </span>
-        </a>
-      </div>
-      
-      <!-- Step 2: Connect Courier -->
-      <div class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-10 px-6 rounded-xl max-sm:w-full">
-        <div class="flex flex-col relative">
-          <h3 class="text-title-lg">
-            Step 2
-          </h3>
-
-          <p class="text-body-lg">
-            Connect Courier
-          </p>
-
-          <span class="absolute right-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-            Local_Shipping
-          </span>
-
-        </div>
-        <a 
-          href="/en/carriers/carriers/"
-          class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200"
-        >
-          <span class="material-symbols-outlined">
-            
-                arrow_forward
-            
-          </span>
-        </a>
-      </div>
-      
-      <!-- Step 3: Create Order -->
-      <div class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-10 px-6 rounded-xl max-sm:w-full">
-        <div class="flex flex-col relative">
-          <h3 class="text-title-lg">
-            Step 3
-          </h3>
-
-          <p class="text-body-lg">
-            Create Order
-          </p>
-
-          <span class="absolute right-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-            orders
-          </span>
-
-        </div>
-        <a 
-          href="/en/orders/orders/"
-          class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200"
-        >
-          <span class="material-symbols-outlined">
-            
-                arrow_forward
-            
-          </span>
-        </a>
-      </div>
-      
-      <!-- Step 4: Track Shipment -->
-      <div class="flex flex-col gap-4 bg-white dark:bg-gray-900 shadow-lg dark:shadow-gray-50/10 py-10 px-6 rounded-xl max-sm:w-full">
-        <div class="flex flex-col relative">
-          <h3 class="text-title-lg">
-            Step 4
-          </h3>
-
-          <p class="text-body-lg">
-            Track a shipment
-          </p>
-
-          <span class="absolute right-0 top-1/2 -translate-y-1/2 opacity-50 text-surface-400 dark:text-surfacedark-600 !text-[80px] material-symbols-outlined">
-            package
-          </span>
-
-        </div>
-        <a 
-          href="/en/shipments/shipments/"
-          class="mt-4 btn-outline relative inline-flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium border border-gray-500 text-primary-600 dark:border-gray-400 dark:text-primary-200"
-        >
-          <span class="material-symbols-outlined">
-            
-                arrow_forward
-            
-          </span>
-        </a>
-      </div>
+            <span class="material-symbols-outlined text-gray-600 dark:text-gray-400 text-lg">
+                close
+            </span>
+        </button>
     </div>
-  </div>
+
+    <!-- Body -->
+    <div class="flex flex-col gap-6 px-6 py-6 h-[50vh] overflow-y-auto">
+        <!-- Status Card -->
+
+
+        <!-- Timeline Section -->
+        <div class="flex-1">
+            <div class="flex items-center gap-2 mb-4">
+                <span class="material-symbols-outlined text-gray-500 dark:text-gray-400">
+                    schedule
+                </span>
+                <h4 class="text-base font-semibold text-gray-900 dark:text-gray-100">
+                    Shipment Timeline
+                </h4>
+            </div>
+            
+            <!-- Timeline Container -->
+            <div class="relative pl-9">
+                <!-- Vertical line -->
+                <div class="absolute left-[18px] top-2 bottom-2 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
+                
+                <!-- Timeline Item (Current Status) -->
+                <div class="relative mb-8">
+                    <div class="absolute left-[-29px] top-0 flex items-center justify-center w-8 h-8 rounded-full bg-yellow-100 dark:bg-yellow-900/40 border-2 border-white dark:border-surfacedark-100">
+                        <span class="material-symbols-outlined text-yellow-600 dark:text-yellow-400 text-sm">
+                            pending
+                        </span>
+                    </div>
+                    <div class="bg-surface-200 dark:bg-surfacedark-200 rounded-lg p-4 border border-gray-100 dark:border-gray-800">
+                        <div class="flex justify-between items-start mb-1">
+                            <p class="text-sm font-medium text-gray-900 dark:text-gray-100">
+                                Awaiting Carrier Scan
+                            </p>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">
+                                Pending
+                            </span>
+                        </div>
+                        <p class="text-xs text-gray-600 dark:text-gray-300">
+                            Your shipment details have been received and will be updated once scanned by the carrier.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Placeholder for future timeline events -->
+                <ul class="relative border-l border-gray-200 dark:border-gray-700 ml-2.5 space-y-6">
+                    <!-- Timeline events will appear here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="py-5 px-6 flex flex-row items-center justify-center bg-surface-400 dark:bg-surfacedark-400 border-t border-gray-200 dark:border-gray-800">
+        <button 
+            data-close="#track-shipment-{{ shipment.pk }}" 
+            class="btn relative inline-flex flex-row items-center justify-center gap-x-2 py-3 px-8 rounded-[6.25rem] hover:shadow-lg transition-all text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800 hover:bg-primary-700 dark:hover:bg-primary-300"
+        >
+            <span class="material-symbols-outlined text-lg">
+                done
+            </span>
+            Close
+        </button>
+    </div>
 </div>
 
+                                <!-- Remove Confirmation Dialog -->
+                                <div 
+                                    id="shipment-remove-793d2c20-d5e0-498f-8fd8-7ec06e105d2d" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show_.backDialog]:block [&.show_.backDialog]:inset-0 [&.show]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#shipment-remove-793d2c20-d5e0-498f-8fd8-7ec06e105d2d" 
+                                        class="backDialog hidden z-40 overflow-auto fixed bg-black"
+                                    ></div> 
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] pt-8 h-auto bg-surface-300 dark:bg-surfacedark-300 rounded-[28px]">
+                                        <div 
+                                            class="w-20 h-20 flex items-center justify-center mx-auto rounded-full overflow-hidden"
+                                            style="background-color: #ff000075;"
+                                        >
+                                            <span 
+                                                class="material-symbols-outlined text-white"
+                                                style="font-size: 55px;"
+                                            >
+                                                Priority_High
+                                            </span>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 justify-start px-8 pt-8 pb-0">
+                                            <h3 class="text-title-lg text-gray-900 dark:text-gray-100 text-center">
+                                                Are You Sure ?
+                                            </h3>
+
+                                            <p class="text-center text-gray-600 dark:text-gray-400">
+                                                Are you sure you want to remove "" ?
+                                            </p>
+                                        </div>
+
+                                        <div 
+                                            class="flex flex-row px-8 py-8"
+                                            style="justify-content: space-around;"
+                                        >
+                                            <button 
+                                                data-close="#shipment-remove-793d2c20-d5e0-498f-8fd8-7ec06e105d2d" 
+                                                class="closeDialog relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium text-primary-600 hover:bg-surface-200 focus:bg-surface-400 dark:text-primary-200 dark:hover:bg-surfacedark-200 dark:focus:bg-surfacedark-400"
+                                            >
+                                                No
+                                            </button>
+
+                                            <a 
+                                                href="#" 
+                                                class="btn relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                            >
+                                                Yes
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                        
+                            <tr class="[&.selected]:!bg-primary-100 dark:[&.selected]:!bg-primary-700">
+                                <td>
+                                    <a 
+                                        class="hover:text-primary-600 dark:hover:text-primary-200"
+                                        href="/en/shipments/shipments/3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b/detail/"
+                                    >
+                                        GZ-BAFEFC4990C88D
+                                    </a>
+                                </td>
+
+                                <td>
+                                    Buyer 9
+                                </td>
+
+                                <td>
+                                    Aswan, Egypt
+                                </td>
+
+                                <td>
+                                    <div class="flex items-center gap-1">
+                                        <span class="inline-block w-3 h-3 mr-1 rounded-full bg-primary-500"></span>
+                                        Draft
+                                    </div>
+                                </td>
+
+                                <!--  -->
+                                <td>
+                                    <div class="relative">
+                                        <button 
+                                            data-type="dropdown" 
+                                            data-target="#shipment-dropdown-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b"
+                                            class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]"
+                                        >
+                                            <span 
+                                                aria-label="Actions" 
+                                                data-microtip-position="top" 
+                                                role="tooltip"
+                                                class="material-symbols-outlined !text-[28px] pointer-events-none"
+                                            >
+                                                More_Vert
+                                            </span>
+                                        </button>
+
+                                        <!-- menus -->
+                                        <ul 
+                                            id="shipment-dropdown-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b" 
+                                            data-type="dropdownmenu"
+                                            class="[&.show]:!opacity-100 overflow-hidden [&.show]:!visible opacity-0 w-[150px] invisible absolute border divide-y z-30 transition duration-400 ease-in-out inline-flex flex-col rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10"
+                                            
+                                                style="right: 100%; top: -100%;"
+                                            
+                                        >
+                                            <li class="relative">
+                                                <a 
+                                                    href="/en/shipments/shipments/3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b/detail/"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Edit
+                                                </a>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs" 
+                                                    data-target="#track-shipment-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b" 
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Track
+                                                </button>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b/documents/label_NshsuRB.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Label
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b/documents/invoice.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Invoice
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs"
+                                                    data-target="#shipment-remove-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b"
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+
+                                <!-- Track Dialog -->
+                                <div 
+                                    id="track-shipment-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show]:inset-0 [&.show_.backDialog]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#track-shipment-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b" 
+                                        class="backDialog z-40 overflow-auto fixed bg-black"
+                                    ></div>
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] h-auto bg-surface-100 dark:bg-surfacedark-100 rounded-[28px] overflow-hidden">
+                                        <div class="flex flex-col gap-4 justify-start">
+                                            <div class="flex justify-between items-center px-6 py-4 bg-surface-400 dark:bg-surfacedark-400">
+                                                <h3 class="text-title-lg text-gray-900 dark:text-gray-100">
+                                                    GZ-BAFEFC4990C88D
+                                                </h3>
+
+                                                <!-- close -->
+                                                <div 
+                                                    data-close="#track-shipment-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b" 
+                                                >
+                                                    <span class="material-symbols-outlined cursor-pointer">
+                                                        close
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex flex-col gap-2 px-6 py-4 h-[50vh] overflow-y-auto">
+                                                <div>
+                                                    <p>
+                                                        Tracking isn’t available yet. The carrier hasn’t scanned or dispatched this shipment. Please try again later
+                                                    </p>
+                                                </div>
+
+                                                <!-- timeline -->
+                                                <ul 
+                                                    class="relative border-l border-gray-200 dark:border-gray-700"
+                                                >
+  
+                                                </ul>
+                                            </div>
+
+                                            <div class="py-4 px-6 flex flex-row items-center bg-surface-400 dark:bg-surfacedark-400">
+                                                <button 
+                                                    data-close="#track-shipment-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b" 
+                                                    class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 mx-auto rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                                >
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Remove Confirmation Dialog -->
+                                <div 
+                                    id="shipment-remove-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show_.backDialog]:block [&.show_.backDialog]:inset-0 [&.show]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#shipment-remove-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b" 
+                                        class="backDialog hidden z-40 overflow-auto fixed bg-black"
+                                    ></div> 
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] pt-8 h-auto bg-surface-300 dark:bg-surfacedark-300 rounded-[28px]">
+                                        <div 
+                                            class="w-20 h-20 flex items-center justify-center mx-auto rounded-full overflow-hidden"
+                                            style="background-color: #ff000075;"
+                                        >
+                                            <span 
+                                                class="material-symbols-outlined text-white"
+                                                style="font-size: 55px;"
+                                            >
+                                                Priority_High
+                                            </span>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 justify-start px-8 pt-8 pb-0">
+                                            <h3 class="text-title-lg text-gray-900 dark:text-gray-100 text-center">
+                                                Are You Sure ?
+                                            </h3>
+
+                                            <p class="text-center text-gray-600 dark:text-gray-400">
+                                                Are you sure you want to remove "" ?
+                                            </p>
+                                        </div>
+
+                                        <div 
+                                            class="flex flex-row px-8 py-8"
+                                            style="justify-content: space-around;"
+                                        >
+                                            <button 
+                                                data-close="#shipment-remove-3efd15eb-0af9-4fc2-983d-c4b60f1a6b6b" 
+                                                class="closeDialog relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium text-primary-600 hover:bg-surface-200 focus:bg-surface-400 dark:text-primary-200 dark:hover:bg-surfacedark-200 dark:focus:bg-surfacedark-400"
+                                            >
+                                                No
+                                            </button>
+
+                                            <a 
+                                                href="#" 
+                                                class="btn relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                            >
+                                                Yes
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                        
+                            <tr class="[&.selected]:!bg-primary-100 dark:[&.selected]:!bg-primary-700">
+                                <td>
+                                    <a 
+                                        class="hover:text-primary-600 dark:hover:text-primary-200"
+                                        href="/en/shipments/shipments/38d4debe-4c88-43ea-8c8d-0c4005919bc2/detail/"
+                                    >
+                                        GZ-9B553C948199DC
+                                    </a>
+                                </td>
+
+                                <td>
+                                    Buyer 1009 Buy
+                                </td>
+
+                                <td>
+                                    Alexandria, Egypt
+                                </td>
+
+                                <td>
+                                    <div class="flex items-center gap-1">
+                                        <span class="inline-block w-3 h-3 mr-1 rounded-full bg-primary-500"></span>
+                                        Draft
+                                    </div>
+                                </td>
+
+                                <!--  -->
+                                <td>
+                                    <div class="relative">
+                                        <button 
+                                            data-type="dropdown" 
+                                            data-target="#shipment-dropdown-38d4debe-4c88-43ea-8c8d-0c4005919bc2"
+                                            class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]"
+                                        >
+                                            <span 
+                                                aria-label="Actions" 
+                                                data-microtip-position="top" 
+                                                role="tooltip"
+                                                class="material-symbols-outlined !text-[28px] pointer-events-none"
+                                            >
+                                                More_Vert
+                                            </span>
+                                        </button>
+
+                                        <!-- menus -->
+                                        <ul 
+                                            id="shipment-dropdown-38d4debe-4c88-43ea-8c8d-0c4005919bc2" 
+                                            data-type="dropdownmenu"
+                                            class="[&.show]:!opacity-100 overflow-hidden [&.show]:!visible opacity-0 w-[150px] invisible absolute border divide-y z-30 transition duration-400 ease-in-out inline-flex flex-col rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10"
+                                            
+                                                style="right: 100%; top: -100%;"
+                                            
+                                        >
+                                            <li class="relative">
+                                                <a 
+                                                    href="/en/shipments/shipments/38d4debe-4c88-43ea-8c8d-0c4005919bc2/detail/"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Edit
+                                                </a>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs" 
+                                                    data-target="#track-shipment-38d4debe-4c88-43ea-8c8d-0c4005919bc2" 
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Track
+                                                </button>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/38d4debe-4c88-43ea-8c8d-0c4005919bc2/documents/label_hngJklD.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Label
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/38d4debe-4c88-43ea-8c8d-0c4005919bc2/documents/invoice.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Invoice
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs"
+                                                    data-target="#shipment-remove-38d4debe-4c88-43ea-8c8d-0c4005919bc2"
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+
+                                <!-- Track Dialog -->
+                                <div 
+                                    id="track-shipment-38d4debe-4c88-43ea-8c8d-0c4005919bc2" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show]:inset-0 [&.show_.backDialog]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#track-shipment-38d4debe-4c88-43ea-8c8d-0c4005919bc2" 
+                                        class="backDialog z-40 overflow-auto fixed bg-black"
+                                    ></div>
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] h-auto bg-surface-100 dark:bg-surfacedark-100 rounded-[28px] overflow-hidden">
+                                        <div class="flex flex-col gap-4 justify-start">
+                                            <div class="flex justify-between items-center px-6 py-4 bg-surface-400 dark:bg-surfacedark-400">
+                                                <h3 class="text-title-lg text-gray-900 dark:text-gray-100">
+                                                    GZ-9B553C948199DC
+                                                </h3>
+
+                                                <!-- close -->
+                                                <div 
+                                                    data-close="#track-shipment-38d4debe-4c88-43ea-8c8d-0c4005919bc2" 
+                                                >
+                                                    <span class="material-symbols-outlined cursor-pointer">
+                                                        close
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex flex-col gap-2 px-6 py-4 h-[50vh] overflow-y-auto">
+                                                <div>
+                                                    <p>
+                                                        Tracking isn’t available yet. The carrier hasn’t scanned or dispatched this shipment. Please try again later
+                                                    </p>
+                                                </div>
+
+                                                <!-- timeline -->
+                                                <ul 
+                                                    class="relative border-l border-gray-200 dark:border-gray-700"
+                                                >
+  
+                                                </ul>
+                                            </div>
+
+                                            <div class="py-4 px-6 flex flex-row items-center bg-surface-400 dark:bg-surfacedark-400">
+                                                <button 
+                                                    data-close="#track-shipment-38d4debe-4c88-43ea-8c8d-0c4005919bc2" 
+                                                    class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 mx-auto rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                                >
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Remove Confirmation Dialog -->
+                                <div 
+                                    id="shipment-remove-38d4debe-4c88-43ea-8c8d-0c4005919bc2" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show_.backDialog]:block [&.show_.backDialog]:inset-0 [&.show]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#shipment-remove-38d4debe-4c88-43ea-8c8d-0c4005919bc2" 
+                                        class="backDialog hidden z-40 overflow-auto fixed bg-black"
+                                    ></div> 
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] pt-8 h-auto bg-surface-300 dark:bg-surfacedark-300 rounded-[28px]">
+                                        <div 
+                                            class="w-20 h-20 flex items-center justify-center mx-auto rounded-full overflow-hidden"
+                                            style="background-color: #ff000075;"
+                                        >
+                                            <span 
+                                                class="material-symbols-outlined text-white"
+                                                style="font-size: 55px;"
+                                            >
+                                                Priority_High
+                                            </span>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 justify-start px-8 pt-8 pb-0">
+                                            <h3 class="text-title-lg text-gray-900 dark:text-gray-100 text-center">
+                                                Are You Sure ?
+                                            </h3>
+
+                                            <p class="text-center text-gray-600 dark:text-gray-400">
+                                                Are you sure you want to remove "" ?
+                                            </p>
+                                        </div>
+
+                                        <div 
+                                            class="flex flex-row px-8 py-8"
+                                            style="justify-content: space-around;"
+                                        >
+                                            <button 
+                                                data-close="#shipment-remove-38d4debe-4c88-43ea-8c8d-0c4005919bc2" 
+                                                class="closeDialog relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium text-primary-600 hover:bg-surface-200 focus:bg-surface-400 dark:text-primary-200 dark:hover:bg-surfacedark-200 dark:focus:bg-surfacedark-400"
+                                            >
+                                                No
+                                            </button>
+
+                                            <a 
+                                                href="#" 
+                                                class="btn relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                            >
+                                                Yes
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                        
+                            <tr class="[&.selected]:!bg-primary-100 dark:[&.selected]:!bg-primary-700">
+                                <td>
+                                    <a 
+                                        class="hover:text-primary-600 dark:hover:text-primary-200"
+                                        href="/en/shipments/shipments/820f879f-9d3d-4c1e-8041-c6d441aeb034/detail/"
+                                    >
+                                        GZ-51B5EA4BBADC2A
+                                    </a>
+                                </td>
+
+                                <td>
+                                    Buyer 6
+                                </td>
+
+                                <td>
+                                    Alexandria, Egypt
+                                </td>
+
+                                <td>
+                                    <div class="flex items-center gap-1">
+                                        <span class="inline-block w-3 h-3 mr-1 rounded-full bg-primary-500"></span>
+                                        Draft
+                                    </div>
+                                </td>
+
+                                <!--  -->
+                                <td>
+                                    <div class="relative">
+                                        <button 
+                                            data-type="dropdown" 
+                                            data-target="#shipment-dropdown-820f879f-9d3d-4c1e-8041-c6d441aeb034"
+                                            class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]"
+                                        >
+                                            <span 
+                                                aria-label="Actions" 
+                                                data-microtip-position="top" 
+                                                role="tooltip"
+                                                class="material-symbols-outlined !text-[28px] pointer-events-none"
+                                            >
+                                                More_Vert
+                                            </span>
+                                        </button>
+
+                                        <!-- menus -->
+                                        <ul 
+                                            id="shipment-dropdown-820f879f-9d3d-4c1e-8041-c6d441aeb034" 
+                                            data-type="dropdownmenu"
+                                            class="[&.show]:!opacity-100 overflow-hidden [&.show]:!visible opacity-0 w-[150px] invisible absolute border divide-y z-30 transition duration-400 ease-in-out inline-flex flex-col rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10"
+                                            
+                                                style="right: 100%; top: -100%;"
+                                            
+                                        >
+                                            <li class="relative">
+                                                <a 
+                                                    href="/en/shipments/shipments/820f879f-9d3d-4c1e-8041-c6d441aeb034/detail/"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Edit
+                                                </a>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs" 
+                                                    data-target="#track-shipment-820f879f-9d3d-4c1e-8041-c6d441aeb034" 
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Track
+                                                </button>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/820f879f-9d3d-4c1e-8041-c6d441aeb034/documents/label.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Label
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/820f879f-9d3d-4c1e-8041-c6d441aeb034/documents/invoice_h8S8AJo.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Invoice
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs"
+                                                    data-target="#shipment-remove-820f879f-9d3d-4c1e-8041-c6d441aeb034"
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+
+                                <!-- Track Dialog -->
+                                <div 
+                                    id="track-shipment-820f879f-9d3d-4c1e-8041-c6d441aeb034" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show]:inset-0 [&.show_.backDialog]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#track-shipment-820f879f-9d3d-4c1e-8041-c6d441aeb034" 
+                                        class="backDialog z-40 overflow-auto fixed bg-black"
+                                    ></div>
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] h-auto bg-surface-100 dark:bg-surfacedark-100 rounded-[28px] overflow-hidden">
+                                        <div class="flex flex-col gap-4 justify-start">
+                                            <div class="flex justify-between items-center px-6 py-4 bg-surface-400 dark:bg-surfacedark-400">
+                                                <h3 class="text-title-lg text-gray-900 dark:text-gray-100">
+                                                    GZ-51B5EA4BBADC2A
+                                                </h3>
+
+                                                <!-- close -->
+                                                <div 
+                                                    data-close="#track-shipment-820f879f-9d3d-4c1e-8041-c6d441aeb034" 
+                                                >
+                                                    <span class="material-symbols-outlined cursor-pointer">
+                                                        close
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex flex-col gap-2 px-6 py-4 h-[50vh] overflow-y-auto">
+                                                <div>
+                                                    <p>
+                                                        Tracking isn’t available yet. The carrier hasn’t scanned or dispatched this shipment. Please try again later
+                                                    </p>
+                                                </div>
+
+                                                <!-- timeline -->
+                                                <ul 
+                                                    class="relative border-l border-gray-200 dark:border-gray-700"
+                                                >
+  
+                                                </ul>
+                                            </div>
+
+                                            <div class="py-4 px-6 flex flex-row items-center bg-surface-400 dark:bg-surfacedark-400">
+                                                <button 
+                                                    data-close="#track-shipment-820f879f-9d3d-4c1e-8041-c6d441aeb034" 
+                                                    class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 mx-auto rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                                >
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Remove Confirmation Dialog -->
+                                <div 
+                                    id="shipment-remove-820f879f-9d3d-4c1e-8041-c6d441aeb034" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show_.backDialog]:block [&.show_.backDialog]:inset-0 [&.show]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#shipment-remove-820f879f-9d3d-4c1e-8041-c6d441aeb034" 
+                                        class="backDialog hidden z-40 overflow-auto fixed bg-black"
+                                    ></div> 
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] pt-8 h-auto bg-surface-300 dark:bg-surfacedark-300 rounded-[28px]">
+                                        <div 
+                                            class="w-20 h-20 flex items-center justify-center mx-auto rounded-full overflow-hidden"
+                                            style="background-color: #ff000075;"
+                                        >
+                                            <span 
+                                                class="material-symbols-outlined text-white"
+                                                style="font-size: 55px;"
+                                            >
+                                                Priority_High
+                                            </span>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 justify-start px-8 pt-8 pb-0">
+                                            <h3 class="text-title-lg text-gray-900 dark:text-gray-100 text-center">
+                                                Are You Sure ?
+                                            </h3>
+
+                                            <p class="text-center text-gray-600 dark:text-gray-400">
+                                                Are you sure you want to remove "" ?
+                                            </p>
+                                        </div>
+
+                                        <div 
+                                            class="flex flex-row px-8 py-8"
+                                            style="justify-content: space-around;"
+                                        >
+                                            <button 
+                                                data-close="#shipment-remove-820f879f-9d3d-4c1e-8041-c6d441aeb034" 
+                                                class="closeDialog relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium text-primary-600 hover:bg-surface-200 focus:bg-surface-400 dark:text-primary-200 dark:hover:bg-surfacedark-200 dark:focus:bg-surfacedark-400"
+                                            >
+                                                No
+                                            </button>
+
+                                            <a 
+                                                href="#" 
+                                                class="btn relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                            >
+                                                Yes
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                        
+                            <tr class="[&.selected]:!bg-primary-100 dark:[&.selected]:!bg-primary-700">
+                                <td>
+                                    <a 
+                                        class="hover:text-primary-600 dark:hover:text-primary-200"
+                                        href="/en/shipments/shipments/e7a0f361-080f-4d04-a3cf-9ce0cbb77c45/detail/"
+                                    >
+                                        GZ-FEB1ABE70C4FAE
+                                    </a>
+                                </td>
+
+                                <td>
+                                    Buyer 5
+                                </td>
+
+                                <td>
+                                    Giza, Egypt
+                                </td>
+
+                                <td>
+                                    <div class="flex items-center gap-1">
+                                        <span class="inline-block w-3 h-3 mr-1 rounded-full bg-primary-500"></span>
+                                        Draft
+                                    </div>
+                                </td>
+
+                                <!--  -->
+                                <td>
+                                    <div class="relative">
+                                        <button 
+                                            data-type="dropdown" 
+                                            data-target="#shipment-dropdown-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45"
+                                            class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]"
+                                        >
+                                            <span 
+                                                aria-label="Actions" 
+                                                data-microtip-position="top" 
+                                                role="tooltip"
+                                                class="material-symbols-outlined !text-[28px] pointer-events-none"
+                                            >
+                                                More_Vert
+                                            </span>
+                                        </button>
+
+                                        <!-- menus -->
+                                        <ul 
+                                            id="shipment-dropdown-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45" 
+                                            data-type="dropdownmenu"
+                                            class="[&.show]:!opacity-100 overflow-hidden [&.show]:!visible opacity-0 w-[150px] invisible absolute border divide-y z-30 transition duration-400 ease-in-out inline-flex flex-col rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10"
+                                            
+                                                style="right: 100%; top: -100%;"
+                                            
+                                        >
+                                            <li class="relative">
+                                                <a 
+                                                    href="/en/shipments/shipments/e7a0f361-080f-4d04-a3cf-9ce0cbb77c45/detail/"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Edit
+                                                </a>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs" 
+                                                    data-target="#track-shipment-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45" 
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Track
+                                                </button>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/e7a0f361-080f-4d04-a3cf-9ce0cbb77c45/documents/label_yBwIsfT.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Label
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/e7a0f361-080f-4d04-a3cf-9ce0cbb77c45/documents/invoice.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Invoice
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs"
+                                                    data-target="#shipment-remove-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45"
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+
+                                <!-- Track Dialog -->
+                                <div 
+                                    id="track-shipment-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show]:inset-0 [&.show_.backDialog]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#track-shipment-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45" 
+                                        class="backDialog z-40 overflow-auto fixed bg-black"
+                                    ></div>
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] h-auto bg-surface-100 dark:bg-surfacedark-100 rounded-[28px] overflow-hidden">
+                                        <div class="flex flex-col gap-4 justify-start">
+                                            <div class="flex justify-between items-center px-6 py-4 bg-surface-400 dark:bg-surfacedark-400">
+                                                <h3 class="text-title-lg text-gray-900 dark:text-gray-100">
+                                                    GZ-FEB1ABE70C4FAE
+                                                </h3>
+
+                                                <!-- close -->
+                                                <div 
+                                                    data-close="#track-shipment-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45" 
+                                                >
+                                                    <span class="material-symbols-outlined cursor-pointer">
+                                                        close
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex flex-col gap-2 px-6 py-4 h-[50vh] overflow-y-auto">
+                                                <div>
+                                                    <p>
+                                                        Tracking isn’t available yet. The carrier hasn’t scanned or dispatched this shipment. Please try again later
+                                                    </p>
+                                                </div>
+
+                                                <!-- timeline -->
+                                                <ul 
+                                                    class="relative border-l border-gray-200 dark:border-gray-700"
+                                                >
+  
+                                                </ul>
+                                            </div>
+
+                                            <div class="py-4 px-6 flex flex-row items-center bg-surface-400 dark:bg-surfacedark-400">
+                                                <button 
+                                                    data-close="#track-shipment-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45" 
+                                                    class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 mx-auto rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                                >
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Remove Confirmation Dialog -->
+                                <div 
+                                    id="shipment-remove-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show_.backDialog]:block [&.show_.backDialog]:inset-0 [&.show]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#shipment-remove-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45" 
+                                        class="backDialog hidden z-40 overflow-auto fixed bg-black"
+                                    ></div> 
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] pt-8 h-auto bg-surface-300 dark:bg-surfacedark-300 rounded-[28px]">
+                                        <div 
+                                            class="w-20 h-20 flex items-center justify-center mx-auto rounded-full overflow-hidden"
+                                            style="background-color: #ff000075;"
+                                        >
+                                            <span 
+                                                class="material-symbols-outlined text-white"
+                                                style="font-size: 55px;"
+                                            >
+                                                Priority_High
+                                            </span>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 justify-start px-8 pt-8 pb-0">
+                                            <h3 class="text-title-lg text-gray-900 dark:text-gray-100 text-center">
+                                                Are You Sure ?
+                                            </h3>
+
+                                            <p class="text-center text-gray-600 dark:text-gray-400">
+                                                Are you sure you want to remove "" ?
+                                            </p>
+                                        </div>
+
+                                        <div 
+                                            class="flex flex-row px-8 py-8"
+                                            style="justify-content: space-around;"
+                                        >
+                                            <button 
+                                                data-close="#shipment-remove-e7a0f361-080f-4d04-a3cf-9ce0cbb77c45" 
+                                                class="closeDialog relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium text-primary-600 hover:bg-surface-200 focus:bg-surface-400 dark:text-primary-200 dark:hover:bg-surfacedark-200 dark:focus:bg-surfacedark-400"
+                                            >
+                                                No
+                                            </button>
+
+                                            <a 
+                                                href="#" 
+                                                class="btn relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                            >
+                                                Yes
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                        
+                            <tr class="[&.selected]:!bg-primary-100 dark:[&.selected]:!bg-primary-700">
+                                <td>
+                                    <a 
+                                        class="hover:text-primary-600 dark:hover:text-primary-200"
+                                        href="/en/shipments/shipments/4cbcddea-eec5-44cc-b5c2-b6a15210158a/detail/"
+                                    >
+                                        GZ-9B005584EF774D
+                                    </a>
+                                </td>
+
+                                <td>
+                                    Mahmoud Mohamed abdallah khattab
+                                </td>
+
+                                <td>
+                                    Alexandria, Egypt
+                                </td>
+
+                                <td>
+                                    <div class="flex items-center gap-1">
+                                        <span class="inline-block w-3 h-3 mr-1 rounded-full bg-primary-500"></span>
+                                        Draft
+                                    </div>
+                                </td>
+
+                                <!--  -->
+                                <td>
+                                    <div class="relative">
+                                        <button 
+                                            data-type="dropdown" 
+                                            data-target="#shipment-dropdown-4cbcddea-eec5-44cc-b5c2-b6a15210158a"
+                                            class="btn relative !inline-flex !items-center justify-center w-12 h-12 gap-x-2 p-2.5 rounded-[6.25rem] text-sm tracking-[.00714em] text-center font-medium hover:bg-primary-600/[0.08] focus:bg-primary-600/[0.08] dark:hover:bg-primary-200/[0.08] dark:focus:bg-primary-200/[0.08]"
+                                        >
+                                            <span 
+                                                aria-label="Actions" 
+                                                data-microtip-position="top" 
+                                                role="tooltip"
+                                                class="material-symbols-outlined !text-[28px] pointer-events-none"
+                                            >
+                                                More_Vert
+                                            </span>
+                                        </button>
+
+                                        <!-- menus -->
+                                        <ul 
+                                            id="shipment-dropdown-4cbcddea-eec5-44cc-b5c2-b6a15210158a" 
+                                            data-type="dropdownmenu"
+                                            class="[&.show]:!opacity-100 overflow-hidden [&.show]:!visible opacity-0 w-[150px] invisible absolute border divide-y z-30 transition duration-400 ease-in-out inline-flex flex-col rounded-xl bg-white dark:bg-gray-900 shadow-md dark:shadow-gray-50/10"
+                                            
+                                                style="right: 100%; top: -100%;"
+                                            
+                                        >
+                                            <li class="relative">
+                                                <a 
+                                                    href="/en/shipments/shipments/4cbcddea-eec5-44cc-b5c2-b6a15210158a/detail/"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Edit
+                                                </a>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs" 
+                                                    data-target="#track-shipment-4cbcddea-eec5-44cc-b5c2-b6a15210158a" 
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Track
+                                                </button>
+                                            </li>
+
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/4cbcddea-eec5-44cc-b5c2-b6a15210158a/documents/label_fqp49V1.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Label
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <a 
+                                                    href="https://test.dashboard.gozagel.com/media/shipments/4cbcddea-eec5-44cc-b5c2-b6a15210158a/documents/invoice_8pfxmWk.pdf" target="_blank"
+                                                    class="flex flex-row items-center gap-3 py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Print Invoice
+                                                </a>
+                                            </li>
+                                            
+                                            <li class="relative border-t">
+                                                <button 
+                                                    data-type="dialogs"
+                                                    data-target="#shipment-remove-4cbcddea-eec5-44cc-b5c2-b6a15210158a"
+                                                    class="flex flex-row items-center gap-3 w-full py-2.5 px-6 hover-icon hover:bg-surface-200 dark:hover:bg-surfacedark-200 whitespace-nowrap"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
+
+                                <!-- Track Dialog -->
+                                <div 
+                                    id="track-shipment-4cbcddea-eec5-44cc-b5c2-b6a15210158a" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show]:inset-0 [&.show_.backDialog]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#track-shipment-4cbcddea-eec5-44cc-b5c2-b6a15210158a" 
+                                        class="backDialog z-40 overflow-auto fixed bg-black"
+                                    ></div>
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] h-auto bg-surface-100 dark:bg-surfacedark-100 rounded-[28px] overflow-hidden">
+                                        <div class="flex flex-col gap-4 justify-start">
+                                            <div class="flex justify-between items-center px-6 py-4 bg-surface-400 dark:bg-surfacedark-400">
+                                                <h3 class="text-title-lg text-gray-900 dark:text-gray-100">
+                                                    GZ-9B005584EF774D
+                                                </h3>
+
+                                                <!-- close -->
+                                                <div 
+                                                    data-close="#track-shipment-4cbcddea-eec5-44cc-b5c2-b6a15210158a" 
+                                                >
+                                                    <span class="material-symbols-outlined cursor-pointer">
+                                                        close
+                                                    </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="flex flex-col gap-2 px-6 py-4 h-[50vh] overflow-y-auto">
+                                                <div>
+                                                    <p>
+                                                        Tracking isn’t available yet. The carrier hasn’t scanned or dispatched this shipment. Please try again later
+                                                    </p>
+                                                </div>
+
+                                                <!-- timeline -->
+                                                <ul 
+                                                    class="relative border-l border-gray-200 dark:border-gray-700"
+                                                >
+  
+                                                </ul>
+                                            </div>
+
+                                            <div class="py-4 px-6 flex flex-row items-center bg-surface-400 dark:bg-surfacedark-400">
+                                                <button 
+                                                    data-close="#track-shipment-4cbcddea-eec5-44cc-b5c2-b6a15210158a" 
+                                                    class="btn relative inline-flex flex-row items-center justify-center gap-x-1 py-2.5 px-6 mx-auto rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                                >
+                                                    Close
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Remove Confirmation Dialog -->
+                                <div 
+                                    id="shipment-remove-4cbcddea-eec5-44cc-b5c2-b6a15210158a" 
+                                    class="[&.show_.backDialog]:opacity-60 [&.show]:opacity-100 [&.show]:h-full [&.show_.backDialog]:block [&.show_.backDialog]:inset-0 [&.show]:inset-0 duration-[400ms] ease-[cubic-bezier(0, 0, 0, 1)] opacity-0 w-full h-0 z-50 overflow-auto fixed left-0 top-0 flex items-center justify-center"
+                                >
+                                    <div 
+                                        data-close="#shipment-remove-4cbcddea-eec5-44cc-b5c2-b6a15210158a" 
+                                        class="backDialog hidden z-40 overflow-auto fixed bg-black"
+                                    ></div> 
+
+                                    <!-- dialogs -->
+                                    <div class="z-50 flex flex-col w-11/12 sm:w-[480px] pt-8 h-auto bg-surface-300 dark:bg-surfacedark-300 rounded-[28px]">
+                                        <div 
+                                            class="w-20 h-20 flex items-center justify-center mx-auto rounded-full overflow-hidden"
+                                            style="background-color: #ff000075;"
+                                        >
+                                            <span 
+                                                class="material-symbols-outlined text-white"
+                                                style="font-size: 55px;"
+                                            >
+                                                Priority_High
+                                            </span>
+                                        </div>
+
+                                        <div class="flex flex-col gap-4 justify-start px-8 pt-8 pb-0">
+                                            <h3 class="text-title-lg text-gray-900 dark:text-gray-100 text-center">
+                                                Are You Sure ?
+                                            </h3>
+
+                                            <p class="text-center text-gray-600 dark:text-gray-400">
+                                                Are you sure you want to remove "" ?
+                                            </p>
+                                        </div>
+
+                                        <div 
+                                            class="flex flex-row px-8 py-8"
+                                            style="justify-content: space-around;"
+                                        >
+                                            <button 
+                                                data-close="#shipment-remove-4cbcddea-eec5-44cc-b5c2-b6a15210158a" 
+                                                class="closeDialog relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] text-sm tracking-[.00714em] font-medium text-primary-600 hover:bg-surface-200 focus:bg-surface-400 dark:text-primary-200 dark:hover:bg-surfacedark-200 dark:focus:bg-surfacedark-400"
+                                            >
+                                                No
+                                            </button>
+
+                                            <a 
+                                                href="#" 
+                                                class="btn relative flex flex-row items-center justify-center gap-x-2 py-2.5 px-6 rounded-[6.25rem] hover:shadow-md text-sm tracking-[.00714em] font-medium bg-primary-600 text-white dark:bg-primary-200 dark:text-primary-800"
+                                            >
+                                                Yes
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            
+
+
+
+        </div>
+
+
+    </div>
+    
   </main>
 
 
@@ -1619,7 +2541,41 @@ function switchLanguage(lang) {
 
   
   
-  
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll('.tab');
+            const indicator = document.getElementById('indicator');
+
+            function setIndicatorPosition() {
+                const activeTab = document.querySelector('.tab.active') || tabs[0]; // Default to first tab if none is active
+                const tabRect = activeTab.getBoundingClientRect();
+
+                // Positioning the indicator based on the active tab
+                const tabOffset = tabRect.left; // Position of the active tab
+                const tabWidth = tabRect.width; // Width of the active tab
+
+                // Set the width and position of the indicator
+                indicator.style.width = `${tabWidth}px`;
+                indicator.style.transform = `translateX(${tabOffset - indicator.parentElement.getBoundingClientRect().left}px)`; // Use transform to adjust position
+            }
+
+            // Set initial position
+            setIndicatorPosition();
+
+            // Update indicator position on tab click
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    tabs.forEach(t => t.classList.remove('active')); // Remove active class from all tabs
+                    this.classList.add('active'); // Add active class to clicked tab
+                    setIndicatorPosition(); // Update the indicator position
+                });
+            });
+
+            // Adjust indicator position on window resize
+            window.addEventListener('resize', setIndicatorPosition);
+        });
+    </script>
+    
   <!-- Tailmater javascript -->
   <script src="../vendors/jsvectormap/dist/js/jsvectormap.min.js"></script>
   <script src="../vendors/glightbox/dist/js/glightbox.min.js"></script>
