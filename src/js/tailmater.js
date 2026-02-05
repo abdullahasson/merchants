@@ -589,7 +589,17 @@
   // ########## 18. Custom JS ##########
   const myCustom = function () {
 
-    // insert your javascript in here
+    // Initialize instruction modal if not already initialized
+    if (!window.instructionModal && document.getElementById('instructionModal')) {
+      // Check if we're on the main dashboard page
+      const currentPath = window.location.pathname;
+      if (currentPath.includes('/users/dashboard/') || currentPath === '/' || currentPath.endsWith('/ar/')) {
+        // Initialize instruction modal with a small delay to ensure all elements are loaded
+        setTimeout(() => {
+          window.instructionModal = new InstructionModal();
+        }, 500);
+      }
+    }
 
   }
   myCustom();

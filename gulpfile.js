@@ -13,7 +13,7 @@ const logSymbols           = require('log-symbols');
 function livePreview(done){
   browserSync.init({
     files: "./*.html",
-    startPath: "./users/index.html",
+    startPath: "index.html",
     server: {
       baseDir: "./",
     },
